@@ -190,6 +190,9 @@ function replaceDocumentMarkers($document,$additionalMarkers = array()) {
 			case 'error':
 				addElement('div',$parent,isset($_SESSION['error'])?$_SESSION['error']:'',array('id'=>'errordiv'));
 				break;
+			case 'logo':
+				addElement('img',$parent,'',array('id'=>'logo_img','src'=>$config['logo']));
+				break;
 			default:
 				if(isset($additionalMarkers[$i])) {
 					$parent->insertBefore($additionalMarkers[$i],$replaceme);

@@ -3,6 +3,8 @@
 * @author: Menne Kamminga <mkamminga@bevolkingsonderzoeknoord.nl>
 * 
 * Here we define a global array with oath-hotp secret keys:
+* To NOT accidently commit your configuration:
+*   git update-index --assume-unchanged secrets.php
 */
 defined('__MAINAPP__') or die('nope');
 

@@ -68,6 +68,9 @@ $config['secret_key'] = hash( 'sha256', 'some very secret password' );
 //The encryption method used to protect session data
 $config['encrypt_method'] = "AES-256-CBC";
 
+//This is used as a logo on the login page:
+$config['logo'] = "some_logo_file.png"; 
+
 //The <title> attribute in the page header.
 $config['page_title'] = "AD User Tool"; 
 
