@@ -8,13 +8,13 @@ defined('__MAINAPP__') or die('nope');
 
 $config = array();
 
-$config['sessionname'] = "00112233445566778899";//Session name, should be a random string, this is used as cookie name for the php session
+$config['sessionname'] = "some_random_string";//Session name, should be a random string, this is used as cookie name for the php session
 $config['domain'] = "SHORT_DOMAIN_NAME"; //Domain part of user name, when logging in, this is appended to the username to perform ldap_bind
 $config['fqdn'] = "DOMAIN_NAME.COM"; //FQDN is required when creating new users for the domain.
 $config['server'] = "AD_SERVER.DOMAIN_NAME.COM"; //The full server DNS name
 $config['ldap_base_dn_users'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';//The base OU we are searching in for users, new users are created here:
 $config['ldap_base_dn_groups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';//The base OU we are searching in for groups
-$config['ca_cert'] = "c:\\xampp\\ca.pem"; //The certificate of the domain Certificate Authority (required for secure LDAPS connection)
+//$config['ca_cert'] = "c:\\xampp\\ca.pem"; //The certificate of the domain Certificate Authority (required for secure LDAPS connection)
 $config['secret_key'] = hash( 'sha256', 'some very secret password' );//The secret key is used to protect session data.
 $config['encrypt_method'] = "AES-256-CBC";//The encryption method used to protect session data
 $config['page_title'] = "AD User Tool"; //The <title> attribute in the page header.

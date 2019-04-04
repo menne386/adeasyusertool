@@ -38,10 +38,15 @@ $_SESSION['timestamp'] = time();
 
 $con = null;
 
-ldap_set_option($con, LDAP_OPT_DEBUG_LEVEL, 7);
-ldap_set_option($con, LDAP_OPT_X_TLS_CRLCHECK, 0)or die("failed to set referrals");
-ldap_set_option($con, LDAP_OPT_X_TLS_REQUIRE_CERT, 0)or die("failed to set referrals");
-ldap_set_option($con, LDAP_OPT_X_TLS_CACERTFILE, $config['ca_cert'])or die("failed to set referrals");
+if($config['debug']) {
+	ldap_set_option($con, LDAP_OPT_DEBUG_LEVEL, 7);
+}
+
+if(isset($config['ca_cert'])) {
+	ldap_set_option($con, LDAP_OPT_X_TLS_CRLCHECK, 0)or die("failed to set CRLCHECK");
+	ldap_set_option($con, LDAP_OPT_X_TLS_REQUIRE_CERT, 0)or die("failed to set REQUIRE_CERT");
+	ldap_set_option($con, LDAP_OPT_X_TLS_CACERTFILE, $config['ca_cert'])or die("failed to set CACERTFILE");
+}
 
 $con=ldap_connect($config['server']) or die("Could not connect to $server"); 
 ldap_set_option($con, LDAP_OPT_PROTOCOL_VERSION, 3) or die("failed to set protocol version");
