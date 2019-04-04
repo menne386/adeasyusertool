@@ -3,26 +3,91 @@
 * @author: Menne Kamminga <mkamminga@bevolkingsonderzoeknoord.nl>
 * 
 * Here we define all global configuration
+*
+* DO NOT CHANGE CONFIGURATION DEFAULTS HERE! INSTEAD edit "config.php" and add lines you want to override there!
+* To NOT commit your configuration:
+*   git update-index --assume-unchanged config.php
 */
 defined('__MAINAPP__') or die('nope');
 
 $config = array();
 
-$config['sessionname'] = "00112233445566778899";//Session name, should be a random string, this is used as cookie name for the php session
-$config['domain'] = "SHORT_DOMAIN_NAME"; //Domain part of user name, when logging in, this is appended to the username to perform ldap_bind
-$config['fqdn'] = "DOMAIN_NAME.COM"; //FQDN is required when creating new users for the domain.
-$config['server'] = "AD_SERVER.DOMAIN_NAME.COM"; //The full server DNS name
-$config['ldap_base_dn_users'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';//The base OU we are searching in for users, new users are created here:
-$config['ldap_base_dn_groups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';//The base OU we are searching in for groups
-$config['secret_key'] = hash( 'sha256', 'some very secret password' );//The secret key is used to protect session data.
-$config['encrypt_method'] = "AES-256-CBC";//The encryption method used to protect session data
-$config['page_title'] = "AD User Tool"; //The <title> attribute in the page header.
-$config['use_oath_hotp'] = false; //Enable 2e factor authentication based on oath hotp
-$config['oath_hotp_maxdeviation'] = 100; //Maximum number that the oath can deviate.
+//Session name, should be a random string, this is used as cookie name for the php session
+$config['sessionname'] = "00112233445566778899";
+
+//Domain part of user name, when logging in, this is appended to the username to perform ldap_bind
+$config['domain'] = "SHORT_DOMAIN_NAME"; 
+
+//FQDN is required when creating new users for the domain.
+$config['fqdn'] = "DOMAIN_NAME.COM"; 
+
+//The full server DNS name
+$config['server'] = "AD_SERVER.DOMAIN_NAME.COM"; 
+
+//The base OU we are searching in for users, new users are created here:
+$config['ldap_base_dn_users'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
+
+//The base OU we are searching in for groups
+$config['ldap_base_dn_groups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
+
+//The filter that is used for user searching
+$config['ldap_search_filter_users'] = '(&(objectCategory=person)(samaccountname=*))';
+
+//The filter that is used for group searching
+$config['ldap_search_filter_groups'] = '(&(objectCategory=group)(samaccountname=*))';
+
+//What attributes are available for display/edit for users:
+$config['ldap_attributes_users'] = array(
+	'samaccountname'=>"field:user:samaccountname",
+	'displayname'=>"field:user:displayname",
+	'givenname'=>"field:user:givenname",
+	'initials'=>"field:user:initials",
+	'sn'=>"field:user:sn",
+	'mail'=>"field:user:mail",
+	'department'=>"field:user:department",
+	'title'=>"field:user:title",
+	'unicodepwd'=>"field:user:unicodepwd",
+	'useraccountcontrol'=>"field:user:useraccountcontrol",
+);
+
+//What attributes are available for display/edit for groups:
+$config['ldap_attributes_groups'] = array(
+	'samaccountname'=>"field:group:samaccountname",
+	'member'=>'field:group:member',
+);
+
+//What attributes are available for display/edit for rights: (added to these are all the groups)
+$config['ldap_attributes_rights'] = array(
+	'samaccountname'=>"field:user:samaccountname",
+	'displayname'=>"field:user:displayname"
+);
+
+//The secret key is used to protect session data.
+$config['secret_key'] = hash( 'sha256', 'some very secret password' );
+
+//The encryption method used to protect session data
+$config['encrypt_method'] = "AES-256-CBC";
+
+//The <title> attribute in the page header.
+$config['page_title'] = "AD User Tool"; 
+
+//Enable 2e factor authentication based on oath hotp
+$config['use_oath_hotp'] = false; 
+
+//Maximum number that the oath can deviate.
+$config['oath_hotp_maxdeviation'] = 100; 
+
+//Enable debugging:
 $config['debug'] = false;
+
+//The version number displayed:
 $config['version'] = '0.5.1';
-//$config['ca_cert'] = "c:\\xampp\\ca.pem"; //The certificate of the domain Certificate Authority (required for secure LDAPS connection on some servers)
-//$config['language'] = 'nl'; //Language code (2 letters)
+
+//The certificate of the domain Certificate Authority (required for secure LDAPS connection on some servers) (Unset by default!)
+//$config['ca_cert'] = "c:\\xampp\\ca.pem"; 
+
+//Language code (2 letters) (Unset by default!)
+//$config['language'] = 'nl'; 
 
 //Override configuration:
 require_once('config.php');

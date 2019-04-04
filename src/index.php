@@ -35,32 +35,12 @@ $msg = "";
 $ad_users = array();
 $ad_groups = array();
 
-$search_filter = '(&(objectCategory=person)(samaccountname=*))';
-$search_filter_g = '(&(objectCategory=group)(samaccountname=*))';
+$search_filter = $config['ldap_search_filter_users'];
+$search_filter_g = $config['ldap_search_filter_groups'];
 
-$attributes = array(
-	'samaccountname'=>"field:user:samaccountname",
-	'displayname'=>"field:user:displayname",
-	'givenname'=>"field:user:givenname",
-	'initials'=>"field:user:initials",
-	'sn'=>"field:user:sn",
-	'mail'=>"field:user:mail",
-	'department'=>"field:user:department",
-	'title'=>"field:user:title",
-	'unicodepwd'=>"field:user:unicodepwd",
-	'useraccountcontrol'=>"field:user:useraccountcontrol",
-);
-$attributes_g = array(
-	'samaccountname'=>"field:group:samaccountname",
-	'member'=>'field:group:member',
-);
-
-$attributes_r = array(
-	'samaccountname'=>"field:user:samaccountname",
-	'displayname'=>"field:user:displayname"
-);
-
-
+$attributes = $config['ldap_attributes_users'];
+$attributes_g = $config['ldap_attributes_groups'];
+$attributes_r = $config['ldap_attributes_rights'];
 
 require_once('filters.php');//Functions that are used to filter/check ldap data before display or before write.
 
