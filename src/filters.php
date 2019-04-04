@@ -48,6 +48,7 @@ function displayfilter_useraccountcontrol($dn,$value, &$node,$att,bool $edit,$at
 	
 	
 	++$tabIndex;
+	return $input;
 }
 
 
@@ -119,7 +120,7 @@ function displayfilter_membership($dn,$value, &$node,$att,bool $edit,$attributes
 	++$tabIndex;
 	//$hidden = addElement('input',$node,'',array('type'=>'hidden','value'=>$value));	
 	$input = addElement('input',$node,$value,$attribs);	
-	
+	return $input;	
 }
 
 function displayfilter_default($dn,$value, &$node,$att,bool $edit,$attributes) {

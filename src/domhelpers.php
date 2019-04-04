@@ -36,9 +36,10 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 			$func = "displayfilter_".$att;
 			if(in_array($att,array_keys($ad_groups))) {
 				$func= "displayfilter_membership";
+			} else {
+				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
+								addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>$id.'_'.$att."_new_e"));
 			}
-			$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
-			        addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>$id.'_'.$att."_new_e"));
 					
 			if(function_exists($func)) {
 				$func($id.'_'."new","",$td,$att,false,$attributes);
@@ -56,9 +57,10 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 			$func = "displayfilter_".$att;
 			if(in_array($att,array_keys($ad_groups))) {
 				$func= "displayfilter_membership";
+			} else {
+				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
+								addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>hash("sha256",$dn.'=>'.$att.'=>'.$id)."_e"));	
 			}
-			$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
-			        addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>hash("sha256",$dn.'=>'.$att.'=>'.$id)."_e"));	
 			
 			if(function_exists($func)) {
 				$func($dn,$usr[$att],$td,$att,true,$attributes);
