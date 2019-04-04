@@ -1,0 +1,147 @@
+
+.changing{
+	background-color: #ff00FF!important;
+}
+.changed{
+	background-color: #00FF00!important;
+}
+.error{
+	background-color: #FF0000!important;
+}
+.sorted{
+	display:none;
+}
+
+table{
+	border: 1px solid black;
+	border-right: 0px;
+	margin: 20px auto;	
+	border-collapse: separate!important;
+}
+
+thead {
+	position: sticky;
+	top: 0px;
+}
+
+th{
+	padding-top:3px;
+	padding-bottom: 3px;
+	border-collapse: separate;
+	vertical-align: bottom;
+	background-color: #9772c4;
+	
+	z-index: 0;
+	border-right: 1px solid black;
+}
+
+th.columnselected{ 
+	color:yellow; 
+}
+
+th.rotate {
+	border:0px solid black;
+	height: 200px;
+}
+th.rotate > div {
+	width: 20px;
+	transform: translate(20px,-14px) rotate(315deg);
+	transform-origin: 100% 100%;
+	height: 20px;
+	line-height: 20px;
+}
+th.rotate > div > span {
+	border-bottom: 1px solid black;
+	width: 284px;
+	display: block;
+	text-align:left;
+}
+
+td {
+	padding:3px;
+	border-right: 1px solid black;
+	text-align: center;
+	height: 20px;
+	width: 20px;
+	white-space: nowrap;	
+}
+
+thead tr{
+	background-color: #d8beff;
+	border-bottom: 1px solid black; 
+	border-collapse:seperate;
+	color: white;
+}
+tbody tr:nth-child(even) {background-color: #EEE;}
+tbody tr:nth-child(odd) {background-color: #FFF;}
+tbody tr:hover{background-color: #ffff99;}
+td:nth-child(even) {background-color: #00000022;}
+
+table#rights { border-right: 1px solid black; }
+
+table#rights th{ padding: 0px; }
+
+table#rights thead >tr::after{
+	content: "";
+	width: 200px;
+	height: 200px;
+	display:block;
+	border-bottom: 1px solid black;
+	background-color: #9772c4;
+}
+
+table input {
+	width: 100px;
+	margin-bottom:0px!important;
+}
+
+#search{
+	width: 100px;
+	margin-bottom:0px!important;
+}
+
+.nav > li > a{
+	cursor: pointer;
+}
+
+#errordiv{
+	color: red;
+}
+
+.cellerror {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	top: -20px;
+	/*min-width: 120px;*/
+}
+
+.cellerror .cellerrortext {
+	visibility: hidden;
+	width: 120px;
+	background-color: red;
+	color: white;
+	text-align: center;
+	border-radius: 6px 6px 6px 0px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -3px;
+	/*min-width: 120px;*/
+	width: 200px;
+}
+
+td.error .cellerrortext{
+  visibility: visible;
+}
+
+tr.error > td:nth-child(1)  .cellerrortext{
+  visibility: visible;
+}
+
+
+

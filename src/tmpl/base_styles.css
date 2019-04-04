@@ -1,0 +1,3912 @@
+/* -----------------------------------  
+   Import external CSS files
+----------------------------------- */
+/* Load the Compass Core Framework */
+/* Reset css */
+/* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects block display not defined in IE6/7/8/9 & FF3
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+/*
+ * Corrects inline-block display not defined in IE6/7/8/9 & FF3
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/*
+ * Prevents modern browsers from displaying 'audio' without controls
+ * Remove excess height in iOS5 devices
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
+ * Known issue: no IE6 support
+ */
+[hidden] {
+  display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Addresses font-family inconsistency between 'textarea' and other form elements.
+ */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/*
+ * Addresses margins handled incorrectly in IE6/7
+ */
+body {
+  margin: 0; }
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses outline displayed oddly in Chrome
+ */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers
+ * people.opera.com/patrickl/experiments/keyboard/test
+ */
+a:hover,
+a:active {
+  outline: 0; }
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses font sizes and margins set differently in IE6/7
+ * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0; }
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+*/
+b,
+strong {
+  font-weight: bold; }
+
+blockquote {
+  margin: 1em 40px; }
+
+/*
+ * Addresses styling not present in S5, Chrome
+ */
+dfn {
+  font-style: italic; }
+
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Addresses margins set differently in IE6/7
+ */
+p,
+pre {
+  margin: 1em 0; }
+
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  font-size: 1em; }
+
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+/* 1 */
+q {
+  quotes: none; }
+
+/* 2 */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small {
+  font-size: 75%; }
+
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+/*
+ * Addresses paddings set differently in IE6/7
+ */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
+/*
+ * Corrects list images handled incorrectly in IE7
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/*
+ * Corrects overflow displayed oddly in IE9
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE6/7/8/9, S5, O11
+ */
+figure {
+  margin: 0; }
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
+form {
+  margin: 0; }
+
+/*
+ * Define consistent border, margin, and padding
+ */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects text not wrapping in FF3
+ * 3. Corrects alignment displayed oddly in IE6/7
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/*
+ * 1. Corrects font size not being inherited in all browsers
+ * 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 3. Improves appearance and consistency in all browsers
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/*
+ * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ */
+button,
+input {
+  line-height: normal;
+  /* 1 */ }
+
+/*
+ * 1. Improves usability and consistency of cursor style between image-type 'input' and others
+ * 2. Corrects inability to style clickable 'input' types in iOS
+ * 3. Removes inner spacing in IE7 without affecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  /* 1 */
+  -webkit-appearance: button;
+  /* 2 */
+  *overflow: visible;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Removes excess padding in IE8/9
+ * 3. Removes excess padding in IE7
+      Known issue: excess padding remains in IE6
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Removes inner padding and search cancel button in S5, Chrome on OS X
+ */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none; }
+
+/*
+ * Removes inner padding and border in FF3+
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  width: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+/* Load the variables used in the CSS */
+/* light grey: body background */
+/* black */
+/* grey + footer dark-grey: gradient */
+/* light grey: dropdown menu's */
+/* light grey */
+/* white */
+/* grey: background */
+/* brown/grey: patientnav */
+/* blue: background header */
+/* green: background timeline */
+/* xlight grey: background */
+/* footer light-grey: gradient */
+/* Beheer kleuren */
+/* Dark green */
+/* light green */
+/* xxlight grey */
+/* light grey */
+/* grey */
+/* light blue: bottom border patientnav */
+/* border: profile pictures */
+/* blue: top border patientnav */
+/* xlight grey: topmenu */
+/* -----------------------------------
+  Forms
+----------------------------------- */
+/* -----------------------------------
+  Schedule
+----------------------------------- */
+/* Purple */
+/* Grey */
+/* White */
+/* Light purple */
+/* Dark grey */
+/* Light grey */
+/* -----------------------------------  
+  Weergave specifieke styling
+----------------------------------- */
+/* Grey */
+/* Grey */
+/* Grey */
+/* White */
+/* Purple dark */
+/* Purple */
+/* -----------------------------------  
+  Select2
+----------------------------------- */
+/* Default width */
+/* Small width */
+/* Medium width */
+/* Large width */
+/* Dark grey */
+.highlight {
+  padding-left: 5px;
+  margin-left: -5px;
+  background-color: #f7e519;
+  border-radius: 4px; }
+
+.highlight strong {
+  color: #b20000; }
+
+.dateTimeColumn {
+  width: 67px; }
+
+.subrow {
+  background-color: #fefcdc; }
+
+/* -----------------------------------  
+   Basic styling
+----------------------------------- */
+html, body {
+  font-family: Arial, Verdana, Tahoma, Sans-Serif;
+  font-size: 12px;
+  color: #333333;
+  line-height: 18px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  overflow: hidden; }
+
+body.canvas.background {
+  background-color: #f1f2f3; }
+
+/* Default classes: Forms */
+button,
+input,
+select,
+textarea,
+strong {
+  font-family: Arial, Verdana, Tahoma, Sans-Serif; }
+
+.input-xmini {
+  width: 30px; }
+
+.input-micro {
+  width: 15px; }
+
+.input-xmicro {
+  width: 10px; }
+
+/* Default classes */
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.fill {
+  min-height: 1px; }
+
+.hide {
+  display: none; }
+
+.floatleft {
+  float: left; }
+
+.floatright {
+  float: right; }
+
+/* Debug classes */
+.debug {
+  border: solid 1px red;
+  min-height: 1px; }
+
+/* -----------------------------------  
+   Content styling
+----------------------------------- */
+.canvas.content {
+  height: 1000px;
+  overflow-y: scroll;
+  background-color: #FFF; }
+  .canvas.content .content-inner {
+    margin: 10px; }
+  .canvas.content .row.innerborder {
+    border-bottom: solid 1px #bccfd1; }
+
+.tab-content > fieldset {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media (max-width: 1824px) {
+  .page-large div.content-inner > div.row-fluid .span9, .page-large div.content-inner > .form-horizontal > div.row-fluid .span9,
+  .page-large div.content-inner > fieldset > div.row-fluid .span9 {
+    width: 100%; }
+  .page-large div.content-inner > div.row-fluid .span3, .page-large div.content-inner > .form-horizontal > div.row-fluid .span3,
+  .page-large div.content-inner > fieldset > div.row-fluid .span3 {
+    margin-left: 0px;
+    width: 450px; } }
+@media (max-width: 1024px) {
+  div.content-inner > div.row-fluid div.span9, div.content-inner > .form-horizontal > div.row-fluid div.span9 {
+    width: 100%; }
+  div.content-inner > div.row-fluid div.span3, div.content-inner > .form-horizontal > div.row-fluid div.span3 {
+    margin-left: 0px;
+    width: 450px; } }
+/* -----------------------------------  
+   Wicket Ajax indicator
+----------------------------------- */
+.wicket-ajax-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2000; }
+  .wicket-ajax-indicator img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: url("../images/ajax-indicator.gif");
+    height: 0;
+    overflow: hidden;
+    padding-top: 16px;
+    /* height of logo for screen */
+    width: 16px;
+    /* width of logo for screen */ }
+
+/* Alternative styling voor componentent (zoals bootstrap) */
+/* Popover styles */
+.popoverHome {
+  margin-left: 5px; }
+
+.popover {
+  margin-bottom: 10px; }
+
+.popover.bottom .arrow {
+  border-bottom: 5px solid red; }
+
+.popover-inner {
+  padding: 5px; }
+
+.popover-title {
+  margin: 0px;
+  padding-bottom: 0px;
+  color: white;
+  border: none;
+  border-bottom: 0px solid #acacac;
+  background: none; }
+
+.popover-content {
+  padding-top: 0px;
+  color: white;
+  background: none; }
+
+.btn-group > .btn,
+.btn-group > .dropdown-menu {
+  font-size: 12px; }
+
+/* -----------------------------------  
+   Icon styling
+----------------------------------- */
+[class^="icon-"].icon-purple,
+[class*="icon-"].icon-purple,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-purple,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-purple {
+  background-image: url("../images/icons/glyphicons-halflings-purple.png"); }
+[class^="icon-"].icon-green,
+[class*="icon-"].icon-green,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-green,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-green {
+  background-image: url("../images/icons/glyphicons-halflings-green.png"); }
+[class^="icon-"].icon-light-green,
+[class*="icon-"].icon-light-green,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-light-green,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-light-green {
+  background-image: url("../images/icons/glyphicons-halflings-light-green.png"); }
+[class^="icon-"].icon-orange,
+[class*="icon-"].icon-orange,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-orange,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-orange {
+  background-image: url("../images/icons/glyphicons-halflings-orange.png"); }
+[class^="icon-"].icon-red,
+[class*="icon-"].icon-red,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-red,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-red {
+  background-image: url("../images/icons/glyphicons-halflings-red.png"); }
+[class^="icon-"].icon-white,
+[class*="icon-"].icon-white,
+.dropdown-menu > li > a:hover > [class^="icon-"].icon-white,
+.dropdown-menu > li > a:hover > [class*=" icon-"].icon-white {
+  background-image: url("../images/icons/glyphicons-halflings-white.png"); }
+
+.icon {
+  margin: -1px 0 -1px 0;
+  display: inline-block;
+  vertical-align: text-top; }
+
+/* Custom icons */
+.icon-mimetype-pdf {
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/ico-mimetype-pdf.png) transparent no-repeat 0 0; }
+
+.icon-mimetype-doc {
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/ico-mimetype-txt.png) transparent no-repeat 0 0; }
+
+.icon-mimetype-csv {
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/ico-mimetype-csv.png) transparent no-repeat 0 0; }
+
+.icon-plus-icon {
+  margin-right: 5px; }
+
+.icon-link {
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/ico-link.png) transparent no-repeat 0 0; }
+
+.icon-link.icon-white {
+  background: url(../images/icons/ico-link-white.png) transparent no-repeat 0 0; }
+
+.icon-barcode {
+  background: transparent url(../images/icons/ico-barcode.png) no-repeat 0 0; }
+
+.icon-nieuwe-afspraak {
+  width: 16px;
+  height: 16px;
+  background: transparent url(../images/icons/nieuwe-afspraak.png) no-repeat 0 0; }
+
+.fa.icon-large-font {
+  font-size: large; }
+
+/* -----------------------------------  
+   Feedback
+----------------------------------- */
+.alert {
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  clear: both; }
+
+.alert.alert-inline {
+  position: relative;
+  left: auto;
+  margin-left: 0;
+  width: auto;
+  clear: none; }
+
+ul li span p {
+  display: inline; }
+
+/* Forms */
+/* fix voor actief filter boven calender */
+.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active {
+  z-index: 1 !important; }
+
+.btn-top {
+  margin: 10px 0 15px 0; }
+  .btn-top .dropdown-menu {
+    width: 180px;
+    border-radius: 0 0 5px 5px;
+    border-top: medium none;
+    padding: 8px 0; }
+    .btn-top .dropdown-menu li a {
+      color: #612D83;
+      padding: 3px 10px;
+      line-height: 18px;
+      font-size: 12px; }
+  .btn-top.snelkeuze .btn {
+    width: 252px;
+    text-align: left; }
+  .btn-top.snelkeuze .dropdown-menu {
+    width: 250px; }
+
+.btn-bottom {
+  margin-bottom: 10px; }
+
+.btn-success {
+  background-image: none;
+  background-color: #97a300; }
+
+.btn.actief {
+  background-color: #97a300;
+  color: white;
+  text-shadow: 0 0 0 transparent; }
+  .btn.actief i.icon-ok-circle {
+    background-image: url("../images/icons/glyphicons-halflings-white.png"); }
+
+.btn.niet-actief {
+  border: 1px solid #bbbbbb;
+  background-color: #e6e6e6;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFE6E6E6');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U2ZTZlNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #e6e6e6 100%); }
+  .btn.niet-actief i.icon-ok-circle {
+    background-position: -216px -96px; }
+
+.filter-view .btn.active {
+  box-shadow: none;
+  background-color: #CCC; }
+
+.filter-view .form-inline label {
+  margin: 5px 10px 0 0; }
+
+.form-horizontal .control-group {
+  margin-bottom: 5px; }
+
+.form-horizontal .controls {
+  line-height: 30px; }
+
+.form-horizontal.page-filter .form-actions {
+  padding-left: 0px; }
+
+.control-group.table-form-inline {
+  margin: 0; }
+  .control-group.table-form-inline label {
+    margin: 5px 0; }
+  .control-group.table-form-inline div.input-append {
+    margin: 0 5px; }
+
+.hero-unit .control {
+  line-height: 30px; }
+
+.input-append {
+  margin-bottom: 5px; }
+
+textarea {
+  border: solid 1px #cccccc; }
+
+.input-fullwidth {
+  width: 100%;
+  max-width: 600px; }
+
+textarea.input-fullwidth {
+  height: 200px; }
+
+.btn-top-header {
+  margin: 10px 0 15px 0; }
+
+.btn-top {
+  margin: 10px 0 15px 0; }
+  .btn-top .dropdown-menu {
+    width: 180px;
+    border-radius: 0 0 5px 5px;
+    border-top: medium none;
+    padding: 8px 0; }
+    .btn-top .dropdown-menu li a {
+      color: #612D83;
+      padding: 3px 10px;
+      line-height: 18px;
+      font-size: 12px; }
+
+/* Alert blocks - Inline */
+.alert.inline {
+  margin: 0 0 10px 0;
+  padding: 8px 14px;
+  position: static;
+  width: auto;
+  text-align: left; }
+  .alert.inline .close {
+    padding-top: 2px;
+    right: 0; }
+
+/* Dropdown met snelkeuze acties */
+.snelkeuze .btn {
+  width: 252px;
+  text-align: left;
+  margin-left: 5px; }
+.snelkeuze .dropdown-menu {
+  width: 250px;
+  text-align: left; }
+
+.toon-audit button:focus {
+  outline: none; }
+.toon-audit .dropdown-menu {
+  margin-top: 7px;
+  padding: 7px 7px 0 7px;
+  width: 687px;
+  border-radius: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 9990; }
+  .toon-audit .dropdown-menu table {
+    margin-bottom: 7px;
+    z-index: 9990; }
+    .toon-audit .dropdown-menu table th {
+      text-align: left;
+      padding: 5px 10px; }
+    .toon-audit .dropdown-menu table td {
+      padding: 5px 10px;
+      cursor: default; }
+      .toon-audit .dropdown-menu table td:first-child {
+        width: 120px; }
+
+/* Button group active state */
+.btn-group .btn.active {
+  background-color: #97a300;
+  color: white;
+  text-shadow: black 1px 1px 0; }
+
+div.controls .text {
+  padding-top: 5px; }
+
+.control-group.value .controls a {
+  color: #97a300; }
+
+div.controls .text {
+  padding-top: 8px; }
+
+div.vragenlijstinzien .row-fluid .span6 {
+  width: 100% !important; }
+
+/* -----------------------------------  
+   Feedback
+----------------------------------- */
+.alert {
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  clear: both; }
+
+/* Dropdown styles */
+.dropdown-menu {
+  margin-bottom: 15px;
+  padding: 8px 0 8px 0;
+  border-radius: 10px 10px 10px 10px; }
+  .dropdown-menu:before {
+    border-bottom: none;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #acacac;
+    left: 9px;
+    top: 100%; }
+  .dropdown-menu:after {
+    border-bottom: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white;
+    left: 10px;
+    top: 100%; }
+  .dropdown-menu li a {
+    padding: 3px 10px 3px 10px;
+    color: #333333;
+    font-size: 12px; }
+  .dropdown-menu li a:hover,
+  .dropdown-menu li a.active {
+    background: #e2e2dd none; }
+
+/* Modal box - Overlay */
+.modal-backdrop, .modal-backdrop.fade.in {
+  opacity: 0.6; }
+
+/* Feedback meldingen */
+.alert {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 9999; }
+
+/* -----------------------------------  
+	Modal styling
+----------------------------------- */
+.modal-header {
+  background-color: #9772c4;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  -o-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0; }
+  .modal-header .close {
+    margin-top: 14px; }
+  .modal-header h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    color: #FFF; }
+
+.modal-footer {
+  border: none;
+  box-shadow: none;
+  background-color: #EEE; }
+
+/* Modalbox */
+.modal {
+  width: 780px;
+  margin-left: -380px;
+  border: none;
+  border-radius: 5px 5px 5px 5px; }
+  .modal .hero-unit {
+    margin: 0 0 15px 0;
+    padding: 10px;
+    line-height: 30px; }
+    .modal .hero-unit p {
+      line-height: 14px; }
+    .modal .hero-unit .control-group.form-inline {
+      margin-bottom: 0; }
+  .modal.modal-large {
+    width: 840px;
+    margin-left: -420px; }
+  .modal legend {
+    margin-bottom: 10px; }
+  .modal fieldset {
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 0 10px;
+    padding: 15px; }
+  .modal .btn-top {
+    margin-bottom: 15px; }
+  .modal .table-condensed td {
+    padding: 10px 10px 5px 10px;
+    cursor: pointer;
+    color: #612d83;
+    vertical-align: middle; }
+    .modal .table-condensed td a {
+      color: #612d83; }
+    .modal .table-condensed td a:hover {
+      text-decoration: none; }
+  .modal .table-condensed th {
+    padding: 10px;
+    vertical-align: middle;
+    background-color: #EEE;
+    font-size: 13px; }
+  .modal .table-condensed th.status-header {
+    margin-right: 5px;
+    width: 150px; }
+  .modal .table-condensed td.status, .modal .table-condensed th.status-header {
+    padding: 8px 5px 8px 5px;
+    text-align: center; }
+  .modal .table-condensed .btn-success {
+    background-image: none;
+    background-color: #97a300; }
+  .modal .table-condensed .btn-success.active {
+    box-shadow: none;
+    background-color: #E6E6E6; }
+    .modal .table-condensed .btn-success.active i {
+      background-image: url("../images/icons/glyphicons-halflings.png");
+      background-position: -216px -96px; }
+
+.dialog-large {
+  width: 970px;
+  margin-left: -485px; }
+
+.dialog-medium {
+  width: 870px;
+  margin-left: -335px; }
+
+.modal-body.antwoordformulierontvangen {
+  max-height: 600px; }
+
+.modal-body.antwoordformulierontvangen embed {
+  width: 100%;
+  height: 500px; }
+
+.mammaStandplaatsPeriode .modal-body {
+  max-height: 700px; }
+
+.ui-tooltip-colonis {
+  max-width: 320px;
+  background-color: white;
+  border-color: #54026e;
+  width: 320px;
+  font-size: 13px;
+  line-height: 16px;
+  color: #54026e; }
+  .ui-tooltip-colonis .form-horizontal .control-label {
+    color: #54026e;
+    width: 100px; }
+  .ui-tooltip-colonis .form-horizontal .control {
+    padding-left: 100px; }
+  .ui-tooltip-colonis .qtip-content {
+    max-height: 500px;
+    overflow: auto; }
+
+/* Badge */
+.badge {
+  padding: 5px 10px;
+  font-size: 12px; }
+
+.gebeurtenissen .badge {
+  position: relative;
+  padding-right: 130px; }
+  .gebeurtenissen .badge .datum {
+    position: absolute;
+    right: 10px;
+    top: 5px; }
+  .gebeurtenissen .badge .omschrijving {
+    white-space: normal; }
+
+.badge-clickable {
+  width: 100%;
+  cursor: pointer;
+  background-color: #faebff;
+  color: black;
+  font-weight: normal;
+  text-shadow: 0 0 0 transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.badge-not-clickable {
+  width: 100%;
+  background-color: transparent;
+  color: black;
+  font-weight: normal;
+  cursor: default;
+  text-shadow: 0 0 0 transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.badge-inverse,
+.badge.badge-success {
+  width: 100%;
+  font-weight: normal;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.badge-success {
+  background-color: #97a300; }
+
+.badge-inverse {
+  background-color: #9772c4; }
+
+/* Labels */
+.label-info, .badge-info {
+  padding: 3px 6px 3px 6px;
+  margin-left: 3px;
+  background-color: #9772c4;
+  vertical-align: middle; }
+
+/* Badge within modal */
+.modal .badge {
+  padding: 5px 10px;
+  font-size: 12px;
+  white-space: normal; }
+
+/* -----------------------------------  
+	Badge styling (prototype/dev)
+----------------------------------- */
+.version-prototype .badge-prototype {
+  position: fixed;
+  bottom: 5px;
+  left: 10px;
+  z-index: 3;
+  cursor: pointer; }
+  .version-prototype .badge-prototype .label {
+    padding: 5px 7px 5px 7px;
+    border: solid 1px white;
+    vertical-align: middle; }
+  .version-prototype .badge-prototype i {
+    background-position: -432px -1px; }
+
+/* -----------------------------------  
+   Table grid
+----------------------------------- */
+/* Table */
+.move-handle {
+  cursor: pointer; }
+
+.move-handle:active {
+  cursor: move; }
+
+.point-handle {
+  cursor: pointer; }
+
+.ui-sortable-helper {
+  cursor: move; }
+
+div.split-table {
+  width: 49%; }
+
+.table-condensed td, .table-condensed th {
+  padding: 10px 10px 10px 10px; }
+.table-condensed th {
+  padding: 10px;
+  vertical-align: middle;
+  font-size: 13px;
+  background-color: #EEE; }
+  .table-condensed th a {
+    color: #612d83; }
+.table-condensed td {
+  color: #612d83;
+  vertical-align: middle; }
+  .table-condensed td a {
+    color: #612d83; }
+  .table-condensed td a.btn.btn-primary {
+    color: white; }
+  .table-condensed td a.btn {
+    color: #333333; }
+  .table-condensed td a.btn.btn-danger {
+    color: white; }
+  .table-condensed td a:hover {
+    text-decoration: none; }
+.table-condensed th.column-button {
+  width: 150px; }
+.table-condensed th.status-center {
+  width: 160px;
+  text-align: center; }
+.table-condensed th.status-upload {
+  width: 290px; }
+.table-condensed th.status-download {
+  width: 90px; }
+.table-condensed th.table-col-datum {
+  width: 120px; }
+.table-condensed th.checkBoxColumn {
+  width: 10px; }
+.table-condensed th.table-col-icon,
+.table-condensed th.trash {
+  width: 30px; }
+.table-condensed th.table-col-aantal {
+  width: 120px; }
+.table-condensed td.table-col-icon {
+  text-align: center; }
+.table-condensed td.status, .table-condensed th.status-header, .table-condensed th.status-download {
+  padding: 8px 15px 8px 15px;
+  text-align: center; }
+  .table-condensed td.status span, .table-condensed th.status-header span, .table-condensed th.status-download span {
+    margin-right: 5px; }
+.table-condensed.cols-2 th, .table-condensed.cols-2 td {
+  padding: 10px 15px;
+  width: 50%; }
+.table-condensed tr.totalen td {
+  font-weight: bold;
+  border-top: 2px solid #eeeeee; }
+
+/* Totaal aantal */
+.totaal-aantal {
+  padding-left: 10px;
+  color: #666;
+  line-height: 30px;
+  float: left; }
+
+.table-condensed tr.status-afgerond td {
+  color: #a5a5a5; }
+
+table.clickable td {
+  cursor: pointer; }
+table.clickable tr:hover td {
+  background-color: #faebff; }
+table.clickable tr:hover td.no-hover {
+  background-color: white; }
+
+table.table tbody tr.selected td {
+  background-color: #faebff; }
+
+.table h2 {
+  margin: 5px 0 5px 0;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #612d83; }
+
+/* tabel zonder hover */
+.table-condensed.static tbody tr:hover td {
+  background-color: #fff; }
+.table-condensed.static td {
+  vertical-align: middle; }
+
+/* Pagination */
+.pagination {
+  margin-top: 0; }
+  .pagination ul {
+    padding: 0;
+    margin: 0; }
+  .pagination a {
+    color: #666666; }
+
+/* -----------------------------------  
+   Loader
+----------------------------------- */
+#loaderOverlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  z-index: 99998;
+  background: transparent url(../images/transparent.gif) repeat top left; }
+
+#loader {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  margin-left: -75px;
+  padding: 10px;
+  width: 150px;
+  color: #333;
+  line-height: 32px;
+  background-color: #FFF;
+  border: solid 1px #d8beff;
+  border-radius: 5px;
+  z-index: 99999; }
+
+#loader .loaderIcon {
+  float: left;
+  width: 32px;
+  height: 32px;
+  background: url(../images/loader.gif) no-repeat top left;
+  margin-right: 10px; }
+
+.accordion-heading a {
+  color: #623483; }
+.accordion-heading:hover {
+  background-color: #faebff; }
+
+/* Load css sections */
+input, textarea, select, .uneditable-input {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  -ms-border-radius: 5;
+  -o-border-radius: 5;
+  border-radius: 5; }
+
+/* Verplichte velden */
+input[type=number].error, input[type=text].error, .error textarea,
+.error .select2-container .select2-choice,
+.input-append.date .error {
+  border: 1px solid #990000;
+  color: #990000; }
+
+.btn {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  -ms-border-radius: 5;
+  -o-border-radius: 5;
+  border-radius: 5; }
+  .btn.btn-primary {
+    border: solid 1px #828d00;
+    background-image: none;
+    background-color: #97a300; }
+
+.form-horizontal .control-label {
+  text-align: left; }
+
+.form-actions {
+  margin: 0;
+  padding: 0;
+  border-top: 0 none;
+  text-align: right;
+  background-color: transparent; }
+
+input.hasDatepicker,
+input.datum {
+  width: 80px; }
+
+.ui-datepicker {
+  z-index: 99999;
+  clip: auto; }
+
+.datum-tijd {
+  margin-right: 5px;
+  float: left; }
+
+.datum-tijd-value .controls span {
+  font-weight: normal; }
+
+.time-field {
+  display: block;
+  float: left;
+  line-height: 12px; }
+
+input.tijd {
+  width: 28px; }
+
+input.straat {
+  width: 143px; }
+
+input.huisnummer {
+  width: 20px; }
+
+input.huisnummerToevoeging {
+  width: 10px; }
+
+input.postcode {
+  width: 50px; }
+
+input[type="text"].digits-2,
+input[type="text"][maxlength="2"] {
+  width: 20px; }
+
+input[type="text"].digits-3,
+input[type="text"][maxlength="3"] {
+  width: 30px; }
+
+input[type="text"].digits-4,
+input[type="text"][maxlength="4"] {
+  width: 40px; }
+
+/* -----------------------------------  
+   	Bootstrap override for datapicker
+----------------------------------- */
+.input-append input {
+  position: inherit; }
+
+/* waarde naast label tonen */
+.control-group.value {
+  margin: 7px 0; }
+  .control-group.value .control-label {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: #5A5A5A; }
+  .control-group.value .controls {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: bold; }
+    .control-group.value .controls p {
+      margin: 0 0 10px 0;
+      font-family: Arial, Verdana, Tahoma, Sans-Serif;
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: normal; }
+  .control-group.value.no-label .controls {
+    margin: 0;
+    font-weight: normal; }
+
+.control-group.no-label .controls {
+  margin: 0; }
+
+/* Rooster herhaling */
+.selectie-dag {
+  width: 100px; }
+
+.dagdeel-selectie {
+  margin-right: 10px; }
+
+/* -----------------------------------  
+   TZ Forms component overschrijven
+----------------------------------- */
+.formulier-container {
+  padding: 15px;
+  margin: 0 0 10px 0;
+  border: 1px solid #dddddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+
+/* FORMULIER SECTIES */
+.formSection {
+  margin: 0px 0px 15px 0px;
+  background-color: #fff; }
+
+.formSection .row-fluid > .span6 {
+  min-height: 0; }
+
+.formSection .formSection {
+  padding: 0 10px;
+  margin: 0;
+  background: transparent none; }
+  .formSection .formSection .formSection {
+    padding: 0; }
+
+/* clear fix */
+.formSection:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.formSection div.question > label {
+  width: 400px; }
+.formSection div.question div.answer {
+  padding: 0 20px 0 436px; }
+  .formSection div.question div.answer input[type="text"].integer {
+    width: 40px; }
+
+.span6 .formSection div.question > label {
+  width: 175px; }
+.span6 .formSection div.question div.answer {
+  padding: 0 20px 0 211px; }
+
+h2.form_trigger {
+  padding: 5px 10px;
+  margin: 0;
+  clear: left;
+  /*cursor: pointer;*/
+  color: #54026e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  border-bottom: 1px solid #97a300; }
+
+h3.form_trigger {
+  margin: 0;
+  color: #54026e;
+  clear: both; }
+
+/* -----------------------------------  
+   Herhalend formulier
+----------------------------------- */
+.beheer .herhalend-blok {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #faebff;
+  overflow: hidden;
+  clear: both;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px; }
+  .beheer .herhalend-blok .form-block-actions {
+    float: right; }
+  .beheer .herhalend-blok h3 {
+    padding-left: 0;
+    line-height: 30px;
+    clear: none; }
+  .beheer .herhalend-blok .span6.formSection {
+    padding: 0; }
+  .beheer .herhalend-blok .row-fluid {
+    clear: both; }
+
+.verwijder {
+  margin-right: 5px; }
+
+/* -----------------------------------  
+   Plugin: Select2 
+----------------------------------- */
+.select2-container {
+  width: 220px; }
+  .select2-container.selectie-dag {
+    width: 100px; }
+  .select2-container.select2-container-multi .select2-choices {
+    border: solid 1px #cccccc;
+    border-radius: 3px; }
+
+.select2-container
+.select2-drop.select2-drop-active {
+  border-top: solid 1px #aaaaaa; }
+  .select2-container
+  .select2-drop.select2-drop-active .select2-search {
+    margin: 5px 0 0 0; }
+.select2-container
+.select2-drop.select2-drop-active.select2-drop-above {
+  border-bottom: solid 1px #aaaaaa; }
+  .select2-container
+  .select2-drop.select2-drop-active.select2-drop-above .select2-search {
+    margin: 0; }
+.select2-container
+.select2-drop .select2-results .select2-highlighted {
+  background-color: #828d00; }
+.select2-container
+.select2-drop .select2-result-sub {
+  padding: 0; }
+
+.select2-filteroptie .select2-container .select2-choice {
+  margin: 0; }
+
+.select2-container
+.select2-chosen, .select2-results {
+  font-size: 13px; }
+
+/* TODO: html aanpassing. Geen .btn-group om select heen */
+.btn-group .select2-container {
+  font-size: 12px; }
+
+textarea#opmerkingen {
+  width: 96%; }
+
+select.select-large {
+  width: 500px; }
+
+div.question div.answer textarea.textarea-large,
+textarea.textarea-large {
+  height: 192px; }
+
+.binnenNietWijzigbaarPeriode span {
+  padding-left: 4px; }
+.binnenNietWijzigbaarPeriode input {
+  margin-top: 1px; }
+
+.control-group .controls .select2-container {
+  margin-right: 4px !important; }
+
+div.question {
+  margin: 0 0 5px;
+  float: left;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  /* Breedte input velden, selects */ }
+  div.question > label {
+    float: left;
+    width: 175px; }
+  div.question div.answer {
+    padding: 0 20px 0 211px; }
+  div.question div.answer > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    div.question div.answer > ul div.answer > ul.lijst {
+      list-style-type: disc;
+      margin: 0;
+      padding-left: 18px; }
+  div.question .vertical li,
+  div.question .vertical li label {
+    width: 100%;
+    display: block; }
+  div.question .answer li input[type=radio],
+  div.question .answer li input[type=checkbox] {
+    float: left;
+    margin: 2px 5px 2px 0;
+    overflow: hidden; }
+  div.question div.answer li > label > span {
+    display: block;
+    padding-left: 23px; }
+  div.question div.answer.horizontal > ul > li {
+    margin-right: 10px;
+    float: left;
+    padding: 0; }
+  div.question .double div.answer input[type="text"] {
+    float: left;
+    width: 50px; }
+  div.question .bevatNullFlavour div.answer input[type="checkbox"] {
+    margin-left: 5px; }
+  div.question div.answer input[type=text], div.question div.answer textarea,
+  div.question div.answer select,
+  div.question div.answer textarea {
+    padding: 3px;
+    margin: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 24px; }
+  div.question div.answer textarea {
+    height: auto; }
+  div.question div.answer .samengesteld div.select2-container.unit {
+    width: 100px; }
+  div.question div.answer input[type="text"][maxlength="2"] {
+    width: 28px; }
+  div.question div.answer input[type="text"][maxlength="3"] {
+    width: 33px; }
+  div.question div.answer input[type="text"][maxlength="4"] {
+    width: 40px; }
+  div.question div.answer input[type="text"][maxlength="5"] {
+    width: 50px; }
+  div.question div.answer input[type="text"][maxlength="6"] {
+    width: 60px; }
+  div.question div.answer input[type="text"][maxlength="7"] {
+    width: 70px; }
+  div.question div.answer input[type=text].geboortedatum,
+  div.question div.answer input[type=text].datum {
+    width: 80px; }
+  div.question div.answer input[type=text].tijd {
+    width: 40px; }
+  div.question div.answer .input-append .add-on, div.question div.answer .input-prepend .add-on {
+    padding: 1px 4px; }
+  div.question div.answer .input-append .time-fields {
+    margin-left: 5px; }
+    div.question div.answer .input-append .time-fields .divider {
+      font-size: 13px;
+      line-height: 23px;
+      padding: 0 2px; }
+    div.question div.answer .input-append .time-fields input[type="text"][maxlength="2"] {
+      border-radius: 4px;
+      width: 32px; }
+
+div.question.no-label div.answer,
+div.question.no-icons div.answer {
+  padding: 0; }
+
+div.question .select2-container {
+  width: 100%; }
+div.question .select2-default {
+  color: #444444 !important; }
+div.question .select2-container.select2-container-multi .select2-choices {
+  border: 1px solid #dcb0eb;
+  background: white url(../images/icons/select2-multi.png) no-repeat top right; }
+
+/* Formulier iconen */
+/* Default is set to required icon */
+span.form-validation-icon,
+span.form-icon.questionmark,
+span.form-icon.information {
+  display: inline-block;
+  float: left;
+  width: 16px;
+  height: 16px;
+  padding: 1px 0;
+  background: transparent url(../images/icons/formulier-icons.png) no-repeat -16px 100%; }
+
+span.form-validation-icon.not-required {
+  background: transparent none; }
+
+.error span.form-validation-icon {
+  background-position: 0 100%; }
+
+span.form-icon.questionmark,
+span.form-icon.information {
+  float: left; }
+
+span.form-icon.questionmark {
+  background-position: -48px 100%; }
+
+span.form-icon.information {
+  background-position: 0 100%; }
+
+div.question.samengesteld div.select2-container {
+  width: 220px; }
+
+p.buttons, div.buttons {
+  float: left;
+  clear: both;
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding-top: 10px;
+  text-align: right; }
+
+/* bootstrap constructie */
+div.column {
+  float: left;
+  width: 48.717948717948715%;
+  margin-left: 2.564102564102564%;
+  box-sizing: border-box; }
+  div.column:first-child {
+    margin-left: 0; }
+
+/* end styleguide */
+/* Load calendar css */
+.week-calendar {
+  font-family: Arial, Verdana, Tahoma, Sans-Serif;
+  font-size: 12px;
+  color: #333333;
+  line-height: 18px; }
+
+.warning.noResources {
+  border: 5px solid #f8b63c;
+  background-color: #FFFFAD;
+  margin: 10px 0; }
+
+.warning.noResources .inner {
+  padding: 10px;
+  font-size: 14px; }
+
+.week-calendar .calendar-nav {
+  padding: 10px 10px 5px 10px; }
+
+.week-calendar .calendar-nav span.left {
+  float: left; }
+
+.week-calendar .calendar-nav span.right {
+  float: right; }
+
+.week-calendar .calendar-nav button {
+  margin: 0 0.5em; }
+
+.calendar-nav {
+  min-height: 30px; }
+
+.week-calendar table td {
+  margin: 0;
+  padding: 0; }
+
+.week-calendar-header {
+  background: #eee;
+  border-top: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+  margin: 0;
+  width: 100%; }
+
+.week-calendar-header .time-column-header {
+  width: 5%; }
+
+.week-calendar-header .scrollbar-shim {
+  width: 16px; }
+
+.week-calendar-header .day-column-header {
+  text-align: center;
+  padding: 0.4em; }
+
+.week-calendar-header td {
+  background-color: #eee; }
+
+.grid-timeslot-header {
+  width: 6%;
+  background: #eee;
+  vertical-align: top;
+  border: 0; }
+
+.week-calendar .calendar-scrollable-grid {
+  overflow: auto;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  position: relative;
+  background-color: #fff;
+  width: 100%; }
+
+table.week-calendar-time-slots {
+  width: 100%;
+  table-layout: fixed;
+  cursor: default;
+  overflow-x: hidden; }
+
+.week-calendar-time-slots .day-column {
+  width: 13.5%;
+  border-left: 1px solid #dddddd;
+  overflow: visible;
+  vertical-align: top;
+  padding: 0;
+  position: relative; }
+
+.week-calendar-time-slots .day-column-inner {
+  width: 100%;
+  position: relative; }
+
+.time-slot-wrapper {
+  position: relative;
+  height: 0px;
+  top: 1px; }
+
+.time-slots {
+  position: absolute;
+  width: 100%; }
+
+.time-header-cell {
+  padding: 5px;
+  height: 80px;
+  /* reference height */ }
+
+.time-slot {
+  border-bottom: 1px dotted #dddddd; }
+
+.hour-header {
+  text-align: right; }
+
+.hour-end, .hour-header {
+  border-bottom: 1px solid #cccccc;
+  color: #555; }
+
+.business-hours {
+  background-color: #E6EEF1;
+  border-bottom: 1px solid #cccccc;
+  color: #333;
+  font-size: 1.4em; }
+
+.business-hours .am-pm {
+  font-size: 0.6em; }
+
+.day-header-cell {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px; }
+
+.time-slot-header .header-cell {
+  text-align: right;
+  padding-right: 10px; }
+
+.week-calendar-header .today {
+  font-weight: bold; }
+
+/*
+.week-calendar-time-slots .today {
+    background-color: #ffffcc;  
+}
+*/
+.rooster-event {
+  background-color: #EFF8FB;
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+  position: absolute;
+  text-align: center;
+  overflow: hidden;
+  cursor: normal;
+  color: #fff;
+  width: 10px;
+  height: 10px;
+  display: block; }
+
+.cal-event {
+  background-color: #d8beff;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  border: 1px solid #9772c4;
+  position: absolute;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  color: #333;
+  width: 100%;
+  display: block;
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
+
+.rooster-event div,
+.cal-event div {
+  padding: 0 5px; }
+
+.cal-event .time {
+  color: #000;
+  padding: 0;
+  font-weight: bold; }
+
+.ui-draggable .time {
+  cursor: move; }
+
+.cal-event .title {
+  position: relative; }
+
+.ui-resizable-s {
+  height: 10px;
+  bottom: -8px; }
+
+.horizontal-calendar .calendar-scrollable-grid.scrollable {
+  overflow-y: hidden !important;
+  overflow-x: auto !important; }
+
+/*.horizontal-calendar .time-slot-wrapper { clear: left; position: relative; z-index: 1; }*/
+.horizontal-calendar .hour-column {
+  display: block;
+  float: left; }
+
+/* TODO: make it configurable. */
+.horizontal-calendar .hour-column {
+  text-align: left; }
+
+.horizontal-calendar .hour-column .hour {
+  display: block;
+  float: left;
+  width: auto;
+  font-size: 11px;
+  font-weight: normal;
+  color: #333;
+  text-shadow: none; }
+
+.horizontal-calendar .hour-column .minute-column {
+  display: block;
+  float: left;
+  padding-top: 5px;
+  display: block; }
+
+.horizontal-calendar .resource-column {
+  /* white-space: nowrap; */
+  border-right: 1px solid #313131;
+  font-size: 11px; }
+
+.horizontal-calendar .resource-column div {
+  padding: 5px; }
+
+.horizontal-calendar .heading {
+  white-space: nowrap; }
+
+.horizontal-calendar .event-column {
+  position: relative;
+  z-index: 2;
+  vertical-align: top; }
+
+.horizontal-calendar .time-slot {
+  float: right;
+  border: 0;
+  /* background: transparent url(../images/calendar/time-slot-bg.png) repeat-y top right; */ }
+
+.horizontal-calendar .time-slot.hour-end {
+  /* background: transparent url(../images/calendar/time-slot-hour-end-bg.png) repeat-y top right; */ }
+
+.horizontal-calendar .time-slot.last {
+  /* background: transparent url(../images/calendar/time-slot-last-bg.png) repeat-y top right; */ }
+
+.horizontal-calendar .grid-timeslot-header,
+.horizontal-calendar .time-column-header {
+  width: 200px;
+  text-align: center; }
+
+.horizontal-calendar .day-column {
+  display: block;
+  float: left;
+  background-color: transparent !important;
+  position: relative;
+  z-index: 2; }
+
+.horizontal-calendar .day-header {
+  margin: 10px 0 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #612d83;
+  text-decoration: none !important; }
+
+.horizontal-calendar .day-header:hover {
+  text-decoration: underline !important; }
+
+.horizontal-calendar .day-name {
+  overflow: hidden; }
+
+.horizontal-calendar .resource-name-row td.resource-column {
+  height: 46px;
+  border-bottom: 1px solid #dddddd;
+  padding: 0;
+  font-size: 12px; }
+
+.horizontal-calendar .resource-name-row td.resource-column div {
+  margin: 5px; }
+
+.horizontal-calendar .daySchedule-row td.day-column,
+.horizontal-calendar .resource-row td.day-column {
+  height: 45px;
+  border-bottom: 1px solid red;
+  border-right: 0; }
+
+.week-calendar.horizontal-calendar {
+  width: 100%; }
+  .week-calendar.horizontal-calendar table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0px;
+    width: auto;
+    border: 1px solid #dddddd; }
+    .week-calendar.horizontal-calendar table th {
+      min-height: 21px !important;
+      border-collapse: collapse;
+      background-color: #F9F9F9; }
+    .week-calendar.horizontal-calendar table td {
+      border-right: 1px solid #dddddd; }
+  .week-calendar.horizontal-calendar .calendar-head-container table {
+    margin-bottom: 5px; }
+    .week-calendar.horizontal-calendar .calendar-head-container table th {
+      border-right: 1px solid #dddddd; }
+
+.week-calendar.horizontal-calendar .hour-column {
+  font-weight: normal;
+  color: #666; }
+
+.week-calendar.horizontal-calendar table tbody tr td {
+  background: #fff;
+  vertical-align: top;
+  border-bottom: 1px solid #dddddd; }
+
+.week-calendar.horizontal-calendar table tbody:first-child tr:first-child td {
+  border-bottom: none; }
+
+.week-calendar.horizontal-calendar .hour-columns {
+  width: 100%;
+  white-space: nowrap; }
+
+.horizontal-calendar .time-slot-td {
+  border: 0px !important; }
+
+.horizontal-calendar th.resource-header {
+  border: 0 none; }
+
+.horizontal-calendar th.resource-header {
+  height: 60px !important;
+  overflow-y: hidden;
+  padding: 0;
+  text-align: center;
+  vertical-align: center; }
+
+.horizontal-calendar td.medewerker,
+.horizontal-calendar th.medewerker {
+  width: 125px;
+  padding: 0; }
+
+.calendar-table {
+  overflow-y: hidden; }
+
+.horizontal-calendar .cal-event {
+  top: 0; }
+
+.horizontal-calendar .rooster-event {
+  height: 10px; }
+
+/* ADDED 07-07-2009 */
+.cal-event.new {
+  background-color: #acef69 !important;
+  color: black; }
+
+.cal-event.new .time {
+  background-color: #18c700 !important;
+  border: 1px solid #18c700 !important;
+  color: black; }
+
+.ui-widget-content .cal-event .ui-icon {
+  background-image: url(redmond/images/ui-icons_ffffff_256x240.png) !important; }
+
+.cal-event.blocked {
+  background-color: #ffedb8 !important;
+  color: black; }
+
+.cal-event.blocked .time {
+  background-color: #ffcb30 !important;
+  border: 1px solid #ffcb30 !important;
+  color: black; }
+
+.cal-event.consult {
+  background-color: #68a1e5 !important;
+  color: white; }
+
+.cal-event.consult .time {
+  background-color: #2b72d0 !important;
+  border: 1px solid #1b62c0 !important;
+  color: white; }
+
+.cal-event.multiple {
+  background-color: #fbec88 !important;
+  color: black; }
+
+.cal-event.multiple .time {
+  background-color: #fbc41f !important;
+  border: 1px solid #fbc41f !important;
+  color: black; }
+
+.cal-event.optie {
+  background-color: #e8eeff !important;
+  color: black; }
+
+.cal-event.optie .time {
+  background-color: #d0dcff !important;
+  border: 1px solid #d0dcff !important;
+  color: black; }
+
+.cal-event.groep {
+  background-color: #d6d0ff !important;
+  color: black; }
+
+.cal-event.groep .time {
+  background-color: #6957df !important;
+  border: 1px solid #6957df !important;
+  color: white; }
+
+.cal-event.peuterbureau {
+  background-color: #ecf8ff !important;
+  color: black; }
+
+.cal-event.peuterbureau .time {
+  background-color: #c0e7ff !important;
+  border: 1px solid #ecf8ff !important;
+  color: black; }
+
+.cal-event.kleuterbureau {
+  background-color: #e8eeff !important;
+  color: black; }
+
+.cal-event.kleuterbureau .time {
+  background-color: #d0dcff !important;
+  border: 1px solid #d0dcff !important;
+  color: black; }
+
+.cal-event.niet-consult {
+  background-color: #e0ddef !important;
+  color: black; }
+
+.cal-event.niet-consult .time {
+  background-color: #9686ff !important;
+  border: 1px solid #e0ddef !important;
+  color: black; }
+
+.cal-event.disabled {
+  cursor: default; }
+
+.rooster-event.consult {
+  background-color: #ddffbb !important;
+  border: 1px solid #ddffbb !important; }
+
+.rooster-event.punctie {
+  background-color: #fffd7c !important;
+  border: 1px solid #fffd7c !important; }
+
+.rooster-event.intake {
+  background-color: #dfe7ff !important;
+  border: 1px solid #dfe7ff !important; }
+
+.rooster-event.alle {
+  background-color: #bbffa2 !important;
+  border: 1px solid #bbffa2 !important; }
+
+.rooster-event.niet-consult {
+  background-color: #dfdfdf !important;
+  border: 1px solid #dfdfdf !important; }
+
+/* KLEUREN EVENTS */
+.rooster-event.rood,
+.cal-event.rood {
+  background-color: #ff8383 !important;
+  color: black;
+  border: 1px solid #e50000 !important; }
+
+.cal-event.rood .time {
+  background-color: #e50000 !important;
+  color: white; }
+
+.cal-event.rood .time a {
+  color: white; }
+
+.rooster-event.oranje,
+.cal-event.oranje {
+  background-color: #ffd480 !important;
+  color: black;
+  border: 1px solid #ffa800 !important; }
+
+.cal-event.oranje .time {
+  background-color: #ffa800 !important;
+  color: black; }
+
+.rooster-event.groen,
+.cal-event.groen {
+  background-color: #acef69 !important;
+  color: black;
+  border: 1px solid #18c700 !important; }
+
+.cal-event.groen .time {
+  background-color: #18c700 !important;
+  color: black; }
+
+.cal-event.geel {
+  background-color: #fdfeb7 !important;
+  color: black;
+  border: 1px solid #f7e519 !important; }
+
+.rooster-event.geel,
+.cal-event.geel .time {
+  background-color: #fbfe00 !important;
+  color: black; }
+
+.rooster-event.blauw,
+.cal-event.blauw {
+  background-color: #68a1e5 !important;
+  color: white;
+  border: 1px solid #1b62c0 !important; }
+
+.cal-event.blauw .time {
+  background-color: #2b72d0 !important;
+  color: white; }
+
+.rooster-event.paars,
+.cal-event.paars {
+  background-color: #e2b4ff !important;
+  color: black;
+  border: 1px solid #40024d !important; }
+
+.cal-event.paars .time {
+  background-color: #76048f !important;
+  color: white; }
+
+.cal-event.paars .time a {
+  color: white; }
+
+.rooster-event.zwart,
+.cal-event.zwart {
+  background-color: #bebebe !important;
+  color: black;
+  border: 1px solid black !important; }
+
+.cal-event.zwart .time {
+  background-color: black !important;
+  color: white; }
+
+.rooster-event.grijs,
+.cal-event.grijs {
+  background-color: #dfdfdf !important;
+  color: black;
+  border: 1px solid #959595 !important; }
+
+.cal-event.grijs .time {
+  background-color: #959595 !important;
+  color: black; }
+
+.rooster-event.licht-blauw,
+.cal-event.licht-blauw {
+  background-color: #c7e0ff !important;
+  color: black;
+  border: 1px solid #68a1e5 !important; }
+
+.cal-event.licht-blauw .time {
+  background-color: #68a1e5 !important;
+  color: black; }
+
+.rooster-event.licht-groen,
+.cal-event.licht-groen {
+  background-color: #dff9c6 !important;
+  color: black;
+  border: 1px solid #acef69 !important; }
+
+.cal-event.licht-groen .time {
+  background-color: #acef69 !important;
+  color: black; }
+
+.rooster-event.roze,
+.cal-event.roze {
+  background-color: #ffeaea !important;
+  color: black;
+  border: 1px solid #ff0080 !important; }
+
+.cal-event.roze .time {
+  background-color: #ff0080 !important;
+  color: black; }
+
+.rooster-event.lime,
+.cal-event.lime {
+  background-color: #ecfc71 !important;
+  color: black;
+  border: 1px solid #baf700 !important; }
+
+.cal-event.lime .time {
+  background-color: #baf700 !important;
+  color: black; }
+
+.rooster-event.turquoise,
+.cal-event.turquoise {
+  background-color: #5dcfc3 !important;
+  color: black;
+  border: 1px solid #009e8e !important; }
+
+.cal-event.turquoise .time {
+  background-color: #009e8e !important;
+  color: black; }
+
+.rooster-event.licht-paars,
+.cal-event.licht-paars {
+  background-color: #f4ecf9 !important;
+  color: black;
+  border: 1px solid #c894e1 !important; }
+
+.cal-event.licht-paars .time {
+  background-color: #c894e1 !important;
+  color: black; }
+
+.rooster-event.bruin,
+.cal-event.bruin {
+  background-color: #fad4b4 !important;
+  color: black;
+  border: 1px solid #57381f !important; }
+
+.cal-event.bruin .time {
+  background-color: #57381f !important;
+  color: white; }
+
+.calendarMultiResource-0 {
+  background-color: #8080ff !important; }
+
+.calendarMultiResource-1 {
+  background-color: #80ff80 !important; }
+
+.calendarMultiResource-2 {
+  background-color: #ff8080 !important; }
+
+.calendarMultiResource-3 {
+  background-color: #7aff7a !important; }
+
+.calendarMultiResource-4 {
+  background-color: #ff7aff !important; }
+
+.calendarMultiResource-5 {
+  background-color: #ffff7a !important; }
+
+/* Responsive styling */
+body.is-mobile-device {
+  overflow: auto; }
+  body.is-mobile-device .canvas.content {
+    height: auto;
+    overflow-y: auto; }
+  body.is-mobile-device .content-container {
+    margin: 0px; }
+    body.is-mobile-device .content-container .topnav .nav li {
+      clear: both; }
+  body.is-mobile-device .alert {
+    left: 0;
+    margin: 0;
+    width: 100%; }
+    body.is-mobile-device .alert .close {
+      right: 25px; }
+
+/* Inlog formulier medewerkers */
+.inlog-keuzes {
+  margin: 30px auto 0 auto;
+  text-align: center;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .inlog-keuzes .keuze {
+    padding: 10px;
+    display: inline-block;
+    width: 200px;
+    background-color: #dcb0eb;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }
+    .inlog-keuzes .keuze:hover {
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.02);
+      -ms-transform: scale(1.1); }
+    .inlog-keuzes .keuze .inner {
+      padding: 10px;
+      display: inline-block;
+      width: 180px;
+      background-color: #54026e;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px; }
+    .inlog-keuzes .keuze .icon {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 10px auto;
+      display: block; }
+    .inlog-keuzes .keuze .titel {
+      color: white;
+      font-size: 18px; }
+  .inlog-keuzes .keuze.uzi-pas,
+  .inlog-keuzes .keuze.gebruikersnaam {
+    margin-right: 20px; }
+  .inlog-keuzes .keuze.uzi-pas .icon {
+    background: transparent url(../images/inlog/uzi-pas.png) no-repeat center center; }
+  .inlog-keuzes .keuze.gebruikersnaam .icon {
+    background: transparent url(../images/inlog/gebruikersnaam.png) no-repeat center center; }
+  .inlog-keuzes .keuze.yubikey .icon {
+    background: transparent url(../images/inlog/yubikey.png) no-repeat center center; }
+
+.inlog-container {
+  margin: 0 auto;
+  padding: 10px;
+  width: 425px;
+  background-color: #dcb0eb;
+  color: white; }
+  .inlog-container h1 {
+    margin: 0 0 5px 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal; }
+  .inlog-container > p {
+    font-size: 15px;
+    margin: 0 0 10px 0; }
+  .inlog-container .accorderen-lijst {
+    padding-left: 20px;
+    margin-bottom: 0;
+    overflow: hidden; }
+    .inlog-container .accorderen-lijst li {
+      line-height: 30px;
+      float: left;
+      width: 100%; }
+  .inlog-container .gelezen-check {
+    margin: 0; }
+
+.inlog-formulier {
+  padding: 10px;
+  clear: both;
+  background-color: #54026e; }
+  .inlog-formulier p {
+    margin: 0 0 10px 0; }
+  .inlog-formulier a {
+    padding: 5px 0 5px 10px;
+    float: right;
+    display: inline-block;
+    color: #97a300;
+    text-decoration: underline; }
+    .inlog-formulier a:hover {
+      color: white;
+      text-decoration: none; }
+  .inlog-formulier .form-horizontal .control-group {
+    margin: 10px 0 10px 0; }
+  .inlog-formulier .form-horizontal .control-label {
+    text-align: left;
+    color: white;
+    width: 150px; }
+  .inlog-formulier .btn {
+    margin: 0 0 10px 0; }
+
+.uzipasinlog {
+  display: block;
+  overflow: hidden; }
+  .uzipasinlog .uzipasPincodeLabel {
+    width: 180px; }
+  .uzipasinlog .uzipasPincodeLabel {
+    width: 180px; }
+
+/* Load the sections used in the CSS */
+.medewerker.portaal {
+  margin: auto;
+  max-width: 980px;
+  /* -----------------------------------
+     Contentpanel styling
+  ----------------------------------- */
+  /* -----------------------------------
+     Topbar (inloggegevens)
+  ----------------------------------- */ }
+  .medewerker.portaal .content-container {
+    margin: 0 20px 20px 20px;
+    padding: 0;
+    -webkit-box-shadow: #a2a2a3 0px 0px 10px;
+    -moz-box-shadow: #a2a2a3 0px 0px 10px;
+    box-shadow: #a2a2a3 0px 0px 10px; }
+  .medewerker.portaal .topbar {
+    margin: 0 20px;
+    height: 32px;
+    *zoom: 1; }
+    .medewerker.portaal .topbar:before, .medewerker.portaal .topbar:after {
+      content: "";
+      display: table; }
+    .medewerker.portaal .topbar:after {
+      clear: both; }
+  .medewerker.portaal .canvas.logo-row {
+    text-align: center;
+    background-color: white; }
+    .medewerker.portaal .canvas.logo-row a.logo {
+      margin: 0 auto; }
+      .medewerker.portaal .canvas.logo-row a.logo img {
+        width: 200px;
+        margin: 20px 0; }
+  .medewerker.portaal .canvas.logo-row a.logo img {
+    width: 272px; }
+  .medewerker.portaal .topnav-title {
+    font-family: Arial, Verdana, Tahoma, Sans-Serif;
+    font-size: 14pt;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 29px;
+    background-color: #dcb0eb;
+    color: white; }
+    .medewerker.portaal .topnav-title .title {
+      padding-left: 25px; }
+    .medewerker.portaal .topnav-title .subtitle {
+      font-size: 16px;
+      font-weight: normal; }
+  .medewerker.portaal .canvas.topnav {
+    position: relative;
+    z-index: 2;
+    background-color: #54026e; }
+    .medewerker.portaal .canvas.topnav .nav {
+      margin: 25px 0 0 25px;
+      padding: 0px;
+      vertical-align: middle; }
+      .medewerker.portaal .canvas.topnav .nav > li {
+        padding: 0;
+        margin-right: 5px;
+        line-height: 25px;
+        float: left; }
+        .medewerker.portaal .canvas.topnav .nav > li a {
+          padding: 5px 10px;
+          font-size: 16px;
+          font-weight: normal;
+          color: white; }
+        .medewerker.portaal .canvas.topnav .nav > li a:hover {
+          background-color: #dcb0eb;
+          color: #000; }
+      .medewerker.portaal .canvas.topnav .nav > li:hover {
+        background-color: #FFF; }
+      .medewerker.portaal .canvas.topnav .nav > li.active a {
+        background-color: #dcb0eb;
+        color: white; }
+      .medewerker.portaal .canvas.topnav .nav span {
+        font-weight: bold; }
+      .medewerker.portaal .canvas.topnav .nav .open .caret {
+        border-top: 4px solid black;
+        opacity: 0.3;
+        filter: alpha(opacity=30); }
+      .medewerker.portaal .canvas.topnav .nav .dropdown > a:hover .caret {
+        border-top-color: black;
+        border-bottom-color: black; }
+      .medewerker.portaal .canvas.topnav .nav .dropdown .dropdown-menu {
+        border-top: none;
+        border-radius: 0 0 10px 10px; }
+        .medewerker.portaal .canvas.topnav .nav .dropdown .dropdown-menu li a {
+          padding: 3px 10px 3px 10px;
+          color: black; }
+        .medewerker.portaal .canvas.topnav .nav .dropdown .dropdown-menu li a:hover {
+          background: #e2e2dd none; }
+        .medewerker.portaal .canvas.topnav .nav .dropdown .dropdown-menu .dropdown-header {
+          padding: 0px 10px 3px 10px;
+          font-weight: normal;
+          font-size: 11px;
+          color: #acacac; }
+  .medewerker.portaal .top-subnav .sub-menu-container {
+    min-height: 15px;
+    background-color: #dcb0eb; }
+  .medewerker.portaal .top-subnav ul.subnav {
+    margin: 0 0 0 25px;
+    padding: 5px 0;
+    list-style: none; }
+    .medewerker.portaal .top-subnav ul.subnav li a {
+      display: inline-block;
+      font-size: 14px;
+      border-right: 1px solid white;
+      color: #525252;
+      padding: 5px 10px; }
+  .medewerker.portaal .top-subnav .current-item {
+    float: left;
+    padding: 10px 0;
+    margin-left: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #525252; }
+  .medewerker.portaal .canvas.footer {
+    position: relative;
+    z-index: 2;
+    background-color: #dcb0eb;
+    height: 40px; }
+
+/* -----------------------------------  
+   Topmenu styling
+----------------------------------- */
+.beheer .canvas.topnav .nav {
+  margin-top: 5px; }
+
+.logo-row .span3 {
+  text-align: left; }
+.logo-row a img {
+  margin: 10px 25px;
+  width: 100px; }
+
+.beheer .canvas.topnav {
+  height: 44px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  background: #612d83; }
+  .beheer .canvas.topnav .logo {
+    padding: 0px; }
+  .beheer .canvas.topnav .logo > a img {
+    padding: 13px 0 0 30px; }
+  .beheer .canvas.topnav .topnav.divider {
+    margin-top: 10px;
+    width: 0px;
+    height: 25px;
+    border-left: solid 1px #4c2268;
+    border-right: solid 1px #4c2268; }
+  .beheer .canvas.topnav .nav {
+    margin-top: 7px;
+    margin-bottom: 0px;
+    padding: 0 0 0 0; }
+    .beheer .canvas.topnav .nav > li {
+      float: left; }
+      .beheer .canvas.topnav .nav > li a {
+        color: white;
+        padding: 5px 10px 6px 10px; }
+      .beheer .canvas.topnav .nav > li > a:hover,
+      .beheer .canvas.topnav .nav > li > a:focus {
+        background-color: #9772c4; }
+      .beheer .canvas.topnav .nav > li a .caret {
+        margin-top: 8px; }
+    .beheer .canvas.topnav .nav > li:first-child {
+      margin-left: 10px; }
+    .beheer .canvas.topnav .nav > li:hover,
+    .beheer .canvas.topnav .nav li.open {
+      background-color: #9772c4; }
+    .beheer .canvas.topnav .nav span {
+      font-weight: bold; }
+    .beheer .canvas.topnav .nav .orgwissel {
+      width: auto;
+      min-width: 220px; }
+      .beheer .canvas.topnav .nav .orgwissel .select2-choice {
+        padding: 2px 10px 3px 10px;
+        margin-top: 0;
+        background: transparent;
+        border: none; }
+        .beheer .canvas.topnav .nav .orgwissel .select2-choice .select2-chosen {
+          margin-right: 0; }
+        .beheer .canvas.topnav .nav .orgwissel .select2-choice .select2-arrow {
+          display: none; }
+    .beheer .canvas.topnav .nav .orgwissel.select2-dropdown-open .select2-choice {
+      box-shadow: none;
+      background-color: #9772c4;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+    .beheer .canvas.topnav .nav .dropdown .caret {
+      border-top: 4px solid white;
+      opacity: 1;
+      filter: alpha(opacity=100); }
+    .beheer .canvas.topnav .nav .dropdown > a:hover .caret {
+      border-top-color: white;
+      border-bottom-color: white; }
+    .beheer .canvas.topnav .nav .dropdown .dropdown-menu {
+      padding: 8px 0 8px 0;
+      border-top: none;
+      border-radius: 0 0 5px 5px; }
+      .beheer .canvas.topnav .nav .dropdown .dropdown-menu li > a {
+        padding: 3px 10px 3px 10px;
+        color: #612d83; }
+      .beheer .canvas.topnav .nav .dropdown .dropdown-menu li > a:hover {
+        background: #e2e2dd none;
+        filter: none; }
+      .beheer .canvas.topnav .nav .dropdown .dropdown-menu .dropdown-header {
+        padding: 0px 10px 3px 10px;
+        font-weight: normal;
+        font-size: 11px;
+        color: #acacac; }
+      .beheer .canvas.topnav .nav .dropdown .dropdown-menu .divider {
+        margin: 8px; }
+
+.subnav {
+  background-color: #d8beff;
+  color: #333333;
+  height: 47px; }
+  .subnav .nav {
+    margin: 0; }
+
+.subnav .bk-concept-gewijzigd-door {
+  margin: 14px 10px 0 14px;
+  font-size: 12px;
+  font-weight: bold; }
+  .subnav .bk-concept-gewijzigd-door span {
+    padding: 7px 7px 7px 7px; }
+  .subnav .bk-concept-gewijzigd-door span:hover {
+    background-color: #9772c4; }
+
+.subnav .nav-tabs {
+  border: 0 none;
+  margin: 15px 0 0 7px;
+  padding: 0px; }
+
+.subnav .nav-tabs > li > a,
+.subnav .nav-tabs > li > span em {
+  color: white;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border-bottom: none;
+  height: 24px;
+  padding: 7px 10px 0px 10px;
+  margin: 0 2px 0 0;
+  border-radius: 5px 5px 0 0;
+  background-color: #9772c4; }
+
+.subnav .nav-tabs > li > a:hover,
+.subnav .nav-tabs > li.active > a,
+.subnav .nav-tabs > li.active > span em {
+  border-radius: 5px 5px 0 0;
+  background-color: white;
+  color: #333333; }
+  .subnav .nav-tabs > li > a:hover i,
+  .subnav .nav-tabs > li.active > a i,
+  .subnav .nav-tabs > li.active > span em i {
+    margin-right: 8px; }
+
+.subnav .nav-tabs > li > span em {
+  line-height: 22px;
+  display: block;
+  font-style: normal;
+  padding-bottom: 1px; }
+
+.subnav .nav-tabs > li.tab-search {
+  margin-right: 2px; }
+  .subnav .nav-tabs > li.tab-search i {
+    margin-right: 8px; }
+  .subnav .nav-tabs > li.tab-search a {
+    border-bottom: solid 1px transparent;
+    margin: -7px 5px 0 0;
+    line-height: 16px;
+    color: #FFF;
+    background-color: #9772c4;
+    border-radius: 5px; }
+  .subnav .nav-tabs > li.tab-search a:hover, .subnav .nav-tabs > li.tab-search.active a {
+    color: #FFF;
+    border: solid 1px transparent;
+    background-color: #612d83; }
+
+li.dashboard .dashboard-status {
+  height: 8px;
+  width: 8px;
+  top: 0;
+  margin: 0 0 0 5px; }
+  li.dashboard .dashboard-status.red {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    animation: none; }
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  background-color: white;
+  color: #333333; }
+
+.ingelogged-als {
+  text-align: right;
+  margin-right: 25px;
+  margin-top: 20px; }
+  .ingelogged-als label {
+    display: inline;
+    color: #54026e;
+    font-weight: bold; }
+  .ingelogged-als a {
+    padding: 0 5px;
+    font-weight: bold;
+    color: white; }
+  .ingelogged-als .divider {
+    border: 1px solid #dcb0eb;
+    border-width: 0 1px; }
+
+.beheer {
+  /* Fieldset */
+  /* Font-size overschrijven bootstrap */
+  /* Labels */
+  /* -----------------------------------
+         Footer styling
+  ----------------------------------- */ }
+  .beheer .content-container {
+    padding: 0; }
+  .beheer h1 {
+    font-size: 24px;
+    color: #54026e;
+    margin: 10px 10px 15px 15px; }
+    .beheer h1 .subpage,
+    .beheer h1 .divider {
+      font-size: 18px; }
+  .beheer h2 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: normal; }
+  .beheer td h2 {
+    margin: 0 0 0 0; }
+  .beheer hr {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid transparent; }
+  .beheer fieldset {
+    border: 1px solid #dddddd;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 0 10px 0;
+    padding: 15px; }
+    .beheer fieldset h3 {
+      margin: 0 0 10px 0;
+      line-height: 1em; }
+    .beheer fieldset.fieldset-last {
+      margin-bottom: 0; }
+  .beheer .hero-unit {
+    font-size: 12px;
+    padding: 15px; }
+    .beheer .hero-unit legend {
+      font-size: 18px; }
+  .beheer legend {
+    margin-bottom: 15px;
+    line-height: 30px; }
+  .beheer .label-info, .beheer .badge-info {
+    padding: 3px 6px 3px 6px;
+    margin-left: 3px;
+    background-color: #9772c4;
+    vertical-align: middle; }
+  .beheer .canvas.footer {
+    position: relative;
+    z-index: 2;
+    background-color: #dcb0eb;
+    height: 40px; }
+
+.logging-overview .column-gebeurtenis {
+  width: 220px; }
+.logging-overview .column-datum-tijd {
+  width: 120px; }
+.logging-overview .column-gebruiker {
+  width: 180px; }
+.logging-overview .column-bsn {
+  width: 280px; }
+
+.rooster {
+  position: relative;
+  width: 100%; }
+
+.timelines {
+  padding-left: 150px;
+  height: 10000px;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd; }
+  .timelines table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; }
+    .timelines table td {
+      padding: 0; }
+
+.hour {
+  border-left: 1px solid #dddddd; }
+  .hour.acht-uur {
+    border-left: 1px dashed #612d83; }
+
+.half-hour {
+  border-left: 1px dotted #dddddd; }
+
+.resource {
+  padding: 5px 10px;
+  width: 130px;
+  float: left;
+  font-size: 11px; }
+
+.resource-schedule {
+  float: left;
+  position: relative; }
+
+.rows {
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+.schedule-row {
+  min-height: 40px;
+  border-bottom: 1px solid #dddddd;
+  overflow: hidden; }
+
+.cal-event {
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+  .cal-event .time {
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    background-color: #2B72D0; }
+  .cal-event .title {
+    font-size: 11px;
+    padding: 3px; }
+    .cal-event .title ul.simplelist {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+
+.cal-event .time,
+.cal-event .title,
+.cal-event .title ul.simplelist li {
+  white-space: nowrap; }
+
+.schedule-header {
+  padding-left: 150px;
+  border: 1px solid #dddddd;
+  background-color: #f9f9f9; }
+  .schedule-header table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 10px; }
+    .schedule-header table td {
+      padding: 0; }
+    .schedule-header table .day-name {
+      margin: 0;
+      padding: 10px 0;
+      border-left: 1px solid #dddddd;
+      color: #612d83;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold; }
+    .schedule-header table .hour {
+      padding-left: 3px; }
+
+/* week kalender styling */
+.cal-event {
+  background-color: #9772c4;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  border: 1px solid #612d83;
+  position: absolute;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  color: black;
+  width: 100%;
+  display: block;
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
+  .cal-event .time {
+    background-color: #612d83; }
+
+.new-cal-event {
+  min-height: 10px; }
+
+/* KLEUREN EVENTS */
+.cal-event.rood {
+  background-color: #ff8383 !important;
+  color: black;
+  border: 1px solid #e50000 !important; }
+
+.cal-event.rood .time {
+  background-color: #e50000 !important;
+  color: white; }
+
+.cal-event.rood .time a {
+  color: white; }
+
+.cal-event.oranje {
+  background-color: #ffd480 !important;
+  color: black;
+  border: 1px solid #ffa800 !important; }
+
+.cal-event.oranje .time {
+  background-color: #ffa800 !important;
+  color: black; }
+
+.cal-event.groen {
+  background-color: #acef69 !important;
+  color: black;
+  border: 1px solid #18c700 !important; }
+
+.cal-event.groen .time {
+  background-color: #18c700 !important;
+  color: black; }
+
+.cal-event.geel {
+  background-color: #fdfeb7 !important;
+  color: black;
+  border: 1px solid #f7e519 !important; }
+
+.cal-event.geel .time {
+  background-color: #fbfe00 !important;
+  color: black; }
+
+.cal-event.blauw {
+  background-color: #68a1e5 !important;
+  color: white;
+  border: 1px solid #1b62c0 !important; }
+
+.cal-event.blauw .time {
+  background-color: #2b72d0 !important;
+  color: white; }
+
+.cal-event.paars {
+  background-color: #e2b4ff !important;
+  color: black;
+  border: 1px solid #40024d !important; }
+
+.cal-event.paars .time {
+  background-color: #76048f !important;
+  color: white; }
+
+.cal-event.paars .time a {
+  color: white; }
+
+.cal-event.zwart {
+  background-color: #bebebe !important;
+  color: black;
+  border: 1px solid black !important; }
+
+.cal-event.zwart .time {
+  background-color: black !important;
+  color: white; }
+
+.cal-event.grijs {
+  background-color: #dfdfdf !important;
+  color: black;
+  border: 1px solid #959595 !important; }
+
+.cal-event.grijs .time {
+  background-color: #959595 !important;
+  color: black; }
+
+.cal-event.licht-blauw {
+  background-color: #c7e0ff !important;
+  color: black;
+  border: 1px solid #68a1e5 !important; }
+
+.cal-event.licht-blauw .time {
+  background-color: #68a1e5 !important;
+  color: black; }
+
+.cal-event.licht-groen {
+  background-color: #dff9c6 !important;
+  color: black;
+  border: 1px solid #acef69 !important; }
+
+.cal-event.licht-groen .time {
+  background-color: #acef69 !important;
+  color: black; }
+
+.cal-event.roze {
+  background-color: #ffeaea !important;
+  color: black;
+  border: 1px solid #ff0080 !important; }
+
+.cal-event.roze .time {
+  background-color: #ff0080 !important;
+  color: black; }
+
+.cal-event.lime {
+  background-color: #ecfc71 !important;
+  color: black;
+  border: 1px solid #baf700 !important; }
+
+.cal-event.lime .time {
+  background-color: #baf700 !important;
+  color: black; }
+
+.cal-event.turquoise {
+  background-color: #5dcfc3 !important;
+  color: black;
+  border: 1px solid #009e8e !important; }
+
+.cal-event.turquoise .time {
+  background-color: #009e8e !important;
+  color: black; }
+
+.cal-event.licht-paars {
+  background-color: #f4ecf9 !important;
+  color: black;
+  border: 1px solid #c894e1 !important; }
+
+.cal-event.licht-paars .time {
+  background-color: #c894e1 !important;
+  color: black; }
+
+.cal-event.bruin {
+  background-color: #fad4b4 !important;
+  color: black;
+  border: 1px solid #57381f !important; }
+
+.cal-event.bruin .time {
+  background-color: #57381f !important;
+  color: white; }
+
+/* Herhaling roosterblokken */
+.herhaling ul {
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none; }
+  .herhaling ul label {
+    width: 160px;
+    float: left; }
+.herhaling .herhaling-wekelijks .interval .control-label {
+  display: inline;
+  width: auto;
+  margin-right: 0.5em; }
+.herhaling .herhaling-wekelijks .interval .controls,
+.herhaling .herhaling-wekelijks .interval-dagen .controls {
+  margin-left: 0; }
+.herhaling .herhaling-wekelijks .interval-dagen .checkbox.inline {
+  padding-left: 18px;
+  padding-right: 8px;
+  border-right: 1px dotted #cccccc; }
+  .herhaling .herhaling-wekelijks .interval-dagen .checkbox.inline input[type=checkbox] {
+    margin-left: -18px; }
+.herhaling .herhaling-wekelijks .interval-dagen .checkbox.inline + .checkbox.inline {
+  margin-left: 7px; }
+.herhaling .herhaling-wekelijks .interval-dagen .checkbox.inline:last-child {
+  border: 0 none; }
+
+.herhaleningSelectie {
+  display: block;
+  margin-bottom: 5px; }
+
+.maandelijkseSelectie label,
+.herhaleningSelectie label {
+  width: auto;
+  display: inline;
+  margin-right: 0.5em; }
+
+.maandelijkseSelectie {
+  display: block;
+  margin-bottom: 18px; }
+
+.maandelijkseSelectie select {
+  display: inline;
+  width: auto; }
+
+.edit-blokkade .time-field {
+  clear: left;
+  padding-top: 5px;
+  margin-left: 20px; }
+
+.herhaling .controls,
+.edit-blokkade .controls,
+.edit-bk-capaciteit .controls,
+.edit-roosterblok .controls {
+  margin-left: 90px; }
+.herhaling .control-label,
+.edit-blokkade .control-label,
+.edit-bk-capaciteit .control-label,
+.edit-roosterblok .control-label {
+  width: 110px; }
+
+.edit-bk-capaciteit .control-label {
+  width: 80px; }
+
+.terug-overzicht-afspraken {
+  position: relative;
+  top: -7px; }
+
+/* Afspraak wijzigen */
+h2.afspraak-titel {
+  margin: 0 0 5px 0; }
+
+.filter-view {
+  margin-left: 10px; }
+
+table.beschikbare-tijden {
+  empty-cells: show; }
+  table.beschikbare-tijden td {
+    padding: 5px 10px;
+    text-align: center; }
+
+.dag-column {
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal; }
+  .dag-column strong {
+    clear: both; }
+  .dag-column.vandaag {
+    color: #612d83; }
+
+.beschikbaar,
+.niet-beschikbaar {
+  text-align: center;
+  vertical-align: middle; }
+
+.beschikbaar {
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2QxZjhiNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #d1f8b6));
+  background-image: -webkit-linear-gradient(#ffffff, #d1f8b6);
+  background-image: -moz-linear-gradient(#ffffff, #d1f8b6);
+  background-image: -o-linear-gradient(#ffffff, #d1f8b6);
+  background-image: linear-gradient(#ffffff, #d1f8b6); }
+
+.beschikbaar.selected {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NlZjNmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cef3ff));
+  background-image: -webkit-linear-gradient(#ffffff, #cef3ff);
+  background-image: -moz-linear-gradient(#ffffff, #cef3ff);
+  background-image: -o-linear-gradient(#ffffff, #cef3ff);
+  background-image: linear-gradient(#ffffff, #cef3ff); }
+
+.niet-beschikbaar {
+  background-color: #F4F4F4; }
+
+table.tijd-selectie td {
+  padding: 0;
+  text-align: center; }
+
+table.tijd-selectie td span {
+  padding: 5px;
+  display: block;
+  background-color: #F4F4F4;
+  color: #aaa; }
+
+table.tijd-selectie td a {
+  padding: 5px;
+  display: block;
+  text-decoration: underline;
+  color: #00801b;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2QxZjhiNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #d1f8b6));
+  background-image: -webkit-linear-gradient(#ffffff, #d1f8b6);
+  background-image: -moz-linear-gradient(#ffffff, #d1f8b6);
+  background-image: -o-linear-gradient(#ffffff, #d1f8b6);
+  background-image: linear-gradient(#ffffff, #d1f8b6); }
+  table.tijd-selectie td a:hover {
+    background-color: #E9F8FF; }
+
+table.tijd-selectie td a.selected {
+  color: #005782;
+  text-decoration: none;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NlZjNmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #cef3ff));
+  background-image: -webkit-linear-gradient(#ffffff, #cef3ff);
+  background-image: -moz-linear-gradient(#ffffff, #cef3ff);
+  background-image: -o-linear-gradient(#ffffff, #cef3ff);
+  background-image: linear-gradient(#ffffff, #cef3ff); }
+
+.capaciteitskalender-popover.top .arrow {
+  bottom: -10px;
+  left: 4%; }
+.capaciteitskalender-popover .popover-content {
+  color: #54026e;
+  font-size: 13px;
+  line-height: 16px;
+  padding-top: 3px; }
+
+.historie-contacten ul.vervolgacties {
+  margin: 0;
+  padding-left: 0;
+  list-style: none; }
+
+.beheer .vervolgstap > h2 {
+  margin: 15px 0;
+  padding: 0 0 5px 0;
+  font-size: 18px;
+  line-height: 18px;
+  color: #54026e;
+  border-bottom: 1px solid #97a300; }
+.beheer .vervolgstap .column-afspraak-zoeken {
+  clear: both; }
+.beheer .vervolgstap .label-inline {
+  display: inline-block;
+  width: 75px; }
+.beheer .vervolgstap .ifobt-gegevens .control-group.value .control-label,
+.beheer .vervolgstap .ifobt-gegevens .control-group.value .controls {
+  line-height: 22px; }
+
+.beheer .wijzigingen-lijst {
+  padding-left: 15px; }
+  .beheer .wijzigingen-lijst li {
+    line-height: 12px; }
+
+.number-alert {
+  position: relative;
+  left: 4px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  color: white; }
+
+.number-alert:empty {
+  display: none; }
+
+.passport {
+  position: fixed;
+  width: 21.5%; }
+
+.datum-overlijden {
+  color: red; }
+
+address {
+  margin: 0 0 5px 0; }
+
+/* Verslagen overzicht */
+td.ronde {
+  text-align: center;
+  width: 30px; }
+
+th.bvo {
+  width: 100px; }
+
+/* Labels */
+.label-info, .badge-info {
+  padding: 3px 6px 3px 6px;
+  margin-left: 3px;
+  background-color: #9772c4;
+  vertical-align: middle; }
+
+/* Huisarts wijzigen */
+.wijzig-huisarts {
+  margin-top: 20px; }
+
+/* Filter periode van / tot */
+.periode-filter .input-append {
+  margin-bottom: 0; }
+.periode-filter label {
+  margin: 0 1em; }
+
+.bsn-filter {
+  margin-left: 5px; }
+  .bsn-filter input[type=text] {
+    width: 100px; }
+
+/* 2 form tags die naast elkaar moeten staan */
+.view-werklijst fieldset.form-inline form {
+  display: inline-block; }
+
+.table.koppel-gemeentes td.multiselect-td {
+  padding: 0;
+  vertical-align: top; }
+  .table.koppel-gemeentes td.multiselect-td .multiselect-div {
+    height: 174px;
+    overflow: auto; }
+    .table.koppel-gemeentes td.multiselect-td .multiselect-div .table.multiselect-table {
+      margin: 0; }
+      .table.koppel-gemeentes td.multiselect-td .multiselect-div .table.multiselect-table td {
+        padding: 10px 13px 0 10px;
+        border: none; }
+  .table.koppel-gemeentes td.multiselect-td a {
+    margin: 0 0 5px 0;
+    display: block;
+    text-align: left;
+    color: #333;
+    clear: both; }
+    .table.koppel-gemeentes td.multiselect-td a i {
+      margin: 2px 0 0 0; }
+    .table.koppel-gemeentes td.multiselect-td a.btn-primary {
+      color: #FFF; }
+
+/* -----------------------------------  
+   Uinodigingen versturen
+----------------------------------- */
+.row-fluid .column-50 {
+  width: 50%;
+  margin-left: 0; }
+
+.koppelen {
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 18px; }
+  .koppelen .titel {
+    display: inline-block;
+    padding: 16px 0; }
+  .koppelen .state {
+    margin: 5px 20px 5px 10px;
+    display: block;
+    float: left;
+    height: 44px;
+    width: 55px; }
+
+.barcode .state {
+  background: transparent url(../images/icons/barcode.png) no-repeat top left; }
+
+.brief-koppelen .state {
+  background: transparent url(../images/icons/brief.png) no-repeat top left; }
+
+.ifobt-koppelen .state {
+  background: transparent url(../images/icons/box.png) no-repeat top left; }
+
+.brief-status.gekoppeld,
+.ifobt-status.gekoppeld {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: transparent url(../images/icons/tick.png) no-repeat top left; }
+
+.koppelen.gekoppeld .state {
+  background-position: -60px 0; }
+
+th.barcode {
+  width: 120px; }
+
+.personalia,
+.koppelen.active {
+  background-color: #faebff; }
+
+.koppel-status {
+  margin-bottom: 10px; }
+
+.personalia {
+  height: 177px; }
+  .personalia h1 {
+    padding: 16px 10px 10px;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0; }
+  .personalia .adres,
+  .personalia .geboortedatum {
+    padding: 0 10px 5px 10px; }
+
+/* Beheer locaties (coloscopiecentrum) */
+textarea.locatiebeschrijving {
+  margin-bottom: 10px;
+  box-sizing: border-box; }
+
+.filter-view .active {
+  color: black;
+  font-weight: normal; }
+.filter-view .filter-actief.active {
+  background-color: #97a300; }
+  .filter-view .filter-actief.active .icon-ok-circle {
+    background-image: url("../images/icons/glyphicons-halflings-white.png"); }
+
+/* -----------------------------------  
+    Page expired
+----------------------------------- */
+.page-expired .center-blok {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -225px;
+  padding: 20px;
+  width: 450px;
+  border: 1px solid #dcb0eb;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+  .page-expired .center-blok p, .page-expired .center-blok h1 {
+    margin: 0 0 10px 0; }
+  .page-expired .center-blok .buttons {
+    overflow: hidden; }
+
+.huisarts-handmatig .verplicht-legenda {
+  display: none; }
+
+/* Te versturen berichten - controle huisarts */
+.controle-huisarts .huisartsgegevens .span6 {
+  width: 100%;
+  margin-left: 0;
+  float: none; }
+
+.huisarts-bevestigen,
+.huisarts-handmatig,
+.huisarts-zoek-form {
+  border: 1px solid #dddddd;
+  background-color: #eee;
+  padding: 15px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  *zoom: 1; }
+  .huisarts-bevestigen:before, .huisarts-bevestigen:after,
+  .huisarts-handmatig:before,
+  .huisarts-handmatig:after,
+  .huisarts-zoek-form:before,
+  .huisarts-zoek-form:after {
+    content: "";
+    display: table; }
+  .huisarts-bevestigen:after,
+  .huisarts-handmatig:after,
+  .huisarts-zoek-form:after {
+    clear: both; }
+
+.huisarts-zoekresultaten h2 {
+  margin-top: 30px;
+  padding-left: 10px;
+  color: #54026e; }
+
+.controle-huisarts .huisarts-handmatig {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .controle-huisarts .huisarts-handmatig .control-label {
+    width: 120px; }
+  .controle-huisarts .huisarts-handmatig .controls {
+    margin-left: 130px; }
+
+.controle-huisarts .huisarts-zoek-form div.control-group {
+  width: 100%;
+  margin-bottom: 5px; }
+.controle-huisarts .huisarts-zoek-form .btn-primary {
+  margin-top: 0; }
+
+@-webkit-keyframes blink {
+  0% {
+    background-color: red; }
+
+  50% {
+    background-color: rgba(255, 0, 0, 0); }
+
+  100% {
+    background-color: red; } }
+
+@-moz-keyframes blink {
+  0% {
+    background-color: red; }
+
+  50% {
+    background-color: rgba(255, 0, 0, 0); }
+
+  100% {
+    background-color: red; } }
+
+@-ms-keyframes blink {
+  0% {
+    background-color: red; }
+
+  50% {
+    background-color: rgba(255, 0, 0, 0); }
+
+  100% {
+    background-color: red; } }
+
+@keyframes blink {
+  0% {
+    background-color: red; }
+
+  50% {
+    background-color: rgba(255, 0, 0, 0); }
+
+  100% {
+    background-color: red; } }
+
+.dashboard-status {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+  border-radius: 50%;
+  margin-right: 10px; }
+  .dashboard-status.red {
+    background-color: red;
+    -webkit-animation: blink 1.5s ease infinite;
+    -moz-animation: blink 1.5s ease infinite;
+    -ms-animation: blink 1.5s ease infinite;
+    animation: blink 1.5s ease infinite; }
+  .dashboard-status.orange {
+    background-color: orange; }
+  .dashboard-status.green {
+    background-color: green; }
+
+.alert.dashboard-error {
+  position: relative;
+  top: 0;
+  right: auto;
+  left: auto;
+  margin: 0 0 10px 0;
+  width: auto;
+  z-index: auto; }
+
+.table-striped tbody > tr:nth-child(even).log-error td {
+  color: #b94a48;
+  background-color: #f8eeee; }
+.table-striped tbody > tr:nth-child(even).log-warning td {
+  color: #cc8400;
+  background-color: #fff6e5 !important; }
+
+.table-striped tbody > tr:nth-child(odd).log-error td {
+  color: #b94a48;
+  background-color: #f5e7e7; }
+.table-striped tbody > tr:nth-child(odd).log-warning td {
+  color: #cc8400;
+  background-color: #fff1d8 !important; }
+
+.text-red {
+  color: #a0261e; }
+
+.retourzending-totalen .control-label {
+  width: 260px; }
+.retourzending-totalen .controls {
+  margin-left: 280px; }
+
+.overgeslagen {
+  margin-top: 20px; }
+  .overgeslagen .melding {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: bold; }
+
+.barcode-controle {
+  padding: 5px; }
+
+.filter-overzicht-batches .control-group {
+  display: inline-block;
+  vertical-align: middle; }
+.filter-overzicht-batches .datum-van {
+  margin-right: 20px; }
+.filter-overzicht-batches .control-label {
+  width: 80px; }
+.filter-overzicht-batches .controls {
+  margin-left: 90px; }
+
+a:hover, a:active, a:focus {
+  outline: 0; }
+
+.beheer fieldset .clientFieldsContainer {
+  max-width: 600px; }
+  .beheer fieldset .clientFieldsContainer .btn-toon-alle {
+    float: right; }
+.beheer fieldset .samenvoegvelden {
+  margin: 0 0 7px; }
+  .beheer fieldset .samenvoegvelden .header-samenvoegvelden {
+    background: #DCB0EB;
+    display: inline-block;
+    width: 100%;
+    border-radius: 4px;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer; }
+    .beheer fieldset .samenvoegvelden .header-samenvoegvelden h3 {
+      font-weight: normal;
+      padding: 6px 10px;
+      font-size: 12px;
+      margin: 0; }
+    .beheer fieldset .samenvoegvelden .header-samenvoegvelden span {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      float: right; }
+
+.vervolgstap-reeds-ingeboekt {
+  border-color: #1934ae !important;
+  background: #eff3ff; }
+  .vervolgstap-reeds-ingeboekt .vervolgstap {
+    color: #1934ae; }
+
+.vervolgstap-naar-hpv {
+  border-color: #1ea500 !important;
+  background: #f3ffef; }
+  .vervolgstap-naar-hpv .vervolgstap {
+    color: #1ea500; }
+
+.vervolgstap-naar-cytologie {
+  border-color: #e08831 !important;
+  background: #fff4ea; }
+  .vervolgstap-naar-cytologie .vervolgstap {
+    color: #e08831; }
+
+.vervolgstap-vernietig {
+  border-color: #b20000 !important;
+  background: #ffeaea; }
+  .vervolgstap-vernietig .vervolgstap {
+    color: #b20000; }
+
+.vervolgstap-bewaar {
+  border-color: #8831e0 !important;
+  background: #f4eaff; }
+  .vervolgstap-bewaar .vervolgstap {
+    color: #8831e0; }
+
+.vervolgstap-bewaar-zas-positief {
+  border-color: #9c5f22 !important;
+  background: #f5efe8; }
+  .vervolgstap-bewaar-zas-positief .vervolgstap {
+    color: #9c5f22; }
+
+.vervolgstap-bewaar-zas-negatief {
+  border-color: #229c9c !important;
+  background: #eafbfb; }
+  .vervolgstap-bewaar-zas-negatief .vervolgstap {
+    color: #229c9c; }
+
+.labformulier-warning {
+  background-color: #f2cfac !important; }
+
+.tijdelijk-adres input.straatnaam, .huisarts-bevestigen input.straatnaam,
+.huisarts-handmatig input.straatnaam,
+.tijdelijk-adres input.aanduiding-huisnummer,
+.huisarts-bevestigen input.aanduiding-huisnummer,
+.huisarts-handmatig input.aanduiding-huisnummer,
+.tijdelijk-adres input.plaatsnaam,
+.huisarts-bevestigen input.plaatsnaam,
+.huisarts-handmatig input.plaatsnaam {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%; }
+.tijdelijk-adres input.postcode, .huisarts-bevestigen input.postcode,
+.huisarts-handmatig input.postcode {
+  width: 90px;
+  float: left; }
+.tijdelijk-adres .controls .divider, .huisarts-bevestigen .controls .divider,
+.huisarts-handmatig .controls .divider {
+  float: left;
+  padding: 0 5px;
+  display: block;
+  line-height: 30px;
+  text-align: center; }
+.tijdelijk-adres div.append-woonplaats, .huisarts-bevestigen div.append-woonplaats,
+.huisarts-handmatig div.append-woonplaats {
+  padding-left: 118px; }
+
+.tijdelijk-adres {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  width: 66.66667%;
+  margin: 0 0%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  @media (max-width: 768px) {
+    .tijdelijk-adres {
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 0 0%; } }
+
+.huisarts-zoek-form {
+  margin-bottom: 10px; }
+  .huisarts-zoek-form div.control-group {
+    display: block;
+    float: left;
+    width: 33.33333%;
+    margin: 0 0%; }
+
+.huisarts-bevestigen input.naam-huisarts,
+.huisarts-bevestigen input.naam-praktijk,
+.huisarts-bevestigen .huisarts-handmatig input.naam-huisarts,
+.huisarts-handmatig .huisarts-bevestigen input.naam-huisarts,
+.huisarts-bevestigen .huisarts-handmatig input.naam-praktijk,
+.huisarts-handmatig .huisarts-bevestigen input.naam-praktijk, .huisarts-bevestigen input.telefoonnummer,
+.huisarts-bevestigen .huisarts-handmatig input.telefoonnummer,
+.huisarts-handmatig .huisarts-bevestigen input.telefoonnummer,
+.huisarts-handmatig .huisarts-bevestigen input.naam-huisarts,
+.huisarts-bevestigen .huisarts-handmatig input.naam-huisarts,
+.huisarts-handmatig .huisarts-bevestigen input.naam-praktijk,
+.huisarts-bevestigen .huisarts-handmatig input.naam-praktijk,
+.huisarts-handmatig input.naam-huisarts,
+.huisarts-handmatig input.naam-praktijk,
+.huisarts-handmatig .huisarts-bevestigen input.telefoonnummer,
+.huisarts-bevestigen .huisarts-handmatig input.telefoonnummer,
+.huisarts-handmatig input.telefoonnummer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 30px; }
+.huisarts-bevestigen input.naam-huisarts,
+.huisarts-bevestigen input.naam-praktijk,
+.huisarts-handmatig input.naam-huisarts,
+.huisarts-handmatig input.naam-praktijk {
+  width: 47%; }
+.huisarts-bevestigen input.telefoonnummer,
+.huisarts-handmatig input.telefoonnummer {
+  width: 100%; }
+.huisarts-bevestigen .of-tekst,
+.huisarts-handmatig .of-tekst {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 6%;
+  text-align: center; }
+
+.paginering .pagination {
+  width: 60%;
+  float: right;
+  text-align: right; }
+
+div.geselecteerde-organisatie, div.geselecteerde-medewerker {
+  text-align: left;
+  margin-top: 5px; }
+
+.big-dialog .modal-body {
+  max-height: 500px; }
+.big-dialog #radioloogZoekVeldTabel {
+  height: 250px;
+  overflow: scroll;
+  overflow-x: hidden; }
+  .big-dialog #radioloogZoekVeldTabel tr.selected td {
+    background-color: #FAEBFF; }
+
+.mamma_uitslag_ongunstig {
+  max-height: 500px; }
+
+.biradskeuze {
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  padding: 10px; }
+  .biradskeuze > label {
+    text-align: center; }
+  .biradskeuze .radio:nth-child(3) {
+    border-top: 1px solid #cccccc;
+    padding-top: 10px;
+    margin-top: 10px; }
+    .biradskeuze .radio:nth-child(3) .checkmark {
+      top: 10px; }
+  .biradskeuze .radio:first-child {
+    padding-top: 0; }
+  .biradskeuze .controls[disabled] * {
+    cursor: not-allowed; }
+
+.biradskeuze .radio {
+  display: block;
+  position: relative;
+  padding-left: 25px; }
+  .biradskeuze .radio input {
+    opacity: 0; }
+  .biradskeuze .radio .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #e5e5e5;
+    border-radius: 50%; }
+  .biradskeuze .radio input:checked ~ .checkmark {
+    border: 5px solid #60347f;
+    width: 5px;
+    height: 5px; }
+  .biradskeuze .radio input:disabled ~ .checkmark {
+    opacity: 0.4; }
+
+.biradskeuze.biradsverwijzen {
+  background-color: #a94747; }
+
+.biradskeuze .radio.onmogelijk {
+  visibility: hidden; }
+
+.lezing-form-container textarea[name="opschortenRedenTekst"], .lezing-form-container textarea[name="biradsOpmerking"] {
+  color: white; }
+.lezing-form-container .mammaBeoordelenDropdown .select2-container .select2-chosen {
+  color: white; }
+
+.beoordelingsafbeeldingContainerR {
+  text-align: left; }
+
+.beoordelingsafbeeldingContainerL {
+  text-align: right; }
+
+div.beoordelingsafbeelding {
+  position: relative;
+  display: inline-block;
+  zoom: 1; }
+
+img.beoordelingsafbeelding {
+  display: block;
+  pointer-events: none; }
+
+.beoordelingsafbeeldingRichtingaanduiding {
+  color: black;
+  font-size: large;
+  margin: 0px; }
+
+.font-weight-bolder {
+  font-weight: bolder; }
+
+.laesienummer {
+  color: black; }
