@@ -6,6 +6,7 @@ $lang = array(
 	'ldap:19'=>'Value violates server constraints',
 	'ldap:53'=>'Value does not conform to policy',
 	'ldap:68'=>'This record already exists',
+	'ldap:50'=>'Access to value denied',
 	'error:to_short'=>'Value is to short',
 	'error:to_long'=>'Value is to long',
 	'error:invalid_email'=>'Value is not a valid email adres',

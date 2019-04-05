@@ -8,6 +8,7 @@ $lang_override = array(
 	'ldap:19'=>'Waarde is te kort of te lang',
 	'ldap:53'=>'Waarde voldoet niet aan beleid',
 	'ldap:68'=>'Dit record bestaat al',
+	'ldap:50'=>'Toegang tot waarde geweigerd',
 	'error:to_short'=>'Waarde te kort',
 	'error:to_long'=>'Waarde te lang',
 	'error:invalid_email'=>'Waarde is geen email adres',
