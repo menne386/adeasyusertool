@@ -52,15 +52,16 @@ $con=ldap_connect($config['server']) or die("Could not connect to $server");
 ldap_set_option($con, LDAP_OPT_PROTOCOL_VERSION, 3) or die("failed to set protocol version");
 ldap_set_option($con, LDAP_OPT_REFERRALS, 0)or die("failed to set referrals");
 
+if($config['starttls']) {
+	if(!ldap_start_tls($con)) {
+		$num = 0;
 
-if(!ldap_start_tls($con)) {
-	$num = 0;
-
-	$msg = "";
-	ldap_get_option($con,LDAP_OPT_ERROR_NUMBER,$num);
-	ldap_get_option($con,LDAP_OPT_DIAGNOSTIC_MESSAGE,$msg);
-	print_r(getenv());
-	die('start_tls: '.ldap_error($con)."N".$num." M:".$msg." C:".$ca_cert);
+		$msg = "";
+		ldap_get_option($con,LDAP_OPT_ERROR_NUMBER,$num);
+		ldap_get_option($con,LDAP_OPT_DIAGNOSTIC_MESSAGE,$msg);
+		print_r(getenv());
+		die('start_tls: '.ldap_error($con)."N".$num." M:".$msg." C:".$ca_cert);
+	}
 }
 
 

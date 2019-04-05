@@ -47,6 +47,10 @@ if (!isset($_SESSION['AUTH'])) {
 	if(isset($_POST['username']) && isset($_POST['password'])) {
 		$code = 0;
 		$fullusername = $_POST['username']."@".$config['domain'];
+		if($config['openldap']) {
+			$fullusername="CN=".$_POST['username'].','.$config['ldap_base_dn_users'];
+		}
+
 		$ldapbind = ldap_bind($con, $fullusername, $_POST['password']);
 		if($config['use_oath_hotp']) {
 			$code |= 1;// Bit 1 is set (use_oath_hotp is enabled)
@@ -116,10 +120,13 @@ if (!isset($_SESSION['AUTH'])) {
 		if($ldapbind) {
 			$user = $data['u'];
 			unset($data);//Unset the encrypted auth block.
+			
 		} else {
+			$_SESSION['error'] = getLang('error:login_failed')." (0)";
 			kill_and_reload();
 		}
 	} else {
+		$_SESSION['error'] = getLang('error:login_failed')." (0)";
 		kill_and_reload();
 	}
 }

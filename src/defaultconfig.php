@@ -24,6 +24,13 @@ $config['fqdn'] = "DOMAIN_NAME.COM";
 //The full server DNS name
 $config['server'] = "AD_SERVER.DOMAIN_NAME.COM"; 
 
+//Use startTLS when connecting to ldap?
+$config['starttls'] = true;
+
+//If this is true: use openldap bind style instead of active directory style.
+$config['openldap'] = false;
+
+
 //The base OU we are searching in for users, new users are created here:
 $config['ldap_base_dn_users'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
 
