@@ -28,7 +28,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 	}
 
 	if($donewrow) {
-		$tr = addElement('tr',$thead,'',array('id'=>$id."_newrow",'class'=>'newrow'));
+		$tr = addElement('tr',$thead,'',array('id'=>$id."_newrow",'class'=>'newrow','__dn'=>$id.'_new'));
 		$td = null;
 		$tt = 0;
 		foreach($attributes as $att=>$att_tr) {
@@ -51,7 +51,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 	}
 	
 	foreach($data as $dn=>$usr) {
-		$tr = addElement('tr',$tbody);
+		$tr = addElement('tr',$tbody,'',array('__dn'=>$dn));
 		foreach($attributes as $att=>$att_tr) {
 			$td = addElement('td',$tr,'',array('id'=>hash("sha256",$dn.'=>'.$att.'=>'.$id)));
 			$func = "displayfilter_".$att;

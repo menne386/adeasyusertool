@@ -47,12 +47,12 @@ $(document).ready(function () {
 		}
 		$("#"+e.target.parentNode.id+"_e").text('');
 		$(e.target.parentNode).addClass("changing");
-		
+		var _dn = $(e.target).closest('tr')[0].attributes.__dn.value;	
 		$.ajax({
 		  method: "POST",
 		  url: "index.php",
 		  data: { 
-			dn: e.target.attributes.__dn.value, 
+			dn: _dn,
 			attribute: e.target.name,
 			value: e.target.value.trim(),
 			id: e.target.parentNode.id
@@ -195,14 +195,13 @@ $(document).ready(function () {
 		//console.log(myid);
 		//console.log($(this).closest('tr')[0].id);
 		var AA = {
-			dn: 'new',
+			dn: $('#'+myid)[0].attributes.__dn.value,
 			id: myid,
 			attributes: {},
 		};
 		$('#'+myid+' > td > div > input').filter(function() {			
 			if(this.value.trim().length) {
 				AA.attributes[this.name] = this.value.trim(); 
-				AA.dn = this.attributes.__dn.value;
 			}
 			//console.log(this);
 		});
