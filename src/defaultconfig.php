@@ -36,6 +36,10 @@ $config['ldap_search_filter_users'] = '(&(objectCategory=person)(samaccountname=
 //The filter that is used for group searching
 $config['ldap_search_filter_groups'] = '(&(objectCategory=group)(samaccountname=*))';
 
+//The filter that is used for rights matrix searching
+$config['ldap_search_filter_rights'] = '(&(objectCategory=person)(samaccountname=*)(mail=*)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))';
+
+
 //What attributes are available for display/edit for users:
 $config['ldap_attributes_users'] = array(
 	'samaccountname'=>"field:user:samaccountname",

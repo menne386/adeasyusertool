@@ -51,7 +51,7 @@ $ad_groups = getLdapEntries($config['ldap_base_dn_groups'],$search_filter_g,$att
 foreach($ad_groups as $dn=>$values) {
 	$attributes_r[$dn] = $values['samaccountname'];
 }
-$ad_rights = getLdapMemberships($config['ldap_base_dn_users'],$search_filter);
+$ad_rights = getLdapMemberships($config['ldap_base_dn_users'],$config['ldap_search_filter_rights']);
 
 
 require_once('do_processing.php'); //This does processing of posted values
