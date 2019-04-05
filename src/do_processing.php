@@ -55,8 +55,8 @@ if(isset($_POST['dn'])) {
 	$dn = $_POST['dn'];
 	$id = $_POST['id'];
 	$result = array(
-		'status'=>'failed',
-		'error'=>'error',
+		'status'=>'fail',
+		'error'=>'',
 		'id'=>$id,
 	);
 	if($dn=='users_new') {
