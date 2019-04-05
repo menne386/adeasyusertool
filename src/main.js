@@ -138,18 +138,7 @@ $(document).ready(function () {
 		$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
 	}, 3000);
 	
-	$( "input.editable" ).change(changeValue);
-	$( "div.editable" ).click(function (e){
-		changeValue(e);
-		var t = $(e.target).text();
-		if(t.trim().length==0) {
-			$(e.target).text('✔');
-		} else {
-			$(e.target).text('');
-		}
-	});
-	$( ".createnew" ).click(createNewRow);
-	
+
 
 	var myTextExtraction = function(node, table, cellIndex) {
 	  // extract data from markup and return it
@@ -268,4 +257,20 @@ $(document).ready(function () {
 	});
 	
 	$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
+
+
+	$( ".createnew" ).click(createNewRow);
+
+	$( "input.editable" ).change(changeValue);
+
+	$( "div.editable" ).click(function (e){
+		changeValue(e);
+		var t = $(e.target).text();
+		if(t.trim().length==0) {
+			$(e.target).text('✔');
+		} else {
+			$(e.target).text('');
+		}
+	});
+	
 });
