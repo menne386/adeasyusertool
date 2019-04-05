@@ -90,18 +90,19 @@ function displayfilter_member($dn,$value, &$node,$att,bool $edit,$attributes) {
 }
 
 function displayfilter_membership($dn,$value, &$node,$att,bool $edit,$attributes) {
-	$attribs = array(
+	/*$attribs = array(
 		'type'=>'checkbox',
 		'value'=>$value,
 		'class'=>$edit?'editable':'',
 		//'title'=>getLang($attributes[$att]),
-		'name'=>$att
+		//'name'=>$att
 	);
 	if($value==1) {
 		$attribs['checked'] = true;
-	}
+	}*/
 	//$hidden = addElement('input',$node,'',array('type'=>'hidden','value'=>$value));	
-	$input = addElement('input',$node,$value,$attribs);	
+	//$input = addElement('input',$node,$value,$attribs);	
+	$input = addElement('div',$node,$value ? "✔":"",array('class'=>'editable'));	
 	return $input;	
 }
 

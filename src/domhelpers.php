@@ -24,7 +24,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 
 	$trhead = addElement('tr',$thead);
 	foreach($attributes as $att=>$att_tr) {
-		addElement('th',$trhead,getLang($att_tr));
+		addElement('th',$trhead,getLang($att_tr),array('name'=>$att));
 	}
 
 	if($donewrow) {

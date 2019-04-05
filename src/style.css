@@ -144,5 +144,29 @@ tr.error > td:nth-child(1)  .cellerrortext{
   visibility: visible;
 }
 
+div.editable{
+	cursor: pointer;
+	display:block;
+	height: 10px;
+	width: 10px;
+	min-width: 10px;
+	min-height: 10px;
+	border: 1px solid black;
+	background-color:#afa;
+	/*color: white;
+	background-color: #d8beff;*/
+	/*border-radius: 5px;*/
+	margin: auto;
+	line-height: 12px;
 
+}
+
+div.editable:empty {
+	background-color:#00000000;
+}
+
+div.editable:hover {
+	border-width: 3px;
+	/*background-color:yellow;*/
+}
 

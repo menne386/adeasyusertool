@@ -19,6 +19,103 @@ function checkPassword(e) {
 var changesMade = 0;
 
 
+function changeValue(e) {
+	if(!checkPassword(e)) {
+		return;
+	}
+	var mytd = e.target.parentNode;
+	var myRow = $(e.target).closest('tr')[0];
+	var myTable = $(e.target).closest('table')[0];
+	
+	$("#"+mytd.id+"_e").text('');
+	$(mytd).addClass("changing").removeClass('changed');
+	
+	var _dn = myRow.attributes.__dn.value;
+	var _name = e.target.name;
+	var _value = e.target.value;
+	if(name.trim().length==0) {
+		var colidx = $(mytd).index()+1;
+		_name = $(myTable).find('th:nth-child('+colidx+')')[0].attributes.name.value;
+	}
+	
+	$.ajax({
+	  method: "POST",
+	  url: "index.php",
+	  data: { 
+		dn: _dn,
+		attribute: _name,
+		value: _value,
+		id: mytd.id
+	  }
+	}).done(function( msg ) {
+		//console.log(msg);
+		if(msg.status=="ok") {
+			$("#"+msg.id).addClass('changed').removeClass('changing').removeClass('error');
+			$("#"+msg.id+"_e").text('');
+			changesMade++;
+		} else {
+			$("#"+msg.id).addClass('error').removeClass('changing');
+			$("#"+msg.id+"_e").text(msg.error);
+		}
+	}).fail(function( jqXHR, textStatus ) {
+		alert( "Server error: " + textStatus );
+	});
+}
+
+function createNewRow(e) {
+	//console.log(e);
+	var myid = $(this).closest('tr')[0].id;
+	
+	var valid = true;
+	var etext = '';
+	$('#'+myid+'.error > td').filter(function() {
+		//if()
+		valid = false;
+		etext += $(this).text().trim();
+	});
+	if(!valid) {
+		alert(etext);
+		return;
+	}
+	//console.log(myid);
+	//console.log($(this).closest('tr')[0].id);
+	var AA = {
+		dn: $('#'+myid)[0].attributes.__dn.value,
+		id: myid,
+		attributes: {},
+	};
+	$('#'+myid+' > td > div > input').filter(function() {			
+		if(this.value.trim().length) {
+			AA.attributes[this.name] = this.value.trim(); 
+		}
+		//console.log(this);
+	});
+	//console.log(AA);
+	$('#'+myid).addClass('changing').removeClass('error');
+	$.ajax({
+	  method: "POST",
+	  url: "index.php",
+	  data: AA
+	}).done(function( msg ) {
+		var myid = msg.id;
+		//console.log(msg);
+		if(msg.status=="ok") {
+			$('#'+myid).addClass('changed').removeClass('changing');
+			//alert("Aangemaakt");
+			location.reload();
+			
+		} else {
+			$('#'+myid).addClass('error').removeClass('changing');
+			$('#'+myid+' > td:first .cellerrortext').text(msg.error);
+			alert(msg.error);
+		}
+		
+	}).fail(function( jqXHR, textStatus ) {
+		alert( "Server error: " + textStatus );
+	});
+	
+}
+
 $(document).ready(function () {
 
 	setInterval(function(){ 
@@ -40,38 +137,19 @@ $(document).ready(function () {
 	setInterval(function(){ 
 		$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
 	}, 3000);
-
-	$( ".editable" ).change(function (e) {
-		if(!checkPassword(e)) {
-			return;
+	
+	$( "input.editable" ).change(changeValue);
+	$( "div.editable" ).click(function (e){
+		changeValue(e);
+		var t = $(e.target).text();
+		if(t.trim().length==0) {
+			$(e.target).text('✔');
+		} else {
+			$(e.target).text('');
 		}
-		$("#"+e.target.parentNode.id+"_e").text('');
-		$(e.target.parentNode).addClass("changing");
-		var _dn = $(e.target).closest('tr')[0].attributes.__dn.value;	
-		$.ajax({
-		  method: "POST",
-		  url: "index.php",
-		  data: { 
-			dn: _dn,
-			attribute: e.target.name,
-			value: e.target.value.trim(),
-			id: e.target.parentNode.id
-		  }
-		}).done(function( msg ) {
-			//console.log(msg);
-			if(msg.status=="ok") {
-				$("#"+msg.id).addClass('changed').removeClass('changing').removeClass('error');
-				$("#"+msg.id+"_e").text('');
-				changesMade++;
-			} else {
-				$("#"+msg.id).addClass('error').removeClass('changing');
-				$("#"+msg.id+"_e").text(msg.error);
-			}
-			
-		}).fail(function( jqXHR, textStatus ) {
-			alert( "Server fout: " + textStatus );
-		});
 	});
+	$( ".createnew" ).click(createNewRow);
+	
 
 	var myTextExtraction = function(node, table, cellIndex) {
 	  // extract data from markup and return it
@@ -149,9 +227,9 @@ $(document).ready(function () {
 		$("#"+this.name).show();
 		
 		$("#tab-title").text(this.innerText);
-		if(changesMade) { 
+		/*if(changesMade) { 
 			location.reload();
-		}
+		}*/
 	});
 
 	$('#refresh_bt').click(function(){
@@ -177,59 +255,7 @@ $(document).ready(function () {
 			$('#'+myid).removeClass('error');
 		}
 	});
-	$( ".createnew" ).click(function (e) {
-		//console.log(e);
-		var myid = $(this).closest('tr')[0].id;
-		
-		var valid = true;
-		var etext = '';
-		$('#'+myid+'.error > td').filter(function() {
-			//if()
-			valid = false;
-			etext += $(this).text().trim();
-		});
-		if(!valid) {
-			alert(etext);
-			return;
-		}
-		//console.log(myid);
-		//console.log($(this).closest('tr')[0].id);
-		var AA = {
-			dn: $('#'+myid)[0].attributes.__dn.value,
-			id: myid,
-			attributes: {},
-		};
-		$('#'+myid+' > td > div > input').filter(function() {			
-			if(this.value.trim().length) {
-				AA.attributes[this.name] = this.value.trim(); 
-			}
-			//console.log(this);
-		});
-		//console.log(AA);
-		$('#'+myid).addClass('changing').removeClass('error');
-		$.ajax({
-		  method: "POST",
-		  url: "index.php",
-		  data: AA
-		}).done(function( msg ) {
-			var myid = msg.id;
-			//console.log(msg);
-			if(msg.status=="ok") {
-				$('#'+myid).addClass('changed').removeClass('changing');
-				//alert("Aangemaakt");
-				location.reload();
-				
-			} else {
-				$('#'+myid).addClass('error').removeClass('changing');
-				$('#'+myid+' > td:first .cellerrortext').text(msg.error);
-				alert(msg.error);
-			}
-			
-		}).fail(function( jqXHR, textStatus ) {
-			alert( "Server fout: " + textStatus );
-		});
-		
-	});
+	
 	
 	$('td').hover(function(){
 		var col = $(this).index()+1;
