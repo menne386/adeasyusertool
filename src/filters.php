@@ -94,7 +94,7 @@ function displayfilter_membership($dn,$value, &$node,$att,bool $edit,$attributes
 		'type'=>'checkbox',
 		'value'=>$value,
 		'class'=>$edit?'editable':'',
-		'title'=>getLang($attributes[$att]),
+		//'title'=>getLang($attributes[$att]),
 		'name'=>$att
 	);
 	if($value==1) {
