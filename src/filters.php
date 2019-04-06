@@ -28,21 +28,18 @@ function writefilter_useraccountcontrol($dn, &$entry) {
 }
 
 function displayfilter_useraccountcontrol($dn,$value, &$node,$att,bool $edit,$attributes) {
-	$attribs = array(
-		'type'=>$edit?'checkbox':'button',
-		'value'=>$edit?$value:getLang('btn:create'),
-		'class'=>$edit?'editable':'createnew btn btn-primary',
-		//'class'=>$edit?'editable':'createnew',
-		'name'=>$att
-	);
-	if(((int)$value & 2) ==0 && $edit) {
-		$attribs['checked'] = true;
+	if($edit) {
+		$input = addElement('div',$node,($value & 2)==0 ? "✔":"",array('class'=>'editable','value'=>1));	
+	} else {
+		$attribs = array(
+			'type'=>'button',
+			'value'=>getLang('btn:create'),
+			'class'=>'createnew btn btn-primary',
+			'name'=>$att
+		);
+		$input = addElement('input',$node,$value,$attribs);	
 	}
-	
-	$input = addElement('input',$node,$value,$attribs);	
-	
-	
-	
+
 	return $input;
 }
 
@@ -53,7 +50,6 @@ function displayfilter_samaccountname($dn,$value, &$node,$att,bool $edit,$attrib
 		$input = addElement('span',$node,$value,array());
 	} else {
 		$input = displayfilter_default($dn,$value,$node,$att,$edit,$attributes);
-		//$input->setAttribute("autofocus",true);
 	}
 	return $input;
 }
@@ -74,7 +70,6 @@ function displayfilter_unicodepwd($dn,$value, &$node,$att,bool $edit,$attributes
 	return $input;
 }
 
-//CN=Jan de vries,OU=BOMWSE,DC=bomwse,DC=local{||}CN=Bert Visser,OU=BOMWSE,DC=bomwse,DC=local
 function displayfilter_member($dn,$value, &$node,$att,bool $edit,$attributes) {
 	global $ad_users;
 	$members_dn = explode('{||}',$value);
@@ -90,18 +85,6 @@ function displayfilter_member($dn,$value, &$node,$att,bool $edit,$attributes) {
 }
 
 function displayfilter_membership($dn,$value, &$node,$att,bool $edit,$attributes) {
-	/*$attribs = array(
-		'type'=>'checkbox',
-		'value'=>$value,
-		'class'=>$edit?'editable':'',
-		//'title'=>getLang($attributes[$att]),
-		//'name'=>$att
-	);
-	if($value==1) {
-		$attribs['checked'] = true;
-	}*/
-	//$hidden = addElement('input',$node,'',array('type'=>'hidden','value'=>$value));	
-	//$input = addElement('input',$node,$value,$attribs);	
 	$input = addElement('div',$node,$value ? "✔":"",array('class'=>'editable'));	
 	return $input;	
 }

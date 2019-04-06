@@ -145,7 +145,7 @@ if(isset($_POST['dn'])) {
 				$result['error'] = $r;
 			} else {
 				$rr = null;
-				if(strlen(trim($_POST['value']))==0) {
+				if(strlen(trim($_POST['value']))==0 && $attr!='useraccountcontrol') {
 					//Delete property:
 					$entry = array($attr=>array());
 					$rr = ldap_mod_del($con,$dn,$entry);

@@ -111,14 +111,14 @@ table input {
 
 .cellerror {
 	position: relative;
-	display: inline-block;
+	display: none;
 	border-bottom: 1px dotted black;
-	top: -20px;
+	/*top: -10px;*/
+	float: left;
 	/*min-width: 120px;*/
 }
 
 .cellerror .cellerrortext {
-	visibility: hidden;
 	width: 120px;
 	background-color: red;
 	color: white;
@@ -132,17 +132,17 @@ table input {
 	bottom: 100%;
 	left: 50%;
 	margin-left: -3px;
-	/*min-width: 120px;*/
 	width: 200px;
 }
 
-td.error .cellerrortext{
-  visibility: visible;
+td.error .cellerror{
+	display:inline-block;
 }
 
-tr.error > td:nth-child(1)  .cellerrortext{
-  visibility: visible;
+tr.error > td:nth-child(1)  .cellerror{
+	display:inline-block; 
 }
+
 
 div.editable{
 	cursor: pointer;
@@ -153,12 +153,8 @@ div.editable{
 	min-height: 10px;
 	border: 1px solid black;
 	background-color:#afa;
-	/*color: white;
-	background-color: #d8beff;*/
-	/*border-radius: 5px;*/
 	margin: auto;
 	line-height: 12px;
-
 }
 
 div.editable:empty {
@@ -166,7 +162,6 @@ div.editable:empty {
 }
 
 div.editable:hover {
-	border-width: 3px;
-	/*background-color:yellow;*/
+	border-width: 2px;
 }
 

@@ -18,7 +18,6 @@ function checkPassword(e) {
 
 var changesMade = 0;
 
-
 function changeValue(e) {
 	if(!checkPassword(e)) {
 		return;
@@ -48,7 +47,6 @@ function changeValue(e) {
 		id: mytd.id
 	  }
 	}).done(function( msg ) {
-		//console.log(msg);
 		if(msg.status=="ok") {
 			$("#"+msg.id).addClass('changed').removeClass('changing').removeClass('error');
 			$("#"+msg.id+"_e").text('');
@@ -63,13 +61,15 @@ function changeValue(e) {
 }
 
 function createNewRow(e) {
-	//console.log(e);
 	var myid = $(this).closest('tr')[0].id;
 	
 	var valid = true;
 	var etext = '';
 	$('#'+myid+'.error > td').filter(function() {
-		//if()
+		valid = false;
+		etext += $(this).text().trim();
+	});
+	$('#'+myid+' > td.error').filter(function() {
 		valid = false;
 		etext += $(this).text().trim();
 	});
@@ -88,9 +88,7 @@ function createNewRow(e) {
 		if(this.value.trim().length) {
 			AA.attributes[this.name] = this.value.trim(); 
 		}
-		//console.log(this);
 	});
-	//console.log(AA);
 	$('#'+myid).addClass('changing').removeClass('error');
 	$.ajax({
 	  method: "POST",
@@ -98,12 +96,9 @@ function createNewRow(e) {
 	  data: AA
 	}).done(function( msg ) {
 		var myid = msg.id;
-		//console.log(msg);
 		if(msg.status=="ok") {
 			$('#'+myid).addClass('changed').removeClass('changing');
-			//alert("Aangemaakt");
 			location.reload();
-			
 		} else {
 			$('#'+myid).addClass('error').removeClass('changing');
 			$('#'+myid+' > td:first .cellerrortext').text(msg.error);
@@ -118,6 +113,7 @@ function createNewRow(e) {
 
 $(document).ready(function () {
 
+	//Start a keepalive on an interval:
 	setInterval(function(){ 
 		$.ajax({
 		  method: "POST",
@@ -126,39 +122,25 @@ $(document).ready(function () {
 			keepalive: true
 		  }
 		}).done(function( msg ) {
-			
 		}).fail(function( jqXHR, textStatus ) {
 			alert( "Server error: " + textStatus );
 			location.reload();
-		});
-		
+		});	
 	}, 30000);
 	
-	setInterval(function(){ 
-		$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
-	}, 3000);
 	
 
-
+	//Install the table sorter:
 	var myTextExtraction = function(node, table, cellIndex) {
-	  // extract data from markup and return it
-	  // originally: return node.childNodes[0].childNodes[0].innerHTML;
-	  //console.log(node);
 	  var t = $(node).text().replace(/\s+/g, ' ').trim();
 	  if(t.length==0) {
-		var nodes = $(node).find('input');
-		//console.log(nodes);
-		if(nodes.length) {
-			t = nodes[0].value;
+			var nodes = $(node).find('input');
+			if(nodes.length) {
+				t = nodes[0].value;
+			}
 		}
-		//console.log("'"+t+"'");  
-		//t="aaa";
-	  }
-	  //console.log(t);  
-	  
 	  return t;
 	}
-	
 	
 	$(".sorted").tablesorter({
 		cancelSelection:false,
@@ -167,10 +149,56 @@ $(document).ready(function () {
 	});
 	
 	
+	//Show the proper requested page:
+	$('.sorted').hide();
+	var hash = $(location).attr('hash');
+	if(hash) {
+		$("#"+hash.substr(1)).show();
+		$(".nav-tabs > li").removeClass("active");
+		$(".nav-tabs > li").filter(function(){
+			var closesta = $(this).find('a')[0];
+			if("#"+closesta.name==hash) {
+				$(this).addClass("active");
+			}
+		});	
+	} else {
+		$('#users').show();
+	}
+	
+
+	//Make sure rights table has rotate class assigned:
+	for(a=3;a<100;a++) {
+		$('#rights > thead > tr > th:nth-child('+a+')').addClass("rotate");
+		//$('#rights > tbody > tr > td:nth-child('+a+')').addClass("group");
+	}
+	$('.rotate > div').wrapInner('<span></span>');
+	
+	
+
+	//Highligt the column we are currently hovering:
+	$('td').hover(function(){
+		var col = $(this).index()+1;
+		//console.log(col);
+		$('th:nth-child('+col+')').addClass('columnselected');
+	},function(){
+		var col = $(this).index()+1;
+		//console.log(col);
+		$('th:nth-child('+col+')').removeClass('columnselected');
+	});
+
+	//Make sure viewport is properly sized:
+	var resizeFunc = function() {
+		$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
+	};
+	$(window).resize(resizeFunc);
+	resizeFunc();
+
+
+	//Add interaction to buttons and input fields:
+
 	$('#search').keyup(function(){
 		// Search Text
 		var search = $(this).val().toUpperCase();
-
 		// Hide all table tbody rows
 		$('table tbody tr:not(.newrow)').hide();
 		//Search the table:
@@ -182,83 +210,31 @@ $(document).ready(function () {
 			searchT = searchT.toUpperCase();
 			if(searchT.indexOf(search) >-1) {
 				$(this).closest('tr').show();
-			
 			}
 		});
 	});
-	
-	$('.sorted').hide();
-	
-	var hash = $(location).attr('hash');
-	if(hash) {
-		$(hash).show();
-		$(".nav-tabs > li").removeClass("active");
-		$(".nav-tabs > li").filter(function(){
-			var closesta = $(this).find('a')[0];
-			if("#"+closesta.name==hash) {
-				$(this).addClass("active");
-			}
-		});
-		
-	} else {
-		$('#users').show();
-	}
-	
+
 	$('.sorted_bt').click(function(){
 		location.hash = "#"+this.name;
 		$(".nav-tabs > li").removeClass("active");
 		var parentli = $(this).closest('li')[0];
 		$(parentli).addClass("active");
-		//console.log(this);
 		$('.sorted').hide();
-		
-		
 		$("#"+this.name).show();
-		
 		$("#tab-title").text(this.innerText);
-		/*if(changesMade) { 
-			location.reload();
-		}*/
 	});
 
-	$('#refresh_bt').click(function(){
 	
-		location.reload();
-	});
+	$('#refresh_bt').click(function(){ location.reload(); });
 	
-	for(a=3;a<100;a++) {
-		$('#rights > thead > tr > th:nth-child('+a+')').addClass("rotate");
-		//$('#rights > tbody > tr > td:nth-child('+a+')').addClass("group");
-	}
-	$('.rotate > div').wrapInner('<span></span>');
-	
-	
-	$(".checkpw").change(function(e){
-		if(!checkPassword(e)) {
-			return;
-		}		
-	});
+	$(".checkpw").change(function(e){ 	if(!checkPassword(e)) {	return;	}	});
+
 	$('.newrow > td > div > input').change(function() {
-		if(this.type!='password') {
-			var myid = $(this).closest('tr')[0].id;
-			$('#'+myid).removeClass('error');
-		}
+		var myid = $(this).closest('tr')[0].id;
+		$('#'+myid).removeClass('error');
 	});
 	
 	
-	$('td').hover(function(){
-		var col = $(this).index()+1;
-		//console.log(col);
-		$('th:nth-child('+col+')').addClass('columnselected');
-	},function(){
-		var col = $(this).index()+1;
-		//console.log(col);
-		$('th:nth-child('+col+')').removeClass('columnselected');
-	});
-	
-	$('#jp-container').height($(window).height()-$('#jp-container').offset().top*1.4);
-
-
 	$( ".createnew" ).click(createNewRow);
 
 	$( "input.editable" ).change(changeValue);
