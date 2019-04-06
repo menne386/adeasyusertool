@@ -126,11 +126,10 @@ function replaceDocumentMarkers($document,$additionalMarkers = array()) {
 		//print_r($i);
 		switch($i) {
 			case 'headerscripts':
+				addElement('link',$parent,'',array('rel'=>'stylesheet','type'=>'text/css','href'=>'style.css'));
 				addElement('script',$parent,'',array('src'=>'jquery-3.3.1.min.js'));
 				addElement('script',$parent,'',array('src'=>'jquery.tablesorter.min.js'));
-
 				addElement('script',$parent,'',array('src'=>'main.js'));
-				addElement('link',$parent,'',array('rel'=>'stylesheet','type'=>'text/css','href'=>'style.css'));
 
 				
 				break;

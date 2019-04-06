@@ -150,7 +150,7 @@ $(document).ready(function () {
 	
 	
 	//Show the proper requested page:
-	$('.sorted').hide();
+	/*$('.sorted').hide();*/
 	var hash = $(location).attr('hash');
 	if(hash) {
 		$("#"+hash.substr(1)).show();
