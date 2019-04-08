@@ -97,6 +97,8 @@ if(isset($_POST['dn'])) {
 
 		
 		if(ldap_add($con, $dn, $ldaprecord)) {
+			$ldaprecord['unicodepwd'] = '"******"';
+			writelog(array('action'=>'new_user',$ldaprecord));
 			$result['status'] = 'ok';
 		} else {
 			$result['error'] = getLdapError();
@@ -117,11 +119,13 @@ if(isset($_POST['dn'])) {
 		);
 		if(ldap_mod_add ( $con , $attr , $entry)) {
 			$result['status'] = "ok";
+			writelog(array('action'=>'membership_add','group'=>$attr,'member'=>$dn));
 		} else {
 			if(ldap_errno($con)==68) {
 				//Error 68 == "already exists"
 				if(ldap_mod_del ( $con , $attr , $entry)) {
 					$result['status'] = "ok";
+					writelog(array('action'=>'membership_del','group'=>$attr,'member'=>$dn));
 				} else {
 					$result['error'] = getLdapError();
 					ldap_get_option($con,LDAP_OPT_DIAGNOSTIC_MESSAGE,$result['diagnostic']);
@@ -158,6 +162,10 @@ if(isset($_POST['dn'])) {
 					$rr = ldap_modify($con,$dn,$entry);
 				}
 				if($rr) {
+					if($attr=='unicodepwd') {
+						$_POST['value'] = '"*****"';
+					}
+					writelog(array('action'=>'modify','dn'=>$dn,'attribute'=>$attr,'value'=>$_POST['value']));
 					$result['status'] = "ok";
 				} else {
 					$result['error'] = getLdapError();
