@@ -15,6 +15,9 @@ $config = array();
 //Language code (2 letters) (Unset by default!)
 $config['language'] = false; //example: 'nl'
 
+//The dir used to store audit logs: (end in directory seperator.)
+$config['log_dir'] = "./auditlogs/";
+
 //Session name, should be a random string, this is used as cookie name for the php session
 $config['sessionname'] = "a00112233445566778899";
 

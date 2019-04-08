@@ -183,6 +183,10 @@ function replaceDocumentMarkers($document,$additionalMarkers = array()) {
 				$a = addElement('a',$parent,'',array('id'=>'refresh_bt'));
 				addElement('span',$a,getLang('btn:refresh'));
 				break;
+			case 'auditbutton':
+				$a = addElement('a',$parent,'',array('id'=>'audit_bt'));
+				addElement('span',$a,getLang('btn:audit'));
+				break;
 			case 'searchinput':
 				addElement('input',$parent,'',array('type'=>'text','id'=>'search','placeholder'=>getLang('btn:search').'...'));
 				break;

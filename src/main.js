@@ -18,6 +18,21 @@ function checkPassword(e) {
 
 var changesMade = 0;
 
+function getLog(mydate) {
+	$.ajax({
+	  method: "POST",
+	  url: "index.php",
+	  data: { 
+			log: mydate
+	  }
+	}).done(function( msg ) {
+
+	}).fail(function( jqXHR, textStatus ) {
+		alert( "Server error: " + textStatus );
+	});
+
+}
+
 function changeValue(e) {
 	if(!checkPassword(e)) {
 		return;
@@ -226,6 +241,7 @@ $(document).ready(function () {
 
 	
 	$('#refresh_bt').click(function(){ location.reload(); });
+	$('#audit_bt').click(function(){ getLog('201904'); });
 	
 	$(".checkpw").change(function(e){ 	if(!checkPassword(e)) {	return;	}	});
 

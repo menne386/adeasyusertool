@@ -2,29 +2,29 @@
 
 defined('__MAINAPP__') or die('nope');
 
-	$fieldLimits = array(
-		'samaccountname'=>array(
-			'min'=>5,
-			'max'=>40
-		),
-		'mail'=>array(
-			'min'=>5,
-			'max'=>60,
-			'email'=>true
-		),
-		'displayname'=>array(
-			'min'=>5,
-			'max'=>60
-		),
-		'cn'=>array(
-			'min'=>5,
-			'max'=>60
-		),
-		'unicodepwd'=>array(
-			'min'=>5,
-			'max'=>40
-		),
-	);
+$fieldLimits = array(
+	'samaccountname'=>array(
+		'min'=>5,
+		'max'=>40
+	),
+	'mail'=>array(
+		'min'=>5,
+		'max'=>60,
+		'email'=>true
+	),
+	'displayname'=>array(
+		'min'=>5,
+		'max'=>60
+	),
+	'cn'=>array(
+		'min'=>5,
+		'max'=>60
+	),
+	'unicodepwd'=>array(
+		'min'=>5,
+		'max'=>40
+	),
+);
 
 function validate_field($name,$value) {
 	global $attributes;
@@ -48,6 +48,11 @@ function validate_field($name,$value) {
 	return true;
 }
 
+if(isset($_POST['log'])) {
+	error_reporting(0);
+	header('Content-Type: application/json');
+	die(json_encode(getLog(date('Ym'))));
+}
 
 if(isset($_POST['dn'])) {
 	error_reporting(0);

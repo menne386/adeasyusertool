@@ -97,10 +97,13 @@ if (!isset($_SESSION['AUTH'])) {
 		}
 		
 		if($ldapbind && $validOath) {
+			$user = $fullusername;
+			writelog(array('action'=>'login_success'));
 			$data = serialize(array('u'=>$fullusername,'p'=>$_POST['password']));			
 			$_SESSION['AUTH'] = cryptoCoder($data);
 			unset($_SESSION['error']);
 		} else {
+			writelog(array('action'=>'login_failed','code'=>$code));
 			$_SESSION['error'] = getLang('error:login_failed')." ($code)";
 		}
 		reload();
@@ -112,6 +115,7 @@ if (!isset($_SESSION['AUTH'])) {
 	die($document->saveHTML());
 } else {
 	if(isset($_GET['logout'])) {
+		writelog(array('action'=>'logout_success'));
 		kill_and_reload();
 	}
 	$data = unserialize(cryptoCoder($_SESSION['AUTH'],'d'));

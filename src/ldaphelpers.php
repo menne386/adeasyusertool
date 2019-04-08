@@ -43,7 +43,7 @@ function getLdapMemberships($base_dn,$search_filter) {
 			$resultArr[$entries[$x]['dn']] = array(
 				"dn"=>$entries[$x]['dn'],
 				"samaccountname"=>$entries[$x]['samaccountname'][0],
-				"displayname"=>$entries[$x]['displayname'][0]
+				"displayname"=>isset($entries[$x]['displayname']) ? $entries[$x]['displayname'][0]: "",
 			);
 			foreach($ad_groups as $dn=>$values) {
 				$resultArr[$entries[$x]['dn']][$dn] = 0;
