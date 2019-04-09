@@ -92,11 +92,15 @@ table#rights thead >tr::after{
 	background-color: #9772c4;
 }
 
-table input {
-	width: 90%;
+table input,table select {
+	width: 100%;
+	height: 29px!important;
 	margin-bottom:0px!important;
+	box-sizing: border-box;
 }
-
+table input[type=password] {
+	width: 50%;
+}
 table#users td {
 	width: 10%;
 	min-width: 120px;
@@ -111,10 +115,6 @@ table#users td:first-child {width:5%; }
 table#rights td:nth-child(1) {min-width: 100px;}
 table#rights td:nth-child(2) {min-width: 140px;}
 
-table input[type=password] {
-	width: 40%;
-	margin-bottom:0px!important;
-}
 
 #search{
 	width: 100px;
