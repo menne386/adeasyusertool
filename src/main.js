@@ -26,21 +26,56 @@ function getLog(mydate) {
 			log: mydate
 	  }
 	}).done(function( msg ) {
-		var tbody = $('#auditlog');
+
+		//var theadrow = 
+		var tbody = $('#auditlog>tbody');
+		$(tbody).empty();
 		$.each(msg.entries, function(i, entry) {
-			  var _div = $('<div>');
-			  $.each(entry, function(i, prop) {
+			  var _div = $('<tr>');
+			  $('#auditlog>thead>tr>th').filter(function(){
+				var _span = $('<td>').addClass('_prop_'+this.attributes.name.value);
+				var idx = this.attributes.name.value;
+				var prop = entry[idx];
+				if(typeof prop === 'object' && prop !== null) {
+					$.each(prop, function(ii, propprop) {
+						$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);
+					});
+				} else if(prop==null){
+					
+					if(entry['action']=='newuser') {
+						console.log(entry[0]);
+						$.each(entry[0], function(ii, propprop) {
+							$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);
+						});
+						
+					} else if(entry['action']=='membership_add'||entry['action']=='membership_del') {
+						if(idx=='dn' ) {
+							$(_span).text(entry['group']);
+						}
+						if(idx=='attribute' ) {
+							$(_span).text('member');
+						}
+						if(idx=='value' ) {
+							$(_span).text(entry['member']);
+						}
+					}
+				} else {
+					$(_span).text(prop);
+				}
+				$(_span).appendTo(_div);
+			  });
+			  /*$.each(entry, function(i, prop) {
 					if(typeof prop === 'object' && prop !== null) {
-						var _span = $('<span>').addClass('_prop_'+i);
+						var _span = $('<td>').addClass('_prop_'+i);
 						$.each(prop, function(ii, propprop) {
 							$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);  
 
 						});
 						$(_span).appendTo(_div);
 					} else {
-						$('<span>').addClass('_prop_'+i).text(prop).appendTo(_div);  
+						$('<td>').addClass('_prop_'+i).text(prop).appendTo(_div);  
 					}
-				});
+				});*/
 			  tbody.append(_div);
 		});
 	}).fail(function( jqXHR, textStatus ) {

@@ -13,6 +13,7 @@
 }
 
 table{
+	width: 100%;
 	border: 1px solid black;
 	border-right: 0px;
 	margin: 20px auto;	
@@ -80,7 +81,7 @@ td:nth-child(even) {background-color: #00000022;}
 
 table#rights { border-right: 1px solid black; }
 
-table#rights th{ padding: 0px; }
+table#rights th{ padding: 0px;  }
 
 table#rights thead >tr::after{
 	content: "";
@@ -92,7 +93,26 @@ table#rights thead >tr::after{
 }
 
 table input {
-	width: 100px;
+	width: 90%;
+	margin-bottom:0px!important;
+}
+
+table#users td {
+	width: 10%;
+	min-width: 120px;
+}
+table#groups td:first-child {
+	min-width: 100px;
+	width: 5%;
+}	
+
+table#users td:last-child {width: 2%; min-width:50px;}
+table#users td:first-child {width:5%; }
+table#rights td:nth-child(1) {min-width: 100px;}
+table#rights td:nth-child(2) {min-width: 140px;}
+
+table input[type=password] {
+	width: 40%;
 	margin-bottom:0px!important;
 }
 

@@ -16,9 +16,24 @@ function writelog($data=array()) {
 
 function getLog($myDate) {
 	global $config;
+	global $ad_users;
+	global $ad_groups;
 	$file = $config['log_dir'].$myDate.'.log';
 
 	$A = json_decode('{"entries":['.rtrim(rtrim(file_get_contents($file)),',').']}',true);	
 	$A['entries'] = array_reverse($A['entries']);
+	foreach($A['entries'] as $i=>$row) {
+		foreach($row as $attr=>$val) {
+			if($attr=='timestamp') {
+				$A['entries'][$i][$attr] = date(getLang('datetime'),$val);
+			}
+			if(($attr == 'dn' || $attr == 'member')&& isset($ad_users[$val])) {
+				$A['entries'][$i][$attr] = $ad_users[$val]['samaccountname'].'('.$ad_users[$val]['displayname'].')';
+			}				
+			if(($attr == 'dn' || $attr=='group') && isset($ad_groups[$val])) {
+				$A['entries'][$i][$attr] = $ad_groups[$val]['samaccountname'];
+			}				
+		}
+	}
 	return $A;
 }

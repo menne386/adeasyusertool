@@ -3,6 +3,7 @@
 defined('__MAINAPP__') or die('nope');
 
 $lang = array(
+	'datetime'=>'d-M-y H:i:s T',
 	'ldap:19'=>'Value violates server constraints',
 	'ldap:53'=>'Value does not conform to policy',
 	'ldap:68'=>'This record already exists',
