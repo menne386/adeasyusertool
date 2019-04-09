@@ -26,7 +26,23 @@ function getLog(mydate) {
 			log: mydate
 	  }
 	}).done(function( msg ) {
+		var tbody = $('#auditlog');
+		$.each(msg.entries, function(i, entry) {
+			  var _div = $('<div>');
+			  $.each(entry, function(i, prop) {
+					if(typeof prop === 'object' && prop !== null) {
+						var _span = $('<span>').addClass('_prop_'+i);
+						$.each(prop, function(ii, propprop) {
+							$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);  
 
+						});
+						$(_span).appendTo(_div);
+					} else {
+						$('<span>').addClass('_prop_'+i).text(prop).appendTo(_div);  
+					}
+				});
+			  tbody.append(_div);
+		});
 	}).fail(function( jqXHR, textStatus ) {
 		alert( "Server error: " + textStatus );
 	});
@@ -209,6 +225,8 @@ $(document).ready(function () {
 	resizeFunc();
 
 
+	getLog('201904');
+
 	//Add interaction to buttons and input fields:
 
 	$('#search').keyup(function(){
@@ -241,7 +259,7 @@ $(document).ready(function () {
 
 	
 	$('#refresh_bt').click(function(){ location.reload(); });
-	$('#audit_bt').click(function(){ getLog('201904'); });
+	$('#audit_date').change(function(){ getLog(this.value); });
 	
 	$(".checkpw").change(function(e){ 	if(!checkPassword(e)) {	return;	}	});
 

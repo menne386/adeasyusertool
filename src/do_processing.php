@@ -51,7 +51,7 @@ function validate_field($name,$value) {
 if(isset($_POST['log'])) {
 	error_reporting(0);
 	header('Content-Type: application/json');
-	die(json_encode(getLog(date('Ym'))));
+	die(json_encode(getLog($_POST['log'])));
 }
 
 if(isset($_POST['dn'])) {

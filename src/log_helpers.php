@@ -18,5 +18,7 @@ function getLog($myDate) {
 	global $config;
 	$file = $config['log_dir'].$myDate.'.log';
 
-	return json_decode('{"entries":['.rtrim(rtrim(file_get_contents($file)),',').']}',true);	
+	$A = json_decode('{"entries":['.rtrim(rtrim(file_get_contents($file)),',').']}',true);	
+	$A['entries'] = array_reverse($A['entries']);
+	return $A;
 }

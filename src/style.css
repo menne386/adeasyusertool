@@ -165,3 +165,24 @@ div.editable:hover {
 	border-width: 2px;
 }
 
+#auditlog span{
+	padding: 3px;
+	padding-right: 10px;
+}
+
+#auditlog>div{
+	clear: both;
+	border-bottom: 1px solid black;
+}
+
+#auditlog>div>span {
+	float: right;
+}
+
+#auditlog>div>span._prop_action, 
+#auditlog>div>span._prop_timestamp {
+	
+	float: left;
+
+}
+
