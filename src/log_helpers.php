@@ -24,13 +24,13 @@ function getLog($myDate) {
 	$A['entries'] = array_reverse($A['entries']);
 	foreach($A['entries'] as $i=>$row) {
 		foreach($row as $attr=>$val) {
-			if($attr=='timestamp') {
+			if($attr==='timestamp') {
 				$A['entries'][$i][$attr] = date(getLang('datetime'),$val);
 			}
-			if(($attr == 'dn' || $attr == 'member')&& isset($ad_users[$val])) {
+			if(($attr === 'dn' || $attr === 'member')&& isset($ad_users[$val])) {
 				$A['entries'][$i][$attr] = $ad_users[$val]['samaccountname'].'('.$ad_users[$val]['displayname'].')';
 			}				
-			if(($attr == 'dn' || $attr=='group') && isset($ad_groups[$val])) {
+			if(($attr === 'dn' || $attr==='group') && isset($ad_groups[$val])) {
 				$A['entries'][$i][$attr] = $ad_groups[$val]['samaccountname'];
 			}				
 		}

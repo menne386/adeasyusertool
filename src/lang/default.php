@@ -41,6 +41,7 @@ $lang = array(
 	'btn:create'=>'Create',
 	'btn:logged_in_as'=>'Logged in as',
 	'btn:search'=>'Search',
+	'btn:audit'=>'Logbook',
 	'txt:version'=>'Version',
 	'txt:startscreen'=>'Startscreen',
 	'txt:login'=>'Login',

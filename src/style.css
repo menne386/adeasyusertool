@@ -206,3 +206,6 @@ div.editable:hover {
 
 }
 
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }

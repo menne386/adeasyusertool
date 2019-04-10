@@ -31,23 +31,23 @@ function getLog(mydate) {
 		var tbody = $('#auditlog>tbody');
 		$(tbody).empty();
 		$.each(msg.entries, function(i, entry) {
-			  var _div = $('<tr>');
-			  $('#auditlog>thead>tr>th').filter(function(){
+			var _div = $('<tr>');
+			$('#auditlog>thead>tr>th').filter(function(){
 				var _span = $('<td>').addClass('_prop_'+this.attributes.name.value);
 				var idx = this.attributes.name.value;
 				var prop = entry[idx];
-				if(typeof prop === 'object' && prop !== null) {
-					$.each(prop, function(ii, propprop) {
-						$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);
-					});
-				} else if(prop==null){
-					
-					if(entry['action']=='newuser') {
-						console.log(entry[0]);
-						$.each(entry[0], function(ii, propprop) {
-							$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);
-						});
-						
+				if(prop==null){
+					if(entry['action']=='new_user') {
+						if(idx=='value' ) {
+							//console.log(entry);
+							$.each(entry[0], function(ii, propprop) {
+								var D = $('<div>').addClass('_prop_'+ii).addClass('clear');
+								$('<span>').addClass('left').text(ii).appendTo(D);
+								$('<span>').addClass('right').text(propprop).appendTo(D);
+								//text(ii+': '+propprop).appendTo(_span);
+								$(D).appendTo(_span);
+							});
+						}
 					} else if(entry['action']=='membership_add'||entry['action']=='membership_del') {
 						if(idx=='dn' ) {
 							$(_span).text(entry['group']);
@@ -63,20 +63,8 @@ function getLog(mydate) {
 					$(_span).text(prop);
 				}
 				$(_span).appendTo(_div);
-			  });
-			  /*$.each(entry, function(i, prop) {
-					if(typeof prop === 'object' && prop !== null) {
-						var _span = $('<td>').addClass('_prop_'+i);
-						$.each(prop, function(ii, propprop) {
-							$('<span>').addClass('_prop_'+ii).text(propprop).appendTo(_span);  
-
-						});
-						$(_span).appendTo(_div);
-					} else {
-						$('<td>').addClass('_prop_'+i).text(prop).appendTo(_div);  
-					}
-				});*/
-			  tbody.append(_div);
+			});
+			tbody.append(_div);
 		});
 	}).fail(function( jqXHR, textStatus ) {
 		alert( "Server error: " + textStatus );

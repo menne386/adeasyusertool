@@ -41,6 +41,7 @@ $lang_override = array(
 	'btn:create'=>'Maak',
 	'btn:logged_in_as'=>'Inglogd als',
 	'btn:search'=>'Zoeken',
+	'btn:audit'=>'Logboek',
 	'txt:version'=>'Versie',
 	'txt:startscreen'=>'Beginscherm',
 	'txt:login'=>'Aanmelden',
