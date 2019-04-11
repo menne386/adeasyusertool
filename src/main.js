@@ -307,3 +307,15 @@ $(document).ready(function () {
 	});
 	
 });
+
+
+function dumpUnusedStyles() {
+	var style = document.styleSheets[0];
+	for(a=0;a<style.cssRules.length;a++) {
+		var rule = style.cssRules[a];
+		//console.log(rule);
+		if(document.querySelector(rule.selectorText)===null) {
+			console.log(rule.selectorText);
+		}
+	}
+}
