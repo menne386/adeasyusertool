@@ -85,7 +85,8 @@ table#rights th{ padding: 0px;  }
 
 table#rights thead >tr::after{
 	content: "";
-	width: 200px;
+	width: auto;
+	min-width: 200px;
 	height: 200px;
 	display:block;
 	border-bottom: 1px solid black;
