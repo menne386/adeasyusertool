@@ -165,6 +165,18 @@ function createNewRow(e) {
 	
 }
 
+function myTextExtraction(node, table, cellIndex) {
+	var t = $(node).text().replace(/\s+/g, ' ').trim();
+	if(t.length==0) {
+		var nodes = $(node).find('input');
+		if(nodes.length) {
+			t = nodes[0].value;
+		}
+	}
+	return t;
+
+}
+
 $(document).ready(function () {
 
 	//Start a keepalive on an interval:
@@ -185,17 +197,6 @@ $(document).ready(function () {
 	
 
 	//Install the table sorter:
-	var myTextExtraction = function(node, table, cellIndex) {
-	  var t = $(node).text().replace(/\s+/g, ' ').trim();
-	  if(t.length==0) {
-			var nodes = $(node).find('input');
-			if(nodes.length) {
-				t = nodes[0].value;
-			}
-		}
-	  return t;
-	}
-	
 	$(".sorted").tablesorter({
 		cancelSelection:false,
 		textExtraction:myTextExtraction,
@@ -252,18 +253,14 @@ $(document).ready(function () {
 
 	//Add interaction to buttons and input fields:
 
-	$('#search').keyup(function(){
+	$('#search').change(function(){
 		// Search Text
 		var search = $(this).val().toUpperCase();
 		// Hide all table tbody rows
 		$('table tbody tr:not(.newrow)').hide();
 		//Search the table:
 		$('table tbody td').each(function(){
-			var searchT = $(this).text();
-			//console.log(this);
-			searchT += ':'+$(this.firstElementChild).val();
-			
-			searchT = searchT.toUpperCase();
+			var searchT = myTextExtraction(this,null,null).toUpperCase();
 			if(searchT.indexOf(search) >-1) {
 				$(this).closest('tr').show();
 			}
