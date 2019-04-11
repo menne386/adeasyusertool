@@ -113,8 +113,8 @@ table#groups td:first-child {
 
 table#users td:last-child {width: 2%; min-width:50px;}
 table#users td:first-child {width:5%; }
-table#rights td:nth-child(1) {min-width: 100px;}
-table#rights td:nth-child(2) {min-width: 140px;}
+table#rights td:nth-child(1) {min-width: 200px;}
+table#rights td:nth-child(2) {min-width: 200px;}
 
 
 #search{
