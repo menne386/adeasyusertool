@@ -30,7 +30,7 @@ th{
 	padding-bottom: 3px;
 	border-collapse: separate;
 	vertical-align: bottom;
-	background-color: #9772c4;
+	background-color: $(bg:color:mid);
 	
 	z-index: 0;
 	border-right: 1px solid black;
@@ -69,7 +69,7 @@ td {
 }
 
 thead tr{
-	background-color: #d8beff;
+	background-color: $(bg:color:high);
 	border-bottom: 1px solid black; 
 	border-collapse:seperate;
 	color: white;
@@ -89,7 +89,7 @@ table#rights thead >tr::after{
 	height: 200px;
 	display:block;
 	border-bottom: 1px solid black;
-	background-color: #9772c4;
+	background-color: $(bg:color:mid);
 }
 
 table input,table select {

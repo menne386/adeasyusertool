@@ -11,6 +11,9 @@
 define('__MAINAPP__',1);
 
 require_once('defaultconfig.php'); //Load configuration variables (defaultconfig.php in turn includes config.php)
+
+require_once('do_resources.php');
+
 require_once('log_helpers.php');
 
 require_once('domhelpers.php'); //Dom functions:

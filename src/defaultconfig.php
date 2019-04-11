@@ -51,6 +51,15 @@ $config['encrypt_method'] = "AES-256-CBC";
 //This is used as a logo on the login page:
 $config['logo'] = "some_logo_file.png"; 
 
+//This is the colors used in styling:
+$config['style'] = array(
+	'bg:color:low'=>'#612d83',
+	'bg:color:mid'=>'#9772c4',
+	'bg:color:high'=>'#d8beff',
+	'bg:color:button'=>'#97a300',
+	'border:color:button'=>'#828d00',
+);
+
 //The <title> attribute in the page header.
 $config['page_title'] = "AD User Tool"; 
 

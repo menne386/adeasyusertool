@@ -771,10 +771,10 @@ ul li span p {
 
 .btn-success {
   background-image: none;
-  background-color: #97a300; }
+  background-color: $(bg:color:button); }
 
 .btn.actief {
-  background-color: #97a300;
+  background-color: $(bg:color:button);
   color: white;
   text-shadow: 0 0 0 transparent; }
   .btn.actief i.icon-ok-circle {
@@ -894,7 +894,7 @@ textarea.input-fullwidth {
 
 /* Button group active state */
 .btn-group .btn.active {
-  background-color: #97a300;
+  background-color: $(bg:color:button);
   color: white;
   text-shadow: black 1px 1px 0; }
 
@@ -902,7 +902,7 @@ div.controls .text {
   padding-top: 5px; }
 
 .control-group.value .controls a {
-  color: #97a300; }
+  color: $(bg:color:button); }
 
 div.controls .text {
   padding-top: 8px; }
@@ -962,7 +962,7 @@ div.vragenlijstinzien .row-fluid .span6 {
 	Modal styling
 ----------------------------------- */
 .modal-header {
-  background-color: #9772c4;
+  background-color: $(bg:color:mid);
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
   -ms-border-radius: 3px 3px 0 0;
@@ -1010,10 +1010,10 @@ div.vragenlijstinzien .row-fluid .span6 {
   .modal .table-condensed td {
     padding: 10px 10px 5px 10px;
     cursor: pointer;
-    color: #612d83;
+    color: $(bg:color:low);
     vertical-align: middle; }
     .modal .table-condensed td a {
-      color: #612d83; }
+      color: $(bg:color:low); }
     .modal .table-condensed td a:hover {
       text-decoration: none; }
   .modal .table-condensed th {
@@ -1029,7 +1029,7 @@ div.vragenlijstinzien .row-fluid .span6 {
     text-align: center; }
   .modal .table-condensed .btn-success {
     background-image: none;
-    background-color: #97a300; }
+    background-color: $(bg:color:button); }
   .modal .table-condensed .btn-success.active {
     box-shadow: none;
     background-color: #E6E6E6; }
@@ -1058,13 +1058,13 @@ div.vragenlijstinzien .row-fluid .span6 {
 .ui-tooltip-colonis {
   max-width: 320px;
   background-color: white;
-  border-color: #54026e;
+  border-color: $(bg:color:low);
   width: 320px;
   font-size: 13px;
   line-height: 16px;
-  color: #54026e; }
+  color: $(bg:color:low); }
   .ui-tooltip-colonis .form-horizontal .control-label {
-    color: #54026e;
+    color: $(bg:color:low);
     width: 100px; }
   .ui-tooltip-colonis .form-horizontal .control {
     padding-left: 100px; }
@@ -1119,16 +1119,16 @@ div.vragenlijstinzien .row-fluid .span6 {
   box-sizing: border-box; }
 
 .badge-success {
-  background-color: #97a300; }
+  background-color: $(bg:color:button); }
 
 .badge-inverse {
-  background-color: #9772c4; }
+  background-color: $(bg:color:mid); }
 
 /* Labels */
 .label-info, .badge-info {
   padding: 3px 6px 3px 6px;
   margin-left: 3px;
-  background-color: #9772c4;
+  background-color: $(bg:color:mid);
   vertical-align: middle; }
 
 /* Badge within modal */
@@ -1180,12 +1180,12 @@ div.split-table {
   font-size: 13px;
   background-color: #EEE; }
   .table-condensed th a {
-    color: #612d83; }
+    color: $(bg:color:low); }
 .table-condensed td {
-  color: #612d83;
+  color: $(bg:color:low);
   vertical-align: middle; }
   .table-condensed td a {
-    color: #612d83; }
+    color: $(bg:color:low); }
   .table-condensed td a.btn.btn-primary {
     color: white; }
   .table-condensed td a.btn {
@@ -1251,7 +1251,7 @@ table.table tbody tr.selected td {
   font-size: 18px;
   font-weight: normal;
   line-height: 18px;
-  color: #612d83; }
+  color: $(bg:color:low); }
 
 /* tabel zonder hover */
 .table-condensed.static tbody tr:hover td {
@@ -1290,7 +1290,7 @@ table.table tbody tr.selected td {
   color: #333;
   line-height: 32px;
   background-color: #FFF;
-  border: solid 1px #d8beff;
+  border: solid 1px $(bg:color:high);
   border-radius: 5px;
   z-index: 99999; }
 
@@ -1328,9 +1328,9 @@ input[type=number].error, input[type=text].error, .error textarea,
   -o-border-radius: 5;
   border-radius: 5; }
   .btn.btn-primary {
-    border: solid 1px #828d00;
+    border: solid 1px $(border:color:button);
     background-image: none;
-    background-color: #97a300; }
+    background-color: $(bg:color:button); }
 
 .form-horizontal .control-label {
   text-align: left; }
@@ -1481,17 +1481,17 @@ h2.form_trigger {
   margin: 0;
   clear: left;
   /*cursor: pointer;*/
-  color: #54026e;
+  color: $(bg:color:low);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 18px;
   font-weight: normal;
   text-decoration: none;
-  border-bottom: 1px solid #97a300; }
+  border-bottom: 1px solid $(bg:color:button); }
 
 h3.form_trigger {
   margin: 0;
-  color: #54026e;
+  color: $(bg:color:low);
   clear: both; }
 
 /* -----------------------------------  
@@ -1547,7 +1547,7 @@ h3.form_trigger {
     margin: 0; }
 .select2-container
 .select2-drop .select2-results .select2-highlighted {
-  background-color: #828d00; }
+  background-color: $(border:color:button); }
 .select2-container
 .select2-drop .select2-result-sub {
   padding: 0; }
@@ -1674,7 +1674,7 @@ div.question .select2-container {
 div.question .select2-default {
   color: #444444 !important; }
 div.question .select2-container.select2-container-multi .select2-choices {
-  border: 1px solid #dcb0eb;
+  border: 1px solid $(bg:color:high);
   background: white url(../images/icons/select2-multi.png) no-repeat top right; }
 
 /* Formulier iconen */
@@ -1879,12 +1879,12 @@ table.week-calendar-time-slots {
   display: block; }
 
 .cal-event {
-  background-color: #d8beff;
+  background-color: $(bg:color:high);
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
   -khtml-opacity: 0.8;
   opacity: 0.8;
-  border: 1px solid #9772c4;
+  border: 1px solid $(bg:color:mid);
   position: absolute;
   text-align: left;
   overflow: hidden;
@@ -1984,7 +1984,7 @@ table.week-calendar-time-slots {
   margin: 10px 0 10px 0;
   font-size: 14px;
   font-weight: bold;
-  color: #612d83;
+  color: $(bg:color:low);
   text-decoration: none !important; }
 
 .horizontal-calendar .day-header:hover {
@@ -2383,7 +2383,7 @@ body.is-mobile-device {
     padding: 10px;
     display: inline-block;
     width: 200px;
-    background-color: #dcb0eb;
+    background-color: $(bg:color:high);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
@@ -2399,7 +2399,7 @@ body.is-mobile-device {
       padding: 10px;
       display: inline-block;
       width: 180px;
-      background-color: #54026e;
+      background-color: $(bg:color:low);
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       -ms-border-radius: 5px;
@@ -2427,7 +2427,7 @@ body.is-mobile-device {
   margin: 0 auto;
   padding: 10px;
   width: 425px;
-  background-color: #dcb0eb;
+  background-color: $(bg:color:high);
   color: white; }
   .inlog-container h1 {
     margin: 0 0 5px 0;
@@ -2452,14 +2452,14 @@ body.is-mobile-device {
 .inlog-formulier {
   padding: 10px;
   clear: both;
-  background-color: #54026e; }
+  background-color: $(bg:color:low); }
   .inlog-formulier p {
     margin: 0 0 10px 0; }
   .inlog-formulier a {
     padding: 5px 0 5px 10px;
     float: right;
     display: inline-block;
-    color: #97a300;
+    color: $(bg:color:button);
     text-decoration: underline; }
     .inlog-formulier a:hover {
       color: white;
@@ -2522,7 +2522,7 @@ body.is-mobile-device {
     font-weight: 600;
     font-style: italic;
     line-height: 29px;
-    background-color: #dcb0eb;
+    background-color: $(bg:color:high);
     color: white; }
     .medewerker.portaal .topnav-title .title {
       padding-left: 25px; }
@@ -2532,7 +2532,7 @@ body.is-mobile-device {
   .medewerker.portaal .canvas.topnav {
     position: relative;
     z-index: 2;
-    background-color: #54026e; }
+    background-color: $(bg:color:low); }
     .medewerker.portaal .canvas.topnav .nav {
       margin: 25px 0 0 25px;
       padding: 0px;
@@ -2548,12 +2548,12 @@ body.is-mobile-device {
           font-weight: normal;
           color: white; }
         .medewerker.portaal .canvas.topnav .nav > li a:hover {
-          background-color: #dcb0eb;
+          background-color: $(bg:color:high);
           color: #000; }
       .medewerker.portaal .canvas.topnav .nav > li:hover {
         background-color: #FFF; }
       .medewerker.portaal .canvas.topnav .nav > li.active a {
-        background-color: #dcb0eb;
+        background-color: $(bg:color:high);
         color: white; }
       .medewerker.portaal .canvas.topnav .nav span {
         font-weight: bold; }
@@ -2579,7 +2579,7 @@ body.is-mobile-device {
           color: #acacac; }
   .medewerker.portaal .top-subnav .sub-menu-container {
     min-height: 15px;
-    background-color: #dcb0eb; }
+    background-color: $(bg:color:high); }
   .medewerker.portaal .top-subnav ul.subnav {
     margin: 0 0 0 25px;
     padding: 5px 0;
@@ -2600,7 +2600,7 @@ body.is-mobile-device {
   .medewerker.portaal .canvas.footer {
     position: relative;
     z-index: 2;
-    background-color: #dcb0eb;
+    background-color: $(bg:color:high);
     height: 40px; }
 
 /* -----------------------------------  
@@ -2620,7 +2620,7 @@ body.is-mobile-device {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;
   font-weight: normal;
-  background: #612d83; }
+  background: $(bg:color:low); }
   .beheer .canvas.topnav .logo {
     padding: 0px; }
   .beheer .canvas.topnav .logo > a img {
@@ -2642,14 +2642,14 @@ body.is-mobile-device {
         padding: 5px 10px 6px 10px; }
       .beheer .canvas.topnav .nav > li > a:hover,
       .beheer .canvas.topnav .nav > li > a:focus {
-        background-color: #9772c4; }
+        background-color: $(bg:color:mid); }
       .beheer .canvas.topnav .nav > li a .caret {
         margin-top: 8px; }
     .beheer .canvas.topnav .nav > li:first-child {
       margin-left: 10px; }
     .beheer .canvas.topnav .nav > li:hover,
     .beheer .canvas.topnav .nav li.open {
-      background-color: #9772c4; }
+      background-color: $(bg:color:mid); }
     .beheer .canvas.topnav .nav span {
       font-weight: bold; }
     .beheer .canvas.topnav .nav .orgwissel {
@@ -2666,7 +2666,7 @@ body.is-mobile-device {
           display: none; }
     .beheer .canvas.topnav .nav .orgwissel.select2-dropdown-open .select2-choice {
       box-shadow: none;
-      background-color: #9772c4;
+      background-color: $(bg:color:mid);
       border-top-left-radius: 0;
       border-top-right-radius: 0; }
     .beheer .canvas.topnav .nav .dropdown .caret {
@@ -2682,7 +2682,7 @@ body.is-mobile-device {
       border-radius: 0 0 5px 5px; }
       .beheer .canvas.topnav .nav .dropdown .dropdown-menu li > a {
         padding: 3px 10px 3px 10px;
-        color: #612d83; }
+        color: $(bg:color:low); }
       .beheer .canvas.topnav .nav .dropdown .dropdown-menu li > a:hover {
         background: #e2e2dd none;
         filter: none; }
@@ -2695,7 +2695,7 @@ body.is-mobile-device {
         margin: 8px; }
 
 .subnav {
-  background-color: #d8beff;
+  background-color: $(bg:color:high);
   color: #333333;
   height: 47px; }
   .subnav .nav {
@@ -2708,7 +2708,7 @@ body.is-mobile-device {
   .subnav .bk-concept-gewijzigd-door span {
     padding: 7px 7px 7px 7px; }
   .subnav .bk-concept-gewijzigd-door span:hover {
-    background-color: #9772c4; }
+    background-color: $(bg:color:mid); }
 
 .subnav .nav-tabs {
   border: 0 none;
@@ -2728,7 +2728,7 @@ body.is-mobile-device {
   padding: 7px 10px 0px 10px;
   margin: 0 2px 0 0;
   border-radius: 5px 5px 0 0;
-  background-color: #9772c4; }
+  background-color: $(bg:color:mid); }
 
 .subnav .nav-tabs > li > a:hover,
 .subnav .nav-tabs > li.active > a,
@@ -2756,12 +2756,12 @@ body.is-mobile-device {
     margin: -7px 5px 0 0;
     line-height: 16px;
     color: #FFF;
-    background-color: #9772c4;
+    background-color: $(bg:color:mid);
     border-radius: 5px; }
   .subnav .nav-tabs > li.tab-search a:hover, .subnav .nav-tabs > li.tab-search.active a {
     color: #FFF;
     border: solid 1px transparent;
-    background-color: #612d83; }
+    background-color: $(bg:color:low); }
 
 li.dashboard .dashboard-status {
   height: 8px;
@@ -2785,14 +2785,14 @@ li.dashboard .dashboard-status {
   margin-top: 20px; }
   .ingelogged-als label {
     display: inline;
-    color: #54026e;
+    color: $(bg:color:low);
     font-weight: bold; }
   .ingelogged-als a {
     padding: 0 5px;
     font-weight: bold;
     color: white; }
   .ingelogged-als .divider {
-    border: 1px solid #dcb0eb;
+    border: 1px solid $(bg:color:high);
     border-width: 0 1px; }
 
 .beheer {
@@ -2806,7 +2806,7 @@ li.dashboard .dashboard-status {
     padding: 0; }
   .beheer h1 {
     font-size: 24px;
-    color: #54026e;
+    color: $(bg:color:low);
     margin: 10px 10px 15px 15px; }
     .beheer h1 .subpage,
     .beheer h1 .divider {
@@ -2842,12 +2842,12 @@ li.dashboard .dashboard-status {
   .beheer .label-info, .beheer .badge-info {
     padding: 3px 6px 3px 6px;
     margin-left: 3px;
-    background-color: #9772c4;
+    background-color: $(bg:color:mid);
     vertical-align: middle; }
   .beheer .canvas.footer {
     position: relative;
     z-index: 2;
-    background-color: #dcb0eb;
+    background-color: $(bg:color:high);
     height: 40px; }
 
 .logging-overview .column-gebeurtenis {
@@ -2881,7 +2881,7 @@ li.dashboard .dashboard-status {
 .hour {
   border-left: 1px solid #dddddd; }
   .hour.acht-uur {
-    border-left: 1px dashed #612d83; }
+    border-left: 1px dashed $(bg:color:low); }
 
 .half-hour {
   border-left: 1px dotted #dddddd; }
@@ -2946,7 +2946,7 @@ li.dashboard .dashboard-status {
       margin: 0;
       padding: 10px 0;
       border-left: 1px solid #dddddd;
-      color: #612d83;
+      color: $(bg:color:low);
       text-align: center;
       font-size: 14px;
       font-weight: bold; }
@@ -2955,12 +2955,12 @@ li.dashboard .dashboard-status {
 
 /* week kalender styling */
 .cal-event {
-  background-color: #9772c4;
+  background-color: $(bg:color:mid);
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
   -khtml-opacity: 0.8;
   opacity: 0.8;
-  border: 1px solid #612d83;
+  border: 1px solid $(bg:color:low);
   position: absolute;
   text-align: left;
   overflow: hidden;
@@ -2970,7 +2970,7 @@ li.dashboard .dashboard-status {
   display: block;
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); }
   .cal-event .time {
-    background-color: #612d83; }
+    background-color: $(bg:color:low); }
 
 .new-cal-event {
   min-height: 10px; }
@@ -3204,7 +3204,7 @@ table.beschikbare-tijden {
   .dag-column strong {
     clear: both; }
   .dag-column.vandaag {
-    color: #612d83; }
+    color: $(bg:color:low); }
 
 .beschikbaar,
 .niet-beschikbaar {
@@ -3273,7 +3273,7 @@ table.tijd-selectie td a.selected {
   bottom: -10px;
   left: 4%; }
 .capaciteitskalender-popover .popover-content {
-  color: #54026e;
+  color: $(bg:color:low);
   font-size: 13px;
   line-height: 16px;
   padding-top: 3px; }
@@ -3288,8 +3288,8 @@ table.tijd-selectie td a.selected {
   padding: 0 0 5px 0;
   font-size: 18px;
   line-height: 18px;
-  color: #54026e;
-  border-bottom: 1px solid #97a300; }
+  color: $(bg:color:low);
+  border-bottom: 1px solid $(bg:color:button); }
 .beheer .vervolgstap .column-afspraak-zoeken {
   clear: both; }
 .beheer .vervolgstap .label-inline {
@@ -3341,7 +3341,7 @@ th.bvo {
 .label-info, .badge-info {
   padding: 3px 6px 3px 6px;
   margin-left: 3px;
-  background-color: #9772c4;
+  background-color: $(bg:color:mid);
   vertical-align: middle; }
 
 /* Huisarts wijzigen */
@@ -3455,7 +3455,7 @@ textarea.locatiebeschrijving {
   color: black;
   font-weight: normal; }
 .filter-view .filter-actief.active {
-  background-color: #97a300; }
+  background-color: $(bg:color:button); }
   .filter-view .filter-actief.active .icon-ok-circle {
     background-image: url("../images/icons/glyphicons-halflings-white.png"); }
 
@@ -3470,7 +3470,7 @@ textarea.locatiebeschrijving {
   margin-left: -225px;
   padding: 20px;
   width: 450px;
-  border: 1px solid #dcb0eb;
+  border: 1px solid $(bg:color:high);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
@@ -3521,7 +3521,7 @@ textarea.locatiebeschrijving {
 .huisarts-zoekresultaten h2 {
   margin-top: 30px;
   padding-left: 10px;
-  color: #54026e; }
+  color: $(bg:color:low); }
 
 .controle-huisarts .huisarts-handmatig {
   width: 100%;
