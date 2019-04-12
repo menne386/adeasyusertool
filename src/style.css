@@ -126,6 +126,9 @@ table select {
 #rights td:nth-child(1) {min-width: 200px;}
 #rights td:nth-child(2) {min-width: 200px;}
 
+#audit td:nth-child(1) {width: 2%;}
+#audit td:nth-child(2) {width: 2%;}
+#audit td:nth-child(3) {width: 2%;}
 
 #search{
 	width: 100px;

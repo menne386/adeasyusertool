@@ -38,27 +38,30 @@ function getLog(mydate) {
 				var prop = entry[idx];
 				if(prop==null){
 					if(typeof entry[0] === 'object' && entry[0]!=null) {
-						if(idx=='value' ) {
-							//console.log(entry);
-							$.each(entry[0], function(ii, propprop) {
-								var D = $('<div>').addClass('_prop_'+ii).addClass('clear');
-								$('<span>').addClass('left').text(ii).appendTo(D);
-								$('<span>').addClass('right').text(propprop).appendTo(D);
-								//text(ii+': '+propprop).appendTo(_span);
-								$(D).appendTo(_span);
-							});
-						}
+						prop = entry[0];
 					} else {
 						if(idx=='value' && typeof entry['group'] !=='undefined' ) {
-							$(_span).text(entry['group']);
+							prop = entry['group'];
 						}
 						if(idx=='dn'&& typeof entry['member'] !=='undefined') {
-							$(_span).text(entry['member']);
+							prop = entry['member'];
 						}
 					}
+				}
+				
+				if(typeof prop === 'object' && prop!=null) {
+					//console.log(entry);
+					$.each(prop, function(ii, propprop) {
+						var D = $('<div>').addClass('_prop_'+ii).addClass('clear');
+						$('<span>').addClass('left').text(ii).appendTo(D);
+						$('<span>').addClass('right').text(propprop).appendTo(D);
+						//text(ii+': '+propprop).appendTo(_span);
+						$(D).appendTo(_span);
+					});
 				} else {
 					$(_span).text(prop);
-				}
+				}		
+				 
 				if( $(_span).text().trim().length==0) {
 					$(_span).text('...');
 				}

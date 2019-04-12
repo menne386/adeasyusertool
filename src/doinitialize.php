@@ -10,23 +10,25 @@ if(isset($_SESSION['timestamp'])) {
 	if(time()>$_SESSION['timestamp'] + 60) {
 		unset($_SESSION['AUTH']);
 		unset($_SESSION['_i']);
-		$_SESSION['error'] = "Sessie verlopen";
+		$_SESSION['error'] = getLang('error:session_expired');
+		writelog(array('action'=>'session_expired'));
 	}
 		
 }
 
 //Session bound to user:
-$userid = array(
+$useridU = array(
 	'ip'=>$_SERVER['REMOTE_ADDR'],
 	'xfor'=>isset($_SERVER['HTTP_X_FORWARDED_FOR'])?$_SERVER['HTTP_X_FORWARDED_FOR']:'empty',
 	'xfor2'=>isset($_SERVER['X_FORWARDED_FOR'])?$_SERVER['X_FORWARDED_FOR']:'empty',
 );
-$userid = hash('sha256',serialize($userid));
+$userid = hash('sha256',serialize($useridU));
 
 if(isset($_SESSION['userid']) && $_SESSION['userid'] != $userid) {
 	unset($_SESSION['AUTH']);
 	unset($_SESSION['_i']);
-	$_SESSION['error'] = "Sessie hergebruik fout";
+	$_SESSION['error'] = getLang('error:session_reuse');
+	writelog(array('action'=>'session_reuse','dn'=>$useridU,'value'=>$userid));
 }
 $_SESSION['userid'] = $userid;
 

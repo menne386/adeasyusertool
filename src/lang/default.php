@@ -13,6 +13,8 @@ $lang = array(
 	'error:invalid_email'=>'Value is not a valid email adres',
 	'error:filter'=>'Filter denied access to value',
 	'error:login_failed'=>'Unable to log in with these credentials',
+	'error:session_reuse'=>'Session re-use error! Possible hijack attempt!',
+	'error:session_expired'=>'Session expired',
 	'field:cn'=>'Displayname',
 	
 	'field:password'=>'Password',
@@ -57,10 +59,12 @@ $lang = array(
 	'action:login_success'=>'User login',
 	'action:modify'=>'Modify attribute',
 	'action:logout_success'=>'User logout',
-	'action:login_failed'=>'Failed login attempt',
+	'action:login_failed'=>'Failed login attempt!',
 	'action:membership_del'=>'Remove user from group',
 	'action:membership_add'=>'Add user to group',
 	'action:new_user'=>'Add new user',
+	'action:session_expired'=>'Session expired',
+	'action:session_reuse'=>'Session breach!',
 );
 
 function getLang($marker) {

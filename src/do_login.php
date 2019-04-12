@@ -114,11 +114,13 @@ if (!isset($_SESSION['AUTH'])) {
 	replaceDocumentMarkers($document);
 	die($document->saveHTML());
 } else {
+	$data = unserialize(cryptoCoder($_SESSION['AUTH'],'d'));
 	if(isset($_GET['logout'])) {
+		$user = $data['u'];
+		unset($data);
 		writelog(array('action'=>'logout_success'));
 		kill_and_reload();
 	}
-	$data = unserialize(cryptoCoder($_SESSION['AUTH'],'d'));
 	if(isset($data['u']) && isset($data['p']) ) {
 		$ldapbind = ldap_bind($con, $data['u'], $data['p']);
 		if($ldapbind) {
