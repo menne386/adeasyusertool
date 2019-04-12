@@ -12,8 +12,8 @@ if(isset($_SESSION['timestamp'])) {
 		unset($_SESSION['_i']);
 		$_SESSION['error'] = getLang('error:session_expired');
 		writelog(array('action'=>'session_expired'));
-	}
-		
+		session_regenerate_id();
+	}		
 }
 
 //Session bound to user:
