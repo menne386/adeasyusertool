@@ -37,7 +37,7 @@ function getLog(mydate) {
 				var idx = this.attributes.name.value;
 				var prop = entry[idx];
 				if(prop==null){
-					if(typeof entry[0] === 'object' && entry[0]!=null) {
+					if(typeof entry[0] === 'object' && entry[0]!=null && idx=='value') {
 						prop = entry[0];
 					} else {
 						if(idx=='value' && typeof entry['group'] !=='undefined' ) {
