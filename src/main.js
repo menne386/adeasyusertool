@@ -37,7 +37,7 @@ function getLog(mydate) {
 				var idx = this.attributes.name.value;
 				var prop = entry[idx];
 				if(prop==null){
-					if(entry['action']=='new_user') {
+					if(typeof entry[0] === 'object' && entry[0]!=null) {
 						if(idx=='value' ) {
 							//console.log(entry);
 							$.each(entry[0], function(ii, propprop) {
@@ -48,19 +48,19 @@ function getLog(mydate) {
 								$(D).appendTo(_span);
 							});
 						}
-					} else if(entry['action']=='membership_add'||entry['action']=='membership_del') {
-						if(idx=='dn' ) {
+					} else {
+						if(idx=='value' && typeof entry['group'] !=='undefined' ) {
 							$(_span).text(entry['group']);
 						}
-						if(idx=='attribute' ) {
-							$(_span).text('member');
-						}
-						if(idx=='value' ) {
+						if(idx=='dn'&& typeof entry['member'] !=='undefined') {
 							$(_span).text(entry['member']);
 						}
 					}
 				} else {
 					$(_span).text(prop);
+				}
+				if( $(_span).text().trim().length==0) {
+					$(_span).text('...');
 				}
 				$(_span).appendTo(_div);
 			});

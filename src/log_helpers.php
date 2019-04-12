@@ -24,6 +24,14 @@ function getLog($myDate) {
 	$A['entries'] = array_reverse($A['entries']);
 	foreach($A['entries'] as $i=>$row) {
 		foreach($row as $attr=>$val) {
+			if($attr==='action') {
+				$A['entries'][$i][$attr] = getLang('action:'.$val);
+			}
+			if($attr==='attribute') {
+				$A['entries'][$i][$attr] = getLang('field:user:'.$val);
+			}
+				
+			
 			if($attr==='timestamp') {
 				$A['entries'][$i][$attr] = date(getLang('datetime'),$val);
 			}

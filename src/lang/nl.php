@@ -47,6 +47,20 @@ $lang_override = array(
 	'txt:login'=>'Aanmelden',
 	'txt:login_token'=>'2e factor code',
 	'txt:login_help'=>'Meld je aan met je gebruikersnaam, wachtwoord en 2e factor code',
+	'txt:action'=>'Actie',
+	'txt:datetime'=>'Datum & Tijd',
+	'txt:sid'=>'SessieID',
+	'txt:user'=>'Gebruiker',
+	'txt:dn'=>'Objectnaam',
+	'txt:attr'=>'Attribuut',
+	'txt:value'=>'Waarde',
+	'action:login_success'=>'Gebruiker aanmelden',
+	'action:modify'=>'Attribuut wijzigen',
+	'action:logout_success'=>'Gebruiker afmelden',
+	'action:login_failed'=>'Aanmelden gefaald',
+	'action:membership_del'=>'Gebruiker uit groep halen',
+	'action:membership_add'=>'Gebruiker in groep zetten',
+	'action:new_user'=>'Nieuwe gebruiker maken',
 	
 );
 

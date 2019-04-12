@@ -47,6 +47,20 @@ $lang = array(
 	'txt:login'=>'Login',
 	'txt:login_token'=>'Token',
 	'txt:login_help'=>'Login with your username, password and token (where applicable)',
+	'txt:action'=>'Action',
+	'txt:datetime'=>'Date/Time',
+	'txt:sid'=>'SessionID',
+	'txt:user'=>'User',
+	'txt:dn'=>'Objectname',
+	'txt:attr'=>'Attribute',
+	'txt:value'=>'Value',
+	'action:login_success'=>'User login',
+	'action:modify'=>'Modify attribute',
+	'action:logout_success'=>'User logout',
+	'action:login_failed'=>'Failed login attempt',
+	'action:membership_del'=>'Remove user from group',
+	'action:membership_add'=>'Add user to group',
+	'action:new_user'=>'Add new user',
 );
 
 function getLang($marker) {
