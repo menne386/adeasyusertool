@@ -16,11 +16,11 @@ require_once('do_resources.php');
 
 require_once('log_helpers.php');
 
-require_once('domhelpers.php'); //Dom functions:
-require_once('sessionhelpers.php'); //reload/kill_and_reload functions:
-require_once('cryptohelpers.php'); //cryptoCoder functions:
+require_once('dom_helpers.php'); //Dom functions:
+require_once('session_helpers.php'); //reload/kill_and_reload functions:
+require_once('crypto_helpers.php'); //cryptoCoder functions:
 
-require_once('doinitialize.php'); //initialize the ldap connection and session
+require_once('do_initialize.php'); //initialize the ldap connection and session
 
 
 //Create the document to output to the browser:
@@ -48,7 +48,7 @@ $attributes_r = $config['ldap_attributes_rights'];
 
 require_once('filters.php');//Functions that are used to filter/check ldap data before display or before write.
 
-require_once('ldaphelpers.php'); // getLdapEntries & getLdapMemberships functions;
+require_once('ldap_helpers.php'); // getLdapEntries & getLdapMemberships functions;
 
 $ad_users = getLdapEntries($config['ldap_base_dn_users'],$search_filter,$attributes);
 $ad_groups = getLdapEntries($config['ldap_base_dn_groups'],$search_filter_g,$attributes_g);
