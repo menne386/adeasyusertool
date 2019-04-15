@@ -71,7 +71,7 @@ if(isset($_POST['dn'])) {
 		
 		$ldaprecord = $_POST['attributes'];
 		
-		$ldaprecord["useraccountcontrol"] = "66048";
+		$ldaprecord["useraccountcontrol"] = "512"; //https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties
 		$ldaprecord["userprincipalname"] = $ldaprecord['samaccountname']."@".$config['fqdn'];
 		$ldaprecord['objectclass'][0] = "top";
 		$ldaprecord['objectclass'][1] = "person";
