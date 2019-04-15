@@ -67,7 +67,7 @@ if(isset($_POST['dn'])) {
 	if($dn=='users_new') {
 		//$result['_POST'] = print_r($_POST,true);
 		$CN = $_POST['attributes']['displayname'];
-		$dn = 'CN='.$CN.','.$config['ldap_base_dn_users'];
+		$dn = 'CN='. ldap_escape($CN,'',LDAP_ESCAPE_DN).','.$config['ldap_base_dn_users'];
 		
 		$ldaprecord = $_POST['attributes'];
 		
