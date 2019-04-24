@@ -5,12 +5,12 @@ function checkPassword(e) {
 		if(e.target.value != e.target.previousElementSibling.value) {
 			var TD = $(e.target).closest('td')[0];
 			$(TD).addClass("error").removeClass("changing");
-			$("#"+TD.id+"_e").text(e.target.previousElementSibling.attributes.placeholder.value+" ≠ "+e.target.attributes.placeholder.value);
+			$("#"+TD.id+" .cellerrortext").text(e.target.previousElementSibling.attributes.placeholder.value+" ≠ "+e.target.attributes.placeholder.value);
 			return false;
 		} else {
 			var TD = $(e.target).closest('td')[0];
 			$(TD).removeClass("error");
-			$("#"+TD.id+"_e").text('');
+			$("#"+TD.id+" .cellerrortext").text('');
 		}
 	}
 	return true;
@@ -83,7 +83,7 @@ function changeValue(e) {
 	var myRow = $(e.target).closest('tr')[0];
 	var myTable = $(e.target).closest('table')[0];
 	
-	$("#"+mytd.id+"_e").text('');
+	$("#"+mytd.id+" .cellerrortext").text('');
 	$(mytd).addClass("changing").removeClass('changed');
 	
 	var _dn = myRow.attributes.__dn.value;
@@ -106,11 +106,11 @@ function changeValue(e) {
 	}).done(function( msg ) {
 		if(msg.status=="ok") {
 			$("#"+msg.id).addClass('changed').removeClass('changing').removeClass('error');
-			$("#"+msg.id+"_e").text('');
+			$("#"+msg.id+" .cellerrortext").text('');
 			changesMade++;
 		} else {
 			$("#"+msg.id).addClass('error').removeClass('changing');
-			$("#"+msg.id+"_e").text(msg.error);
+			$("#"+msg.id+" .cellerrortext").text(msg.error);
 		}
 	}).fail(function( jqXHR, textStatus ) {
 		alert( "Server error: " + textStatus );

@@ -2,6 +2,8 @@
 
 defined('__MAINAPP__') or die('nope');
 
+$tdCount = 0;
+
 function addElement($tag,DOMElement $fromElement,$text='',$attr = array()) {
 	$newElement = $fromElement->ownerDocument->createElement($tag);
 	if($text) {
@@ -17,6 +19,8 @@ function addElement($tag,DOMElement $fromElement,$text='',$attr = array()) {
 
 function createTable($node,$id,$attributes,$data,$donewrow=true) {
 	global $ad_groups;
+	global $tdCount;
+
 	/*//global $lang;*/
 	$table = addElement('table',$node,'',array('id'=>$id,'class'=>'sorted'));
 	$thead = addElement('thead',$table);
@@ -38,7 +42,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 				$func= "displayfilter_membership";
 			} else {
 				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
-								addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>$id.'_'.$att."_new_e"));
+								addElement('span',$ediv,"",array('class'=>'cellerrortext'));
 			}
 					
 			if(function_exists($func)) {
@@ -53,13 +57,14 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 	foreach($data as $dn=>$usr) {
 		$tr = addElement('tr',$tbody,'',array('__dn'=>$dn));
 		foreach($attributes as $att=>$att_tr) {
-			$td = addElement('td',$tr,'',array('id'=>hash("sha256",$dn.'=>'.$att.'=>'.$id)));
+			$td = addElement('td',$tr,'',array('id'=>'td_'.$tdCount));
+			++$tdCount;
 			$func = "displayfilter_".$att;
 			if(in_array($att,array_keys($ad_groups))) {
 				$func= "displayfilter_membership";
 			} else {
 				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
-								addElement('span',$ediv,"",array('class'=>'cellerrortext','id'=>hash("sha256",$dn.'=>'.$att.'=>'.$id)."_e"));	
+								addElement('span',$ediv,"",array('class'=>'cellerrortext'));	
 			}
 			
 			if(function_exists($func)) {
