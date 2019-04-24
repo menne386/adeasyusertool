@@ -180,6 +180,17 @@ function myTextExtraction(node, table, cellIndex) {
 
 }
 
+function openDetails() {
+	var value = $(this).text();
+	var _TR = $(this).closest('tr')[0];
+	var _dn = _TR.attributes.__dn.value;
+	console.log(_dn);
+	console.log(value);
+	var _ul  = $('.nav-tabs');
+	var _li = $('<li>').appendTo(_ul);
+	var _a = $('<a>').text(value).appendTo(_li);
+}
+
 $(document).ready(function () {
 
 	//Start a keepalive on an interval:
@@ -293,6 +304,7 @@ $(document).ready(function () {
 	
 	
 	$( ".createnew" ).click(createNewRow);
+	$( ".detail_bt" ).click(openDetails);
 
 	$( "input.editable" ).change(changeValue);
 

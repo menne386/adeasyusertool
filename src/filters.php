@@ -47,7 +47,7 @@ function displayfilter_useraccountcontrol($dn,$value, &$node,$att,bool $edit,$at
 function displayfilter_samaccountname($dn,$value, &$node,$att,bool $edit,$attributes) {
 	$input = false;
 	if($edit) {
-		$input = addElement('span',$node,$value,array());
+		$input = addElement('span',$node,$value,array('class'=>'detail_bt'));
 	} else {
 		$input = displayfilter_default($dn,$value,$node,$att,$edit,$attributes);
 	}
