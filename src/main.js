@@ -263,7 +263,8 @@ $(document).ready(function () {
 	resizeFunc();
 
 
-	getLog('201904');
+	//console.log($('#audit_date'));
+	getLog($('#audit_date').val());
 
 	//Add interaction to buttons and input fields:
 
