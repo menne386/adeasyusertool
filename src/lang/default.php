@@ -33,13 +33,14 @@ $lang = array(
 
 	'field:group:samaccountname'=>'Groupname',
 	'field:group:member'=>'Members',
+	'field:group:description'=>'Description',
 	
 	'btn:login'=>'Login',
 	'btn:logout'=>'Logout',
 	'btn:refresh'=>'Refresh',
 	'btn:users'=>'Users',
-	'btn:groups'=>'Groups',
-	'btn:rights'=>'Matrix',
+	'btn:groups'=>'Roles & Rights',
+	'btn:rights'=>'Users & Roles',
 	'btn:create'=>'Create',
 	'btn:logged_in_as'=>'Logged in as',
 	'btn:search'=>'Search',

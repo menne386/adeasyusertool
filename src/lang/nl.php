@@ -33,13 +33,14 @@ $lang_override = array(
 
 	'field:group:samaccountname'=>'Groepsnaam',
 	'field:group:member'=>'Leden',
+	'field:group:description'=>'Beschrijving',
 	
 	'btn:login'=>'Aanmelden',
 	'btn:logout'=>'Afmelden',
 	'btn:refresh'=>'Ververs',
 	'btn:users'=>'Gebruikers',
-	'btn:groups'=>'Groepen',
-	'btn:rights'=>'Matrix',
+	'btn:groups'=>'Rollen & Rechten',
+	'btn:rights'=>'Gebruikers & Rollen',
 	'btn:create'=>'Maak',
 	'btn:logged_in_as'=>'Inglogd als',
 	'btn:search'=>'Zoeken',

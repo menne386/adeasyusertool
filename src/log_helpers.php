@@ -17,7 +17,8 @@ function writelog($data=array()) {
 function getLog($myDate) {
 	global $config;
 	global $ad_users;
-	global $ad_groups;
+	global $ad_rolegroups;
+	global $ad_rightgroups;
 	$file = $config['log_dir'].(int)$myDate.'.log';
 
 	$A = json_decode('{"entries":['.rtrim(rtrim(file_get_contents($file)),',').']}',true);	
@@ -38,8 +39,11 @@ function getLog($myDate) {
 			if(($attr === 'dn' || $attr === 'member')&& isset($ad_users[$val])) {
 				$A['entries'][$i][$attr] = $ad_users[$val]['samaccountname'].'('.$ad_users[$val]['displayname'].')';
 			}				
-			if(($attr === 'dn' || $attr==='group') && isset($ad_groups[$val])) {
-				$A['entries'][$i][$attr] = $ad_groups[$val]['samaccountname'];
+			if(($attr === 'dn' || $attr==='group') && isset($ad_rolegroups[$val])) {
+				$A['entries'][$i][$attr] = $ad_rolegroups[$val]['samaccountname'];
+			}				
+			if(($attr === 'dn' || $attr==='group') && isset($ad_rightgroups[$val])) {
+				$A['entries'][$i][$attr] = $ad_rightgroups[$val]['samaccountname'];
 			}				
 		}
 	}

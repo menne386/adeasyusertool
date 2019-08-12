@@ -109,7 +109,7 @@ $config['ldap_attributes_users'] = array(
 //What attributes are available for display/edit for groups:
 $config['ldap_attributes_groups'] = array(
 	'samaccountname'=>"field:group:samaccountname",
-	'member'=>'field:group:member',
+	'description'=>'field:group:description',
 );
 
 //What attributes are available for display/edit for rights: (added to these are all the groups)

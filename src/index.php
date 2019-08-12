@@ -37,7 +37,8 @@ require_once('do_login.php');
 $msg = "";
 
 $ad_users = array();
-$ad_groups = array();
+$ad_rolegroups = array();
+$ad_rightgroups = array();
 
 $search_filter = $config['ldap_search_filter_users'];
 $search_filter_rightgroups = $config['ldap_search_filter_rightgroups'];

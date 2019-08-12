@@ -109,7 +109,11 @@ if(isset($_POST['dn'])) {
 	$filterfn = 'writefilter_'.$attr;
 	
 	$isUserMod = in_array($dn,array_keys($ad_users)) && in_array($attr,array_keys($attributes));
-	$isMembershipUpdate = in_array($dn,array_keys($ad_users)) && in_array($attr,array_keys($ad_groups));
+	$isMembershipUpdate = in_array($dn,array_keys($ad_users)) && in_array($attr,array_keys($ad_rolegroups));
+	if(!$isMembershipUpdate) {
+		$isMembershipUpdate = in_array($dn,array_keys($ad_rolegroups)) && in_array($attr,array_keys($ad_rightgroups));
+
+	}
 	//$isGroupMod = in_array($dn,array_keys($ad_groups)) && in_array($attr,array_keys($attributes_g));
 	
 	
