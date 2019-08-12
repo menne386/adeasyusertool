@@ -73,14 +73,20 @@ $config['debug'] = false;
 //The base OU we are searching in for users, new users are created here:
 $config['ldap_base_dn_users'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
 
-//The base OU we are searching in for groups
-$config['ldap_base_dn_groups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
+//The base OU we are searching in for role groups
+$config['ldap_base_dn_rolegroups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
+
+//The base OU we are searching in for right groups
+$config['ldap_base_dn_rightgroups'] = 'OU=SOME_OU_WITH_USERS,OU=SOME_OU,DC=DOMAIN_NAME,DC=COM';
 
 //The filter that is used for user searching
 $config['ldap_search_filter_users'] = '(&(objectCategory=person)(samaccountname=*))';
 
 //The filter that is used for group searching
-$config['ldap_search_filter_groups'] = '(&(objectCategory=group)(samaccountname=*))';
+$config['ldap_search_filter_rolegroups'] = '(&(objectCategory=group)(samaccountname=*))';
+
+//The filter that is used for group searching
+$config['ldap_search_filter_rightgroups'] = '(&(objectCategory=group)(samaccountname=*))';
 
 //The filter that is used for rights matrix searching
 $config['ldap_search_filter_rights'] = '(&(objectCategory=person)(samaccountname=*)(mail=*)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))';

@@ -17,8 +17,7 @@ function addElement($tag,DOMElement $fromElement,$text='',$attr = array()) {
 	return $newElement;
 }
 
-function createTable($node,$id,$attributes,$data,$donewrow=true) {
-	global $ad_groups;
+function createTable($node,$id,$attributes,$data,$donewrow,$membershipfilterforattr) {
 	global $tdCount;
 
 	/*//global $lang;*/
@@ -38,7 +37,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 		foreach($attributes as $att=>$att_tr) {
 			$td = addElement('td',$tr,'',array('id'=>$id.'_'.$att."_new"));
 			$func = "displayfilter_".$att;
-			if(in_array($att,array_keys($ad_groups))) {
+			if(in_array($att,$membershipfilterforattr)) {
 				$func= "displayfilter_membership";
 			} else {
 				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	
@@ -60,7 +59,7 @@ function createTable($node,$id,$attributes,$data,$donewrow=true) {
 			$td = addElement('td',$tr,'',array('id'=>'td_'.$tdCount));
 			++$tdCount;
 			$func = "displayfilter_".$att;
-			if(in_array($att,array_keys($ad_groups))) {
+			if(in_array($att,$membershipfilterforattr)) {
 				$func= "displayfilter_membership";
 			} else {
 				$ediv = addElement('div',$td,"",array('class'=>'cellerror'));	

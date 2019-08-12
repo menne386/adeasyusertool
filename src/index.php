@@ -40,22 +40,27 @@ $ad_users = array();
 $ad_groups = array();
 
 $search_filter = $config['ldap_search_filter_users'];
-$search_filter_g = $config['ldap_search_filter_groups'];
+$search_filter_rightgroups = $config['ldap_search_filter_rightgroups'];
+$search_filter_rolegroups = $config['ldap_search_filter_rolegroups'];
 
 $attributes = $config['ldap_attributes_users'];
 $attributes_g = $config['ldap_attributes_groups'];
-$attributes_r = $config['ldap_attributes_rights'];
+$attributes_role_to_right = $config['ldap_attributes_groups'];
+$attributes_user_to_role = $config['ldap_attributes_rights'];
 
 require_once('filters.php');//Functions that are used to filter/check ldap data before display or before write.
 
 require_once('ldap_helpers.php'); // getLdapEntries & getLdapMemberships functions;
 
 $ad_users = getLdapEntries($config['ldap_base_dn_users'],$search_filter,$attributes);
-$ad_groups = getLdapEntries($config['ldap_base_dn_groups'],$search_filter_g,$attributes_g);
-foreach($ad_groups as $dn=>$values) {
-	$attributes_r[$dn] = $values['samaccountname'];
-}
-$ad_rights = getLdapMemberships($config['ldap_base_dn_users'],$config['ldap_search_filter_rights']);
+$ad_rolegroups = getLdapEntries($config['ldap_base_dn_rolegroups'],$search_filter_rolegroups,$attributes_g);
+$ad_rightgroups = getLdapEntries($config['ldap_base_dn_rightgroups'],$search_filter_rightgroups,$attributes_g);
+
+foreach($ad_rolegroups as $dn=>$values) {	$attributes_user_to_role[$dn] = $values['samaccountname'];}
+foreach($ad_rightgroups as $dn=>$values) {	$attributes_role_to_right[$dn] = $values['samaccountname'];}
+
+$ad_roles_to_rights = getLdapMemberships($config['ldap_base_dn_rolegroups'],$config['ldap_search_filter_rolegroups'],$ad_rightgroups);
+$ad_users_to_roles = getLdapMemberships($config['ldap_base_dn_users'],$config['ldap_search_filter_rights'],$ad_rolegroups);
 
 
 require_once('do_processing.php'); //This does processing of posted values
@@ -72,9 +77,9 @@ $additionalMarkers = array();
 $additionalMarkers['logoutbutton'] = addElement('a',$headerdiv,getLang('btn:logout'),array('href'=>'/?logout=1'));
 $additionalMarkers['username'] = addElement('a',$headerdiv,'',array('title'=>getLang('btn:logged_in_as'),'href'=>'javascript:;'));
 								 addElement('span',$additionalMarkers['username'],$user);
-$additionalMarkers['userstable'] = createTable($headerdiv,'users',$attributes,$ad_users);
-$additionalMarkers['groupstable'] = createTable($headerdiv,'groups',$attributes_g,$ad_groups,false);
-$additionalMarkers['rightstable'] = createTable($headerdiv,'rights',$attributes_r,$ad_rights,false);
+$additionalMarkers['userstable'] = createTable($headerdiv,'users',$attributes,$ad_users,true,array());
+$additionalMarkers['groupstable'] = createTable($headerdiv,'groups',$attributes_role_to_right,$ad_roles_to_rights,false,array_keys($ad_rightgroups));
+$additionalMarkers['rightstable'] = createTable($headerdiv,'rights',$attributes_user_to_role,$ad_users_to_roles,false,array_keys($ad_rolegroups));
 
 //Replace markers:
 replaceDocumentMarkers($document,$additionalMarkers);

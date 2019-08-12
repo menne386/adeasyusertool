@@ -238,6 +238,7 @@ $(document).ready(function () {
 	//Make sure rights table has rotate class assigned:
 	for(a=3;a<100;a++) {
 		$('#rights > thead > tr > th:nth-child('+a+')').addClass("rotate");
+		$('#groups > thead > tr > th:nth-child('+a+')').addClass("rotate");
 		//$('#rights > tbody > tr > td:nth-child('+a+')').addClass("group");
 	}
 	$('.rotate > div').wrapInner('<span></span>');
