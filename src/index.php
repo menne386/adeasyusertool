@@ -63,7 +63,7 @@ require_once('do_processing.php'); //This does processing of posted values
 
 
 //Load template:
-$document->loadHTMlFile("tmpl/index.html",LIBXML_NOWARNING|LIBXML_NOERROR);
+loadDocumentTemplate($document,'tmpl/index.html');
 //Create a temporary div to hold elements
 $headerdiv = $document->createElement('div');
 

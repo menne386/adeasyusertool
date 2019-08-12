@@ -42,7 +42,6 @@ if(isset($_POST['keepalive'])) {
 //Timeout:
 
 
-
 if (!isset($_SESSION['AUTH'])) {
 	if(isset($_POST['username']) && isset($_POST['password'])) {
 		$code = 0;
@@ -110,8 +109,11 @@ if (!isset($_SESSION['AUTH'])) {
 	}
 	
 	//Render login document:
-	$document->loadHTMlFile("tmpl/loginform.html",LIBXML_NOWARNING|LIBXML_NOERROR);
+
+	loadDocumentTemplate($document,'tmpl/loginform.html');	
+
 	replaceDocumentMarkers($document);
+
 	die($document->saveHTML());
 } else {
 	$data = unserialize(cryptoCoder($_SESSION['AUTH'],'d'));

@@ -224,3 +224,12 @@ function replaceDocumentMarkers($document,$additionalMarkers = array()) {
 	
 	
 }
+
+function loadDocumentTemplate($document,$template) {
+	if(!$document->loadHTMl(file_get_contents($template),LIBXML_NOWARNING|LIBXML_NOERROR))  {
+    // handle errors here
+		//print_r(libxml_get_errors());
+
+		die("failed to load template: ".$template);
+	}
+}
