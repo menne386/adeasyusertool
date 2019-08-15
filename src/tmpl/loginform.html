@@ -54,7 +54,15 @@
     <div class="inlog-container">
         <div class="inlog-formulier">
             <h1><meta replaceme='txt:login'></h1>
+
+				<enable_if config="use_oath_hotp">
             <p><meta replaceme='txt:login_help'> </p>
+				</enable_if>
+				<disable_if config="use_oath_hotp">
+            <p><meta replaceme='txt:login_help_notoken'> </p>
+				</disable_if>
+
+
             <form class="form-horizontal" id="id18" method="post" action="./">
                 <div class="control-group">
                     <label class="control-label" for="input01"><meta replaceme='field:user:samaccountname'></label>

@@ -116,6 +116,22 @@ function replaceDocumentMarkers($document,$additionalMarkers = array()) {
 			$removeElements[] = $replaceme;
 		}
 	}
+
+	$elements = $document->getElementsByTagName("disable_if");
+	foreach ($elements as $replaceme) {
+		$parent = $replaceme->parentNode;
+		//$parent->removeChild($replaceme);
+		$i = $replaceme->getAttribute('config');
+		if(isset($config[$i]) && $config[$i]) {
+			$removeElements[] = $replaceme;
+		} else {
+			foreach($replaceme->childNodes as $child) {
+				$parent->insertBefore($child->cloneNode(true),$replaceme);
+			}
+			$removeElements[] = $replaceme;
+		}
+	}
+
 	foreach($removeElements as $e) { removeNode($e); }
 	
 	
